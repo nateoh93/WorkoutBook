@@ -3,13 +3,12 @@ class Api::UsersController < ApplicationController
     
     def index
         @users = User.all
-        render :show
-        # include a render
+        render :index
     end
     
     def show
         @user = User.find_by(id: params[:id])
-        # include a render
+        render :show
     end
     
     def create
