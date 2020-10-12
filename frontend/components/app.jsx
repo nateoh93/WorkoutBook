@@ -1,7 +1,8 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import LoginFormContainer from './session_form/login_form_container'
-import SignupFormContainer from './session_form/signup_form_container'
+import LoginFormContainer from './session_form/login_form_container';
+import SignupFormContainer from './session_form/signup_form_container';
+import NavBarContainer from './nav_bar/nav_bar_container';
 
 const App = () => {
     return(
@@ -9,6 +10,7 @@ const App = () => {
             <header>
                 <h1>workoutbook</h1>
                 <h2>Connect with friends and the world around you on Workoutbook.</h2>
+                <NavBarContainer />
             </header>
 
             <Route path="/login" component={LoginFormContainer} />

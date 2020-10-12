@@ -24,6 +24,14 @@ class SessionForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.processForm(user);
+
+        this.setState({
+            email: '',
+            password: '',
+            fname: '',
+            lname: '',
+            birthday: ''
+        })
     }
 
     renderErrors() {
@@ -76,6 +84,7 @@ class SessionForm extends React.Component {
 
                 <form onSubmit={this.handleSubmit} className="login-form-box">
                     {this.renderErrors()}
+
                     <div className="login-form">
                         <br />
                         <label>
