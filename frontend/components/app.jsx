@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import LoginFormContainer from './session_form/login_form_container';
 import SignupFormContainer from './session_form/signup_form_container';
 import NavBarContainer from './nav_bar/nav_bar_container';
@@ -11,14 +11,17 @@ const App = () => {
         <div>
             <Modal />
             <header>
+            <NavBarContainer />
                 <div className="splash-header">
                     <h1 className='splash-logo'>workoutbook</h1>
                     <h2 className='splash-title'>Connect with friends and the world around you on Workoutbook.</h2>
                 </div>
                 <LoginFormContainer />
             </header>
-            <NavBarContainer />
+            <Switch>
 
+                <Redirect to='/' />
+            </Switch>
         </div>
     )
 };

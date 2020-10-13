@@ -72,7 +72,7 @@ button:hover {
 
 .button-create {
     background: #42b72a;
-    width: 100%;
+    width: 200px;
     margin-top: 10px;
 }
 
@@ -91,9 +91,10 @@ button, input {
     border-radius: 5px;
 }
 
-input {
+.login-input {
     border: 1px solid  #888888;
     padding: 15px;
+    margin-bottom: 10px;
 }
 
 .signup-header > h1 {
@@ -101,6 +102,43 @@ input {
     font-weight: bold;
 }
 
+.login-input.errors {
+    border: 1px solid red;
+}
+    
 .error-messages {
-    color: red;
+    display: none;
+    position: absolute;
+    background: #be4b49;
+    color: white;
+    font-size: 15px;
+    width: 180px;
+    height: 30px;
+    border-radius: 3px;
+    text-align: center;
+}
+
+#fname {
+    left: 107%;
+    top: 20%
+}
+
+#lname {
+    left: 55%;
+    top: 20%
+}
+
+.error-messages:before {
+    display: none;
+    position: absolute;
+}
+
+.error-messages:after {
+    display: none;
+    position: absolute;
+}
+
+.error-messages:hover:before, .error-messages:hover:after {
+    display: block;
+    position: absolute;
 }

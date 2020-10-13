@@ -17,9 +17,10 @@
 
 .close-x {
     position: absolute;
-    left: 375px;
-    top: 5px;
+    left: 370px;
+    top: -5px;
     padding: 10px;
+    font-size: 30px;
 }
 
 .close-x:hover {
@@ -55,6 +56,13 @@ span {
     padding-bottom: 10px;
 }
 
-.modal-child .login-form {
-    // padding: 10px
+.signup-names {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.birthday {
+    font-size: 12px;
+    margin-bottom: 3px;
 }
