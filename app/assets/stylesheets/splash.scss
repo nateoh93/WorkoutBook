@@ -1,5 +1,6 @@
 body {
     font-family: 'Roboto', sans-serif;
+    vertical-align: middle;
 }
 
 header {
@@ -9,6 +10,18 @@ header {
     justify-content: space-around;
     padding: 50px;
     height: 500px;
+}
+
+button{
+    border-radius: 5px;
+    padding: 15px;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+button:hover {
+    cursor: pointer;
 }
 
 .splash-header {
@@ -39,39 +52,39 @@ header {
     flex-direction: column;
     align-items: center;
     width: 400px;
+    height: 300px
 }
 
 .login-form-box {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    
 }
 
 .login-form {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    // align-items: center;
     padding-bottom: 10px;
-    border-bottom: 1px solid  #888888;
 }
 
 .button-create-account {
-    padding: 15px 5px 5px 5px;
+    padding:  10px 10px;
 }
 
 .button-create {
     background: #42b72a;
-    border-radius: 5px;
-    padding: 15px;
-    border: none;
+}
+
+.session-submit, .demo-button {
+    background: #1877f2;
     color: #fff;
     font-weight: bold;
 }
 
-.session-submit {
-    background: #1877f2;
-    color: #fff;
-    font-weight: bold;
+.demo-button {
+    padding-bottom: 10px 10px;
 }
 
 label {
@@ -82,4 +95,13 @@ input {
     border: 1px solid  #888888;
     padding: 15px;
     border-radius: 5px;
+}
+
+.signup-header > h1 {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.modal-child > .login-form-container {
+    height: 400px;
 }
