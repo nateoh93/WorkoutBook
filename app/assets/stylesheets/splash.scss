@@ -13,7 +13,7 @@ header {
 }
 
 button{
-    border-radius: 5px;
+    // border-radius: 5px;
     padding: 15px;
     border: none;
     color: #fff;
@@ -50,31 +50,30 @@ button:hover {
     box-shadow: 3px 3px 8px 2px #888888;
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
-    width: 400px;
-    height: 300px
+    width: 375px;
+    height: 350px
 }
 
 .login-form-box {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    
+    // margin-bottom: 5px;
 }
 
 .login-form {
     display: flex;
     flex-direction: column;
     // align-items: center;
-    padding-bottom: 10px;
-}
-
-.button-create-account {
-    padding:  10px 10px;
+    // padding-bottom: 10px;
 }
 
 .button-create {
     background: #42b72a;
+    width: 100%;
+    margin-top: 10px;
 }
 
 .session-submit, .demo-button {
@@ -84,17 +83,17 @@ button:hover {
 }
 
 .demo-button {
-    padding-bottom: 10px 10px;
+    margin: 0px 0px 10px 0px;
+    width: 100%;
 }
 
-label {
-    margin: 5px;
+button, input {
+    border-radius: 5px;
 }
 
 input {
     border: 1px solid  #888888;
     padding: 15px;
-    border-radius: 5px;
 }
 
 .signup-header > h1 {
@@ -104,4 +103,15 @@ input {
 
 .modal-child > .login-form-container {
     height: 400px;
+}
+
+.signup-border, .border {
+    border-top: 1px solid  #888888;
+}
+.modal-background .border {
+    border: none;
+}
+
+.error-messages {
+    color: red;
 }

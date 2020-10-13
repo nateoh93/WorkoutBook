@@ -11,25 +11,22 @@
 .modal-child {
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 90%;
     transform: translate(-50%, -50%);
 }
 
 .close-x {
     position: absolute;
-    right: 5px;
+    left: 375px;
     top: 5px;
     padding: 10px;
 }
 
 .close-x:hover {
     cursor: pointer;
+    color: red;
 }
 
 span {
     font-weight: bold;
-}
-
-.error-messages {
-    color: red;
 }

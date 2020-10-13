@@ -76,6 +76,7 @@ class SessionForm extends React.Component {
             <div className='signup-header'>
                 <h1>Sign Up</h1>
                 <h3>It's quick and easy.</h3>
+                <div className="signup-border"></div>
             </div>
         )
         return (
@@ -107,9 +108,8 @@ class SessionForm extends React.Component {
                     </div>
                 </form>
                 {this.props.formType === 'Log In' ? <button className="demo-button" onClick={this.handleDemo}>Demo User</button> : null}
-                <div className="button-create-account">
-                    {this.props.formType === 'Log In' ? this.props.otherForm : null}
-                </div>
+                <div className="border"></div>
+                {this.props.formType === 'Log In' ? this.props.otherForm : null}
             </div>
         );
     }
