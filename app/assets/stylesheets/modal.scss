@@ -30,3 +30,31 @@
 span {
     font-weight: bold;
 }
+
+.modal-child > .login-form-container {
+    height: 400px;
+}
+
+.signup-border, .border {
+    border-top: 1px solid  #888888;
+}
+.modal-background .border {
+    border: none;
+}
+
+.signup-header {
+    display: flex;
+    flex-direction: column;
+}
+
+.signup-header > h1 {
+    padding-bottom: 10px;
+}
+
+.signup-header > h3 {
+    padding-bottom: 10px;
+}
+
+.modal-child .login-form {
+    // padding: 10px
+}

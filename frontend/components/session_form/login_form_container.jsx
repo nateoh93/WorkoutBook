@@ -5,10 +5,11 @@ import { login, clearErrors } from '../../actions/session_actions';
 import { openModal, closeModal } from '../../actions/modal_actions';
 import SessionForm from './session_form';
 
-const mapStateToProps = ({ errors }) => {
+const mapStateToProps = (state) => {
     return ({
-        errors: errors.session,
+        errors: state.errors.session,
         formType: 'Log In',
+        openModal: state.ui.modal
     });
 };
 
