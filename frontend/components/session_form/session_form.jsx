@@ -14,6 +14,10 @@ class SessionForm extends React.Component {
         this.update = this.update.bind(this);
     }
 
+    componentDidMount() {
+        this.props.clearErrors();
+    }
+
     update(field) {
         return e => this.setState({
             [field]: e.currentTarget.value
@@ -34,18 +38,6 @@ class SessionForm extends React.Component {
         })
     }
 
-    renderErrors() {
-        return (
-            <ul>
-                {this.props.errors.map((error, i) => (
-                    <li key={`error-${i}`}>
-                        {error}
-                    </li>
-                ))}
-            </ul>
-        );
-    }
-
     render() {
         let signupInfo;
         if (this.props.formType === 'Sign Up') {
@@ -56,6 +48,7 @@ class SessionForm extends React.Component {
                         value={this.state.fname}
                         placeholder='First name'
                     />
+                    {this.props.errors.fname}
                 </label>
                 <br/>
                 <label>
@@ -64,10 +57,15 @@ class SessionForm extends React.Component {
                         value={this.state.lname}
                         placeholder='Last name'
                     />
+                    {this.props.errors.lname}
                 </label>
                 <br/>
                 <label>Birthday
-                    <input type="date" onChange={this.update('birthday')} value={this.state.birthday}/>
+                    <input type="date" 
+                        onChange={this.update('birthday')} 
+                        value={this.state.birthday}
+                    />
+                    {this.props.errors.birthday}
                 </label>
             </div>)
         }
@@ -93,6 +91,7 @@ class SessionForm extends React.Component {
                                 className="login-input"
                                 placeholder='Email'
                             />
+                            {this.props.errors.email}
                         </label>
                         <br />
                         <label>
@@ -102,14 +101,15 @@ class SessionForm extends React.Component {
                                 className="login-input"
                                 placeholder='Password'
                             />
+                            {this.props.errors.password}
                         </label>
                         <br />
                         {signupInfo}
+                        {this.props.errors.login}
                         <br/>
                         <input className="session-submit" type="submit" value={this.props.formType} />
                     </div>
                     <br/>
-                    {this.renderErrors()}
                     {this.props.navLink}
                 </form>
             </div>
