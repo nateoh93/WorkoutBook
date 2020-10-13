@@ -1,4 +1,5 @@
 import React from 'react';
+import {withRouter} from 'react-router-dom';
 
 class SessionForm extends React.Component {
     constructor(props) {
@@ -27,15 +28,15 @@ class SessionForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.processForm(user);
+        this.props.processForm(user).then(this.props.closeModal);
 
-        this.setState({
-            email: '',
-            password: '',
-            fname: '',
-            lname: '',
-            birthday: ''
-        })
+        // this.setState({
+        //     email: '',
+        //     password: '',
+        //     fname: '',
+        //     lname: '',
+        //     birthday: ''
+        // })
     }
 
     render() {
@@ -81,7 +82,7 @@ class SessionForm extends React.Component {
                 {this.props.formType === 'Sign Up' ? signupHeader : null}
 
                 <form onSubmit={this.handleSubmit} className="login-form-box">
-
+                    {this.props.formType === 'Sign Up' ? <div onClick={this.props.closeModal} className="close-x">X</div> : null}
                     <div className="login-form">
                         <br />
                         <label>
@@ -110,11 +111,11 @@ class SessionForm extends React.Component {
                         <input className="session-submit" type="submit" value={this.props.formType} />
                     </div>
                     <br/>
-                    {this.props.navLink}
+                    {this.props.formType === 'Log In' ? this.props.otherForm : null}
                 </form>
             </div>
         );
     }
 }
 
-export default SessionForm;
+export default withRouter(SessionForm);
