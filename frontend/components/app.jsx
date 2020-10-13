@@ -11,11 +11,13 @@ const App = () => {
         <div>
             <Modal />
             <header>
-                <h1>workoutbook</h1>
-                <h2>Connect with friends and the world around you on Workoutbook.</h2>
+                <div className="splash-header">
+                    <h1 className='splash-logo'>workoutbook</h1>
+                    <h2 className='splash-title'>Connect with friends and the world around you on Workoutbook.</h2>
+                </div>
                 <LoginFormContainer />
-                <NavBarContainer />
             </header>
+            <NavBarContainer />
 
             {/* <AuthRoute path="/login" component={LoginFormContainer} />
             <AuthRoute path="/signup" component={SignupFormContainer} /> */}

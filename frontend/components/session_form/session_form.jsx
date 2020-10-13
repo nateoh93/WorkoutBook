@@ -30,13 +30,13 @@ class SessionForm extends React.Component {
         const user = Object.assign({}, this.state);
         this.props.processForm(user).then(this.props.closeModal);
 
-        // this.setState({
-        //     email: '',
-        //     password: '',
-        //     fname: '',
-        //     lname: '',
-        //     birthday: ''
-        // })
+        this.setState({
+            email: '',
+            password: '',
+            fname: '',
+            lname: '',
+            birthday: ''
+        })
     }
 
     render() {
@@ -74,7 +74,7 @@ class SessionForm extends React.Component {
         let signupHeader = (
             <div>
                 <h1>Sign Up</h1>
-                <p>It's quick and easy.</p>
+                <h3>It's quick and easy.</h3>
             </div>
         )
         return (
@@ -84,7 +84,6 @@ class SessionForm extends React.Component {
                 <form onSubmit={this.handleSubmit} className="login-form-box">
                     {this.props.formType === 'Sign Up' ? <div onClick={this.props.closeModal} className="close-x">X</div> : null}
                     <div className="login-form">
-                        <br />
                         <label>
                             <input type="text"
                                 value={this.state.email}
@@ -94,7 +93,6 @@ class SessionForm extends React.Component {
                             />
                             {this.props.errors.email}
                         </label>
-                        <br />
                         <label>
                             <input type="password"
                                 value={this.state.password}
@@ -104,15 +102,16 @@ class SessionForm extends React.Component {
                             />
                             {this.props.errors.password}
                         </label>
-                        <br />
                         {signupInfo}
                         {this.props.errors.login}
-                        <br/>
-                        <input className="session-submit" type="submit" value={this.props.formType} />
+                        <label>
+                            <input className="session-submit" type="submit" value={this.props.formType} />
+                        </label>
                     </div>
-                    <br/>
-                    {this.props.formType === 'Log In' ? this.props.otherForm : null}
                 </form>
+                <div className="button-create-account">
+                    {this.props.formType === 'Log In' ? this.props.otherForm : null}
+                </div>
             </div>
         );
     }
