@@ -54,7 +54,7 @@ class SessionForm extends React.Component {
                     className={this.props.errors.fname ? 'login-input errors' : 'login-input'}
                     placeholder='First name'
                 />
-                <div className='error-messages' id="fname">{this.props.errors.fname}</div>
+                    <div className='error-messages' id="fname">{this.props.errors.fname}</div>
                 <input type="text"
                     onChange={this.update('lname')}
                     value={this.state.lname}
@@ -76,7 +76,6 @@ class SessionForm extends React.Component {
                     className={this.props.errors.birthday ? 'login-input errors' : 'login-input'}
                 />
                 <div className='error-messages'>{this.props.errors.birthday}</div>
-                
             </>)
         }
     }
@@ -118,7 +117,7 @@ class SessionForm extends React.Component {
                         />
                         {(this.props.formType === 'Log In' && this.props.openModal) ? null : <div className='error-messages'>{this.props.errors.password}</div>}
 
-                        <div className='error-messages'>{this.props.errors.login}</div>
+                        {(this.props.formType === 'Log In' && !this.props.openModal) ? <div className='error-messages'>{this.props.errors.login}</div> : null}
                         
                         {this.displaySignupBirthday()}
                         <button className="session-submit" type="submit">{this.props.formType}</button>

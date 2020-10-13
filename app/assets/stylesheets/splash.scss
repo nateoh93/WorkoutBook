@@ -106,39 +106,29 @@ button, input {
     border: 1px solid red;
 }
     
-.error-messages {
-    display: none;
-    position: absolute;
-    background: #be4b49;
-    color: white;
-    font-size: 15px;
-    width: 180px;
-    height: 30px;
-    border-radius: 3px;
-    text-align: center;
-}
 
-#fname {
-    left: 107%;
-    top: 20%
-}
 
-#lname {
-    left: 55%;
-    top: 20%
-}
+// #fname {
+//     left: -53%;
+//     top: 20%
+// }
 
-.error-messages:before {
-    display: none;
-    position: absolute;
-}
+// #lname {
+//     left: 105%;
+//     top: 20%
+// }
 
-.error-messages:after {
-    display: none;
-    position: absolute;
-}
+// #birthday {
+//     left: -9.3%;
+//     top: 69%
+// }
 
-.error-messages:hover:before, .error-messages:hover:after {
-    display: block;
-    position: absolute;
-}
+// #email {
+//     left: -9.2%;
+//     top: 39%
+// }
+
+// #password {
+//     left: 21.5%;
+//     top: 52%
+// }
