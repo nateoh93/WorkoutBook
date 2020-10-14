@@ -24,8 +24,9 @@ class NavBar extends React.Component{
                             <div className='friend-request-icon'></div>
                             <div className='messenger-icon'></div>
                             <div className='notifications-icon'></div>
-                            <div className='logout-icon'>
-                                <div className='logout-notifications'>
+                            <div className='navbar-logout-container'>
+                                <div className='logout-icon'></div>
+                                <div className='logout-dropdown'>
                                     <li>
                                         {this.props.currentUser ? <button className="header-button" onClick={this.props.logout}>Logout</button> : null}
                                     </li>
