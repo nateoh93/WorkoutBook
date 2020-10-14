@@ -19,6 +19,7 @@ class SessionForm extends React.Component {
         this.displaySignupHeader = this.displaySignupHeader.bind(this);
         this.displayPasswordError = this.displayPasswordError.bind(this);
         this.displayEmailError = this.displayEmailError.bind(this);
+        this.openModal = this.openModal.bind(this)
     }
 
     componentDidMount() {
@@ -35,6 +36,10 @@ class SessionForm extends React.Component {
             email: '',
             password: '',
         })
+    }
+
+    componentDidUpdate() {
+        // if (this.props.openModal) return this.setState(this.props.reset)
     }
 
     update(field) {
@@ -131,6 +136,15 @@ class SessionForm extends React.Component {
         }
     }
 
+    openModal() {
+        this.setState({
+            email: '',
+            password: '',
+        })
+
+        this.props.otherForm()
+    }
+
     render() {
         return (
             <div className="login-form-container">
@@ -168,10 +182,20 @@ class SessionForm extends React.Component {
 
                 {this.props.formType === 'Log In' ? <button className="demo-button" onClick={this.handleDemo}>Demo User</button> : null}
                 <div className="border"></div>
-                {this.props.formType === 'Log In' ? this.props.otherForm : null}
+                {this.props.formType === 'Log In' ? <button className='button-create' onClick={this.openModal}>Create New Account</button> : null}
+                {/* {this.props.formType === 'Log In' ? <button className='button-create' onClick={this.props.otherForm.then(this.setState({ email: '', password: '' }))}>Create New Account</button> : null} */}
             </div>
         );
     }
 }
 
 export default withRouter(SessionForm);
+
+
+// onblur(this.handlerequired)
+
+// handlerequired() {
+//     return() => {
+
+//     }
+// }
