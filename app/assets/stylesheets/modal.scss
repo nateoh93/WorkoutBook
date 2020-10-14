@@ -81,6 +81,12 @@ span {
     position: relative;
 }
 
+.password-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
 //error message start
 .error-messages.birthday, .error-messages.fname,
 .error-messages.email, .error-messages.password {
@@ -185,7 +191,7 @@ span {
 }
 
 .error-messages.login {
-    top: 35%;
-    left: 54%
+    top: -40%;
+    left: -50%
 }
 //error message end

@@ -142,16 +142,17 @@ class SessionForm extends React.Component {
                         />
                         
                         {this.displayEmailError()}
-                        
-                        <input type="password"
-                            value={this.state.password}
-                            onChange={this.update('password')}
-                            className={((this.props.errors.password && !this.props.openModal) || (this.props.errors.login && !this.props.openModal)) ? 'login-input errors' : 'login-input'}
-                            placeholder='Password'
-                        />
+                        <div className='password-container'>
+                            <input type="password"
+                                value={this.state.password}
+                                onChange={this.update('password')}
+                                className={((this.props.errors.password && !this.props.openModal) || (this.props.errors.login && !this.props.openModal)) ? 'login-input errors' : 'login-input'}
+                                placeholder='Password'
+                            />
+                            {(this.props.formType === 'Log In' && !this.props.openModal && this.props.errors.login) ? <div className='error-messages login'>{this.props.errors.login}</div> : null}
+                        </div>
                         
                         {this.displayPasswordError()}
-                        {(this.props.formType === 'Log In' && !this.props.openModal && this.props.errors.login) ? <div className='error-messages login'>{this.props.errors.login}</div> : null}
                         {this.displaySignupBirthday()}
                         <button className="session-submit" type="submit">{this.props.formType}</button>
                     </div>
