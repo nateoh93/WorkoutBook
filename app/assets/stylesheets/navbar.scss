@@ -17,5 +17,111 @@ nav {
 img {
     height: 30px;
     border: 2px solid #1877f2;
+}
 
+.navbar-right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-icon-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.friend-request-icon {
+    background: image-url('friend-requests-icon.png');
+    background-size: 50%;
+    background-repeat: no-repeat;
+    height: 30px;
+    width: 40px;
+    background-position: 50%;
+    // position: absolute;
+    border: 1px solid black
+}
+
+.messenger-icon {
+    background: image-url('messages-icon.png');
+    background-size: 50%;
+    background-repeat: no-repeat;
+    height: 30px;
+    width: 40px;
+    background-position: 50%;
+    // position: absolute;
+        border: 1px solid black
+
+}
+.notifications-icon {
+    background: image-url('notifications-icon.png');
+    background-size: 50%;
+    background-repeat: no-repeat;
+    height: 30px;
+    width: 40px;
+    background-position: 50%;
+    // position: absolute;
+        border: 1px solid black
+
+}
+.logout-icon {
+    background: image-url('logout-button-icon.png');
+    background-size: 30%;
+    background-repeat: no-repeat;
+    height: 30px;
+    width: 40px;
+    background-position: 50%;
+    // position: absolute;
+        border: 1px solid black;
+    position: relative;
+}
+
+.logout-notifications {
+    // display: none;
+    position: absolute;
+    left: -115px;
+    top: 38px;
+    height: 40px;
+    width: 170px;
+    font-size: 14px;
+    background: white;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 5px -1px #ccc;
+    // white-space: nowrap;
+    // overflow: hidden;
+}
+
+.logout-notifications:after {
+    content: '';
+    position: absolute;
+    right: 20px;
+    top: -8px;
+    border-top: none;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid white;
+    border-left: 15px solid transparent;
+}
+
+.logout-icon:hover .logout-notifications {
+    display: block
+}
+
+.logout-notifications li {
+    padding: 7px 0 7px;
+}
+
+.header-button {
+    padding: 5px 0 5px;
+    border: none;
+    color: inherit;
+    font-weight: inherit;
+    border-radius: 0;
+    background: inherit;
+    width: 100%;
+}
+
+li:hover > button {
+    background: #4267b2;
+    color: white;
 }
