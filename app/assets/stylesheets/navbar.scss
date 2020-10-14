@@ -24,11 +24,23 @@ img {
     justify-content: space-between;
     align-items: center;
 }
+.nav-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-button li {
+    padding-right: 5px;
+}
 
 .nav-icon-list {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+.nav-icon-list:hover div {
+    cursor: pointer;
 }
 
 .friend-request-icon {

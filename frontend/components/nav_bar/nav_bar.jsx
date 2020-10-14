@@ -15,7 +15,11 @@ class NavBar extends React.Component{
                     </div>
 
                     <div className='navbar-right'>
-                        <Link to='/feed'>Home</Link>
+                        <div className='nav-button'>
+                            <li className='nav-profile-button'><Link to='/feed'>User Profile</Link></li>
+                            <li className='nav-home-button'><Link to='/feed'>Home</Link></li>
+                        </div>
+                        
                         <div className='nav-icon-list'>
                             <div className='friend-request-icon'></div>
                             <div className='messenger-icon'></div>
