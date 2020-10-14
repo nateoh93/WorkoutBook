@@ -19,7 +19,10 @@ const App = () => {
                 <LoginFormContainer />
             </header>
             <Switch>
-
+                {/* <AuthRoute path='/login' component={LoginFormContainer} />
+                <AuthRoute path='/signup' component={SignupFormContainer} />
+                <Protected path='/users/:userId' component={ProfileContainer} />
+                <Protected path='/feed' component={NewsFeedContainer} /> */}
                 <Redirect to='/' />
             </Switch>
         </div>
