@@ -22,7 +22,8 @@ class User < ApplicationRecord
     validates :fname, presence: {message: "First name can't be blank"}
     validates :lname, presence: {message: "Last name can't be blank"}
     validates :birthday, presence: {message: "Birthday can't be blank"}
-    validates :email, :session_token, uniqueness: true
+    validates :session_token, uniqueness: true
+    validates :email, uniqueness: {message: 'Email has already been taken'}
     validates :password, length: { minimum: 6, message: 'Password is too short (minimum is 6 characters)' }, allow_nil: true
 
     after_initialize :ensure_session_token

@@ -19,9 +19,7 @@ const App = () => {
                 <ProtectedRoute exact path='/feed' component={NewsFeedContainer} />
                 {/* <AuthRoute path='/login' component={LoginFormContainer} />
                 <AuthRoute path='/signup' component={SignupFormContainer} /> */}
-                {/* <AuthRoute exact path='/' component={LoginFormContainer} /> */}
                 <AuthRoute exact path='/' component={SplashContainer} />
-                {/* <Redirect to='/feed' /> */}
                 <Redirect to='/feed' />
             </Switch>
         </div>

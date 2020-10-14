@@ -94,13 +94,14 @@ span {
     background: #be4b49;
     color: white;
     font-size: 13px;
-    width: 170px;
+    width: 190px;
     height: 35px;
     border-radius: 3px;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 2
 }
 
 .error-messages.birthday:after, .error-messages.fname:after,
@@ -113,6 +114,7 @@ span {
     border-right: none;
     border-bottom: 15px solid transparent;
     border-left: 15px solid #be4b49;
+    z-index: -1
 }
 
 .error-messages.lname {
@@ -126,7 +128,7 @@ span {
     display: flex;
     align-items: center;
     justify-content: center;
-
+    z-index: 2
 }
 
 .error-messages.lname:after {
@@ -138,6 +140,7 @@ span {
     border-right: 15px solid #be4b49;
     border-bottom: 15px solid transparent;
     border-left: none;
+    z-index: -1
 }
 
 .error-messages.login {
@@ -167,12 +170,12 @@ span {
 
 .error-messages.birthday {
     top: 33%;
-    left: -51%
+    left: -56%
 }
 
 .error-messages.fname {
     top: 14%;
-    left: -51%
+    left: -56%
 }
 
 .error-messages.lname {
@@ -182,12 +185,12 @@ span {
 
 .error-messages.email {
     top: 39%;
-    left: -41%
+    left: -46%
 }
 
 .error-messages.password {
     top: 52.5%;
-    left: -41%
+    left: -46%
 }
 
 .error-messages.login {
