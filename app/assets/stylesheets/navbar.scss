@@ -1,7 +1,21 @@
-nav {
+.navbar {
     position: sticky;
     top: 0;
     z-index: 1;
     background: #4267b2;
-    width: 100%
+    width: 100%;
+    padding: 3px 0 3px 0;
+}
+
+nav {
+    padding: 0 450px 0 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+img {
+    height: 30px;
+    border: 2px solid #1877f2;
+
 }
