@@ -10,8 +10,8 @@
 
 .modal-child {
     position: absolute;
-    top: 50%;
-    left: 90%;
+    top: 46%;
+    left: 49.5%;
     transform: translate(-50%, -50%);
 }
 
@@ -38,6 +38,7 @@ span {
 
 .signup-border, .border {
     border-top: 1px solid  #888888;
+    width: 100%;
 }
 .modal-background .border {
     border: none;
@@ -46,6 +47,7 @@ span {
 .signup-header {
     display: flex;
     flex-direction: column;
+    width: 100%
 }
 
 .signup-header > h1 {
@@ -56,9 +58,15 @@ span {
     padding-bottom: 10px;
 }
 
-.signup-names {
+.signup-names-input {
     display: flex;
     justify-content: space-between;
+    // position: relative;
+}
+.signup-names {
+    display: flex;
+    flex-direction: column;
+    // justify-content: space-between;
     position: relative;
 }
 
@@ -67,35 +75,151 @@ span {
     margin-bottom: 3px;
 }
 
-// .error-messages {
-//     display: block;
-//     // position: relative;
-//     background: #be4b49;
-//     color: white;
-//     font-size: 15px;
-//     width: 180px;
-//     height: 30px;
-//     border-radius: 3px;
-//     text-align: center;
+// .error-messages.birthday {
+    // display: none;
+    // position: absolute;
+    // background: #be4b49;
+    // color: white;
+    // font-size: 13px;
+    // width: 175px;
+    // height: 35px;
+    // border-radius: 3px;
+    // text-align: center;
+    // z-index: -1
 // }
 
-
-// .error-messages:before {
-//     display: none;
-//     position: absolute;
-//     left: 50%;
-//     transform: translateX(-50%);
-//     top: -7px;
-//     border-top: 5px solid #be4b49;
-//     border-bottom: 0;
-//     border-right: 5px solid transparent;
-//     border-left: 5px solid transparent;
+// .error-messages.login {
+    // display: block;
+    // z-index: 0;
+    // top: 23.5%;
+    // left: 57.5%
 // }
 
 // .error-messages:after {
-//     display: none;
+//     content: '';
 //     position: absolute;
-//     left: 50%;
-//     transform: translateX(-50%);
-//     bottom: 65px;
+//     // transform: translateX(45%);
+//     right: -8px;
+//     top: 2px;
+//     border-top: 15px solid transparent;
+//     border-right: none;
+//     border-bottom: 15px solid transparent;
+//     border-left: 15px solid #be4b49;
+//     // z-index:0
 // }
+
+.birthday-parent-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.error-messages.birthday {
+    top: 33%;
+    left: -51%
+}
+
+.error-messages.fname {
+    top: 14%;
+    left: -51%
+}
+
+.error-messages.lname {
+    top: 13%;
+    left: 105.5%
+}
+
+.error-messages.email {
+    top: 39%;
+    left: -41%
+}
+
+.error-messages.password {
+    top: 52.5%;
+    left: -41%
+}
+
+.error-messages.login {
+    top: 26%;
+    left: 54%
+}
+
+.error-messages.birthday, .error-messages.fname,
+.error-messages.email, .error-messages.password {
+    // display: none;
+    position: absolute;
+    background: #be4b49;
+    color: white;
+    font-size: 13px;
+    width: 170px;
+    height: 35px;
+    border-radius: 3px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.error-messages.birthday:after, .error-messages.fname:after,
+.error-messages.email:after, .error-messages.password:after {
+    content: '';
+    position: absolute;
+    right: -8px;
+    top: 2px;
+    border-top: 15px solid transparent;
+    border-right: none;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid #be4b49;
+}
+
+.error-messages.lname{
+    // display: none;
+    position: absolute;
+    background: #be4b49;
+    color: white;
+    font-size: 13px;
+    width: 170px;
+    height: 35px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.error-messages.lname:after {
+    content: '';
+    position: absolute;
+    right: 163px;
+    top: 2px;
+    border-top: 15px solid transparent;
+    border-right: 15px solid #be4b49;
+    border-bottom: 15px solid transparent;
+    border-left: none;
+}
+
+.error-messages.login{
+    // display: none;
+    position: absolute;
+    background: #be4b49;
+    color: white;
+    font-size: 13px;
+    width: 170px;
+    height: 41px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.error-messages.login:after {
+    content: '';
+    position: absolute;
+    right: -8px;
+    top: 4px;
+    border-top: 15px solid transparent;
+    border-right: none;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid #be4b49;
+}

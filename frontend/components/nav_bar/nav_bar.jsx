@@ -6,7 +6,11 @@ class NavBar extends React.Component{
     }
 
     render() {
-        return this.props.currentUser ? <button className="header-button" onClick={this.props.logout}>Log Out</button> : null;;
+        return (
+            <nav>
+                {this.props.currentUser ? <button className="header-button" onClick={this.props.logout}>Log Out</button> : null}
+            </nav>
+        )
     }
 } 
     

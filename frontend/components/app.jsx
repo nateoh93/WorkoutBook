@@ -10,8 +10,8 @@ const App = () => {
     return(
         <div>
             <Modal />
-            <header>
             <NavBarContainer />
+            <header>
                 <div className="splash-header">
                     <h1 className='splash-logo'>workoutbook</h1>
                     <h2 className='splash-title'>Connect with friends and the world around you on Workoutbook.</h2>
