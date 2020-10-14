@@ -12,8 +12,7 @@ header {
     height: 500px;
 }
 
-button{
-    // border-radius: 5px;
+button {
     padding: 15px;
     border: none;
     color: #fff;
@@ -61,15 +60,12 @@ button:hover {
     flex-wrap: wrap;
     align-items: center;
     width: 100%
-    // margin-bottom: 5px;
 }
 
 .login-form {
     display: flex;
     flex-direction: column;
     width: 100%
-    // align-items: center;
-    // padding-bottom: 10px;
 }
 
 .button-create {
@@ -99,38 +95,6 @@ button, input {
     margin-bottom: 10px;
 }
 
-.signup-header > h1 {
-    font-size: 30px;
-    font-weight: bold;
-}
-
 .login-input.errors {
     border: 1px solid red;
 }
-    
-
-
-// #fname {
-//     left: -53%;
-//     top: 20%
-// }
-
-// #lname {
-//     left: 105%;
-//     top: 20%
-// }
-
-// #birthday {
-//     left: -9.3%;
-//     top: 69%
-// }
-
-// #email {
-//     left: -9.2%;
-//     top: 39%
-// }
-
-// #password {
-//     left: 21.5%;
-//     top: 52%
-// }
