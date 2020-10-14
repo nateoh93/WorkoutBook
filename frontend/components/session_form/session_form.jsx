@@ -38,7 +38,7 @@ class SessionForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.processForm(user).then(this.props.closeModal);
+        this.props.processForm(user).then(this.props.closeModal).then(this.props.history.push('/feed'));
     }
 
     handleDemo(e) {
