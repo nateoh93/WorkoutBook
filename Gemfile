@@ -30,7 +30,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'aws-sdk-s3'
+gem 'aws-sdk-s3', require: false
 gem 'jquery-rails'
 
 # Reduces boot times through caching; required in config/boot.rb
