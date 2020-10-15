@@ -17,6 +17,7 @@ user1 = User.create!(
     bio: "Running is the best form of exercise.",
     city: "San Francisco",
     school: "Marathon University",
+    work: 'Demo-lition'
 )
 
 user2 = User.create!(
@@ -28,6 +29,7 @@ user2 = User.create!(
     bio: "I like to eat!",
     city: "San Francisco",
     school: "Snack University",
+    work: 'Professional Eater'
 )
 
 user3 = User.create!(
@@ -39,6 +41,7 @@ user3 = User.create!(
     bio: "I like to do burpees!",
     city: "San Francisco",
     school: "Burpee University",
+    work: 'Professional Faller'
 )
 
 user4 = User.create!(
@@ -50,6 +53,7 @@ user4 = User.create!(
     bio: "I like to squat!",
     city: "San Francisco",
     school: "Squat University",
+    work: 'House Squatter'
 )
 
 user5 = User.create!(
@@ -61,4 +65,5 @@ user5 = User.create!(
     bio: "I only workout my arms!",
     city: "San Francisco",
     school: "Curl University",
+    work: 'Dumbbell carrier'
 )

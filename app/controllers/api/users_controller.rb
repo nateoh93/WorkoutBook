@@ -44,7 +44,9 @@ class Api::UsersController < ApplicationController
             :bio, 
             :city,
             :work,
-            :school
+            :school,
+            :cover_photo,
+            :profile_photo
         )
     end
 end
