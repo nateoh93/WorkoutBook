@@ -73,3 +73,10 @@ export const fetchAllUsers = () => {
             .then((allUsers) => { dispatch(receiveAllUsers(allUsers))})
     }
 }
+
+export const updateUser = (user) => {
+    return (dispatch) => {
+        return UserAPIUtil.updateUser(user)
+            .then( (newUser) => {dispatch(receiveUser(newUser))})
+    }
+}

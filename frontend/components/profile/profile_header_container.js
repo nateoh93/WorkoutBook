@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchUser } from '../../actions/session_actions';
+import { fetchUser, updateUser } from '../../actions/session_actions';
 import ProfileHeader from './profile_header';
 
 const mapStateToProps = (state) => {
@@ -9,7 +9,8 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-    fetchUser: (userId) => dispatch(fetchUser(userId))
+    fetchUser: (userId) => dispatch(fetchUser(userId)),
+    updateUser: (user) => dispatch(updateUser(user))
 });
 
 export default connect(
