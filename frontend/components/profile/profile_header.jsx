@@ -16,7 +16,7 @@ class ProfileHeader extends React.Component {
         return(
             <div>
                 <div className='profile-cover-photo'><img src={`${this.props.user.coverPhoto}`} alt=""/></div>
-                <div>Update Cover Photo
+                <div className='cover-photo-btn'>Update Cover Photo
                     <input type="file"/>
                 </div>
             </div>
