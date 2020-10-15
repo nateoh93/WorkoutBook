@@ -8,7 +8,7 @@
 }
 
 nav {
-    padding: 0 450px 0 200px;
+    padding: 0 575px 0 310px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -46,6 +46,15 @@ img {
     font-size: 13px;
 }
 
+.nav-button li:hover {
+    background: rgba(0,0,0,0.1);
+    border-radius: 3px;;
+}
+
+.nav-icon-list div:hover {
+    opacity: unset;
+}
+
 .nav-button li {
     padding: 0 15px 0 15px;
     height: 30px;
@@ -69,6 +78,7 @@ img {
     height: 30px;
     width: 40px;
     background-position: 50%;
+    opacity: 70%;
     // position: absolute
 
 }
@@ -80,6 +90,7 @@ img {
     height: 30px;
     width: 40px;
     background-position: 50%;
+    opacity: 70%;
     // position: absolute;
 }
 
@@ -90,6 +101,7 @@ img {
     height: 30px;
     width: 40px;
     background-position: 50%;
+    opacity: 70%;
     // position: absolute;
     
 }
@@ -106,8 +118,51 @@ img {
     height: 30px;
     width: 40px;
     background-position: 50%;
+    opacity: 70%;
     // position: absolute;
     // position: relative;
+}
+
+.logout-dropdown li {
+    padding: 7px 0 7px;
+}
+
+.header-button {
+    padding: 5px 0 5px;
+    border: none;
+    color: inherit;
+    font-weight: inherit;
+    border-radius: 0;
+    background: inherit;
+    width: 100%;
+}
+
+li:hover > button {
+    background: #4267b2;
+    color: white;
+}
+
+.search-bar {
+    border-radius: 2px;
+    border: none;
+    box-shadow: none;
+    height: 23px;
+    width: 100%;
+    outline: none;
+}
+
+.nav-logo {
+    padding-right: 10px;
+}
+
+.search-bar-form {
+    width: 100%;
+}
+
+.nav-home-button {
+    border-left: 1px solid darkslategray;
+    border-right: 1px solid darkslategray;
+    
 }
 
 .logout-dropdown.false {
@@ -162,44 +217,168 @@ img {
     border-left: 15px solid transparent;
 }
 
-.logout-dropdown li {
-    padding: 7px 0 7px;
+.notifications-dropdown.false {
+    display: none;
+    position: absolute;
+    left: 1109px;
+    top: 43px;
+    height: 50px;
+    width: 210px;
+    font-size: 14px;
+    background: white;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 5px -1px #ccc;
+    // white-space: nowrap;
+    // overflow: hidden;
 }
 
-.header-button {
-    padding: 5px 0 5px;
-    border: none;
-    color: inherit;
-    font-weight: inherit;
-    border-radius: 0;
-    background: inherit;
-    width: 100%;
+.notifications-dropdown.false:after {
+    content: '';
+    position: absolute;
+    right: 20px;
+    top: -9px;
+    border-top: none;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid white;
+    border-left: 15px solid transparent;
 }
 
-li:hover > button {
-    background: #4267b2;
-    color: white;
+.notifications-dropdown.true {
+    display: block;
+    position: absolute;
+    left: 1109px;
+    top: 43px;
+    height: 50px;
+    width: 210px;
+    font-size: 14px;
+    background: white;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 5px -1px #ccc;
 }
 
-.search-bar {
-    border-radius: 2px;
-    border: none;
-    box-shadow: none;
-    height: 23px;
-    width: 100%;
-    outline: none;
+.notifications-dropdown.true:after {
+    content: '';
+    position: absolute;
+    right: 20px;
+    top: -9px;
+    border-top: none;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid white;
+    border-left: 15px solid transparent;
 }
 
-.nav-logo {
-    padding-right: 10px;
+.messages-dropdown.false {
+    display: none;
+    position: absolute;
+    left: 1069px;
+    top: 43px;
+    height: 50px;
+    width: 210px;
+    font-size: 14px;
+    background: white;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 5px -1px #ccc;
+    // white-space: nowrap;
+    // overflow: hidden;
 }
 
-.search-bar-form {
-    width: 100%;
+.messages-dropdown.false:after {
+    content: '';
+    position: absolute;
+    right: 20px;
+    top: -9px;
+    border-top: none;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid white;
+    border-left: 15px solid transparent;
 }
 
-.nav-home-button {
-    border-left: 1px solid darkslategray;
-    border-right: 1px solid darkslategray;
-    
+.messages-dropdown.true {
+    display: block;
+    position: absolute;
+    left: 1069px;
+    top: 43px;
+    height: 50px;
+    width: 210px;
+    font-size: 14px;
+    background: white;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 5px -1px #ccc;
+}
+
+.messages-dropdown.true:after {
+    content: '';
+    position: absolute;
+    right: 20px;
+    top: -9px;
+    border-top: none;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid white;
+    border-left: 15px solid transparent;
+}
+
+.friend-request-dropdown.false {
+    display: none;
+    position: absolute;
+    left: 1028px;
+    top: 43px;
+    height: 50px;
+    width: 210px;
+    font-size: 14px;
+    background: white;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 5px -1px #ccc;
+    // white-space: nowrap;
+    // overflow: hidden;
+}
+
+.friend-request-dropdown.false:after {
+    content: '';
+    position: absolute;
+    right: 20px;
+    top: -9px;
+    border-top: none;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid white;
+    border-left: 15px solid transparent;
+}
+
+.friend-request-dropdown.true {
+    display: block;
+    position: absolute;
+    left: 1028px;
+    top: 43px;
+    height: 50px;
+    width: 210px;
+    font-size: 14px;
+    background: white;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 5px -1px #ccc;
+}
+
+.friend-request-dropdown.true:after {
+    content: '';
+    position: absolute;
+    right: 20px;
+    top: -9px;
+    border-top: none;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid white;
+    border-left: 15px solid transparent;
+}
+
+.notifications-dropdown li, .messages-dropdown li, .friend-request-dropdown li {
+    font-size: 13px;
+    padding: 5px;
+}
+
+.notifs, .messages, .friend-request {
+    font-weight: bold;
+    border-bottom: 1px solid #888888;
 }

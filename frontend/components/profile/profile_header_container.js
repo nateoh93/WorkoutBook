@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import ProfileHeader from './profile';
+import ProfileHeader from './profile_header';
 
 const mapStateToProps = (state) => {
     return {

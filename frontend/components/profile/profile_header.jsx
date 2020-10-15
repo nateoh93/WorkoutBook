@@ -6,7 +6,9 @@ class ProfileHeader extends React.Component {
     }
     
     render() {
-        return null;
+        return(
+            <div className='profile-cover-photo'>PROFILE HEADER - COVER PHOTO GOES HEADER</div>
+        );
     }
 }
 

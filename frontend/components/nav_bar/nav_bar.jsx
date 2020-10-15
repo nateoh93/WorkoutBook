@@ -5,16 +5,21 @@ class NavBar extends React.Component{
     constructor(props) {
         super(props)
         this.state = {
-            dropdown: false
+            logoutDropdown: false,
+            notifsDropdown: false,
+            messagesDropdown: false,
+            friendsDropdown: false,
         }
 
         this.handleDropdown = this.handleDropdown.bind(this);
         this.handleLogOut = this.handleLogOut.bind(this);
     }
 
-    handleDropdown() {
-        let toggle = this.state.dropdown ? false : true;
-        this.setState({dropdown: toggle})      
+    handleDropdown(field) {
+        let toggle = this.state[field] ? false : true;
+        return () => {
+            this.setState({[field]: toggle})      
+        }
     }
 
     handleLogOut() {
@@ -41,12 +46,33 @@ class NavBar extends React.Component{
                             </div>
                             
                             <div className='nav-icon-list'>
-                                <div className='friend-request-icon'></div>
-                                <div className='messenger-icon'></div>
-                                <div className='notifications-icon'></div>
+                                <div className='navbar-friend-request-container'>
+                                    <div className='friend-request-icon' onClick={this.handleDropdown('friendsDropdown')}></div>
+                                    <div className={`friend-request-dropdown ${this.state.friendsDropdown}`}>
+                                        <li className='friend-request'>Friend Requests</li>
+                                        <li>You don't have any friend requests</li>
+                                    </div>
+                                </div>
+                                
+                                <div className='navbar-messages-container'>
+                                    <div className='messenger-icon' onClick={this.handleDropdown('messagesDropdown')}></div>
+                                    <div className={`messages-dropdown ${this.state.messagesDropdown}`}>
+                                        <li className='messages'>Messages</li>
+                                        <li>No new messages!</li>
+                                    </div>
+                                </div>
+
+                                <div className='navbar-notifications-container'>
+                                    <div className='notifications-icon' onClick={this.handleDropdown('notifsDropdown')}></div>
+                                    <div className={`notifications-dropdown ${this.state.notifsDropdown}`}>
+                                        <li className='notifs'>Notifications</li>
+                                        <li>You are caught up on notifications</li>
+                                    </div>
+                                </div>
+
                                 <div className='navbar-logout-container'>
-                                    <div className='logout-icon' onClick={this.handleDropdown}></div>
-                                    <div className={`logout-dropdown ${this.state.dropdown}`}>
+                                    <div className='logout-icon' onClick={this.handleDropdown('logoutDropdown')}></div>
+                                    <div className={`logout-dropdown ${this.state.logoutDropdown}`}>
                                         <li>
                                             {this.props.currentUser ? <button className="header-button" onClick={this.handleLogOut}>Logout</button> : null}
                                         </li>
