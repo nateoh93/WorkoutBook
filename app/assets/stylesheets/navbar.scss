@@ -16,7 +16,7 @@ nav {
 
 img {
     height: 30px;
-    border: 2px solid #1877f2;
+    // border: 2px solid #1877f2;
 }
 
 .navbar-right {
@@ -152,10 +152,12 @@ li:hover > button {
 }
 
 .nav-logo {
-    padding-right: 10px;
+    // padding-right: 10px;
+    border: 2px solid #1877f2;
 }
 
 .search-bar-form {
+    padding-left: 10px;
     width: 100%;
 }
 

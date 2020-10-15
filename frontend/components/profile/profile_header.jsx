@@ -9,7 +9,6 @@ class ProfileHeader extends React.Component {
     }
     
     componentDidMount() {
-        debugger
         this.props.fetchUser(this.props.user.id).then(user => {this.setState({user})})
     }
 
