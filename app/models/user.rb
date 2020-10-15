@@ -28,8 +28,12 @@ class User < ApplicationRecord
 
     after_initialize :ensure_session_token
 
-    attr_reader :password
+    attr_reader :password 
 
+    has_one_attached :cover_photo
+    has_one_attached :profile_photo
+    
+    
     def password=(password)
         @password = password
         self.password_digest = BCrypt::Password.create(password)
