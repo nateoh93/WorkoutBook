@@ -3,6 +3,10 @@
     background: #f0f2f5;;
 }
 
+// .profile-header {
+//     position: relative
+// }
+
 .profile-cover-photo {
     border-right: 1px solid #cecccc;
     border-left: 1px solid #cecccc;
@@ -24,12 +28,40 @@
     top: 65px;
     left: 385px;
     opacity: 90%;
+    height: 25px;
+    width: 150px;
+    // display: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cover-photo-btn:hover{
+    display: block;
+    color: white;
+    background: rgb(27, 21, 21);
+    font-size: 13px;
+    border: 1px solid white;
+    padding: 5px;
+    position: absolute;
+    top: 65px;
+    left: 385px;
+    opacity: 90%;
+    height: 25px;
+    width: 150px;
+    // display: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .upload-btn {
     position: absolute;
-    top: 22px;
+    top: 12px;
     left: 0px;
+    opacity: 0;
 }
 
 .profile-nav {
@@ -37,6 +69,7 @@
     padding: 0 10% 0 25%;
     background: white;
     border: 1px solid #cecccc;
+    border-radius: 3px;
     font-family: sans-serif;
     font-weight: bold;;
     font-size: 14px;
@@ -44,15 +77,24 @@
 }
 
 .profile-nav li {
-    border-right: 1px solid #cecccc42;
+    border-right: 1px solid #cecccc;
     padding: 10px 20px 10px 20px;
 }
 
 .profile-nav li:hover {
     cursor: pointer;
-    color: #888888
+    color: #4b4f56
 }
 
 .profile-nav li:first-of-type {
     border-left: 1px solid #cecccc
+}
+
+.profile-header-name {
+    font-family: sans-serif;
+    position: absolute;
+    z-index: 2;
+    color: white;
+    font-weight: bold;
+    font-size: 27px;
 }

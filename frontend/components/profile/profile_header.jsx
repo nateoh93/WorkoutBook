@@ -12,45 +12,50 @@ class ProfileHeader extends React.Component {
     }
     
     componentDidMount() {
-        this.props.fetchUser(this.props.user.id)
+        this.props.fetchUser(this.props.match.params.userId)
     }
 
     handleFile(field) {
-        // debugger
         return(e) => {
             let file = e.currentTarget.files[0];
-            this.setState({photoFile: file, photoUrl: null})
+            // debugger
             
-            // const fileReader = new FileReader();
+            const fileReader = new FileReader();
+
             // fileReader.onloadend = () => {
+                // debugger
+                this.setState({photoFile: file, photoUrl: null}, () => {
+                    const formData = new FormData();
+                    if (this.state.photoFile) {
+                        formData.append(`user[${field}]`, file)
+                        formData.append(`id`, this.props.match.params.userId)
+                        // debugger
+                        this.props.updateUser(formData)
+                    }
+                })
             // }
 
             // if (file) {
             //     fileReader.readAsDataURL(file);
             // }
     
-            const formData = new FormData();
-            if (this.state.photoFile) {
-                formData.append(`user[${field}]`, this.state.photoFile)
-                this.props.updateUser(formData)
-            }
         }
         // debugger
     }
 
     render() {
         // console.log(this.props.user)
-        
+        console.log('this is profile header component')
         return(
-            <div>
+            <div className='profile-header'>
                 <div className='profile-cover-photo'><img src={`${this.props.user.coverPhoto}`} alt=""/></div>
                 <div className='cover-photo-btn'>Update Cover Photo
                     <input className='upload-btn' type="file" onChange={this.handleFile('cover_photo')}/>
                 </div>
-
+                <p className='profile-header-name'>{this.props.user.fname} {this.props.user.lname}</p>
             </div>
         );
     }
 }
 
-export default withRouter(ProfileHeader);
+export default ProfileHeader;
