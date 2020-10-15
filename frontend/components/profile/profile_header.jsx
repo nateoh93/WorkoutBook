@@ -19,15 +19,15 @@ class ProfileHeader extends React.Component {
         // debugger
         return(e) => {
             let file = e.currentTarget.files[0];
-            const fileReader = new FileReader();
+            this.setState({photoFile: file, photoUrl: null})
+            
+            // const fileReader = new FileReader();
+            // fileReader.onloadend = () => {
+            // }
 
-            fileReader.onloadend = () => {
-                this.setState({photoFile: file, photoUrl: fileReader.result})
-            }
-
-            if (file) {
-                fileReader.readAsDataURL(file);
-            }
+            // if (file) {
+            //     fileReader.readAsDataURL(file);
+            // }
     
             const formData = new FormData();
             if (this.state.photoFile) {
@@ -39,7 +39,7 @@ class ProfileHeader extends React.Component {
     }
 
     render() {
-        console.log(this.props.user)
+        // console.log(this.props.user)
         
         return(
             <div>

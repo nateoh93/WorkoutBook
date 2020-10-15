@@ -15,10 +15,6 @@ class NavBar extends React.Component{
         this.handleLogOut = this.handleLogOut.bind(this);
     }
 
-    componentDidMount() {
-        this.props.fetchUser(this.props.currentUser.id)
-    }
-
     handleDropdown(field) {
         let toggle = this.state[field] ? false : true;
         return () => {
@@ -32,8 +28,6 @@ class NavBar extends React.Component{
     }
 
     render() {
-        console.log(this.state)
-        console.log(this.props)
         if (this.props.currentUser) {            
             return (
                 <div className='navbar'>

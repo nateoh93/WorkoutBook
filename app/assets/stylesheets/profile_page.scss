@@ -4,9 +4,8 @@
 }
 
 .profile-cover-photo {
-    border-right: 1px solid #888888;
-    border-left: 1px solid #888888;
-    border-bottom: 1px solid #888888;
+    border-right: 1px solid #cecccc;
+    border-left: 1px solid #cecccc;
     height: 300px;
 }
 
@@ -31,4 +30,29 @@
     position: absolute;
     top: 22px;
     left: 0px;
+}
+
+.profile-nav {
+    display: flex;
+    padding: 0 10% 0 25%;
+    background: white;
+    border: 1px solid #cecccc;
+    font-family: sans-serif;
+    font-weight: bold;;
+    font-size: 14px;
+    color: #385898;
+}
+
+.profile-nav li {
+    border-right: 1px solid #cecccc42;
+    padding: 10px 20px 10px 20px;
+}
+
+.profile-nav li:hover {
+    cursor: pointer;
+    color: #888888
+}
+
+.profile-nav li:first-of-type {
+    border-left: 1px solid #cecccc
 }
