@@ -11,8 +11,8 @@ User.destroy_all
 user1 = User.create!(
     email: 'demo_user@squat.com',
     password: 'password',
-    fname: 'demo',
-    lname: 'user',
+    fname: 'Demo',
+    lname: 'User',
     birthday: '2000/01/01',
     bio: "Running is the best form of exercise.",
     city: "San Francisco",
@@ -22,8 +22,8 @@ user1 = User.create!(
 user2 = User.create!(
     email: 'alex@squat.com',
     password: 'password',
-    fname: 'alex',
-    lname: 'yudit',
+    fname: 'Alex',
+    lname: 'Yudit',
     birthday: '2000/02/01',
     bio: "I like to eat!",
     city: "San Francisco",
@@ -33,8 +33,8 @@ user2 = User.create!(
 user3 = User.create!(
     email: 'ken@squat.com',
     password: 'password',
-    fname: 'ken',
-    lname: 'ashe',
+    fname: 'Ken',
+    lname: 'Ashe',
     birthday: '2000/03/01',
     bio: "I like to do burpees!",
     city: "San Francisco",
@@ -44,8 +44,8 @@ user3 = User.create!(
 user4 = User.create!(
     email: 'nate@squat.com',
     password: 'password',
-    fname: 'nate',
-    lname: 'oh',
+    fname: 'Nate',
+    lname: 'Oh',
     birthday: '2000/04/01',
     bio: "I like to squat!",
     city: "San Francisco",
