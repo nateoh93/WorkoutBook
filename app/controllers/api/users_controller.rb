@@ -1,5 +1,5 @@
 class Api::UsersController < ApplicationController
-    # before_action :require_logged_in, except: [:create]
+    before_action :require_logged_in, except: [:create]
     
     def index
         @users = User.all
@@ -26,7 +26,7 @@ class Api::UsersController < ApplicationController
         @user = User.find_by(id: params[:id])
         
         if @user.update(user_params)
-            # redirect somewhere
+            render :show
         else
             render json: @user.errors, status: 422
         end

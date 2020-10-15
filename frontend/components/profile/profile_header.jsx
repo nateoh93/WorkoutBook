@@ -14,7 +14,12 @@ class ProfileHeader extends React.Component {
 
     render() {
         return(
-            <div className='profile-cover-photo'><img src={`${this.props.user.coverPhoto}`} alt=""/></div>
+            <div>
+                <div className='profile-cover-photo'><img src={`${this.props.user.coverPhoto}`} alt=""/></div>
+                <div>Update Cover Photo
+                    <input type="file"/>
+                </div>
+            </div>
         );
     }
 }

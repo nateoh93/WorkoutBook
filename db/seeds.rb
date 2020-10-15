@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'open-uri'
+
 User.destroy_all
 
 user1 = User.create!(
@@ -19,6 +21,9 @@ user1 = User.create!(
     school: "Marathon University",
     work: 'Demo-lition'
 )
+
+coverphoto1 = open('https://workoutbook-seeds.s3-us-west-1.amazonaws.com/test1.jpg')
+user1.cover_photo.attach(io: coverphoto1, filename: 'demo_users_cover_photo.jpg')
 
 user2 = User.create!(
     email: 'alex@squat.com',
