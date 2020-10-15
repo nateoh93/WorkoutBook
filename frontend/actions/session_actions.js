@@ -1,9 +1,13 @@
-import * as APIUtil from '../util/session_api_util';
+import * as SessionAPIUtil from '../util/session_api_util';
+import * as UserAPIUtil from '../util/user_api_util';
 
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 export const CLEAR_SESSION_ERRORS = 'CLEAR_SESSION_ERRORS';
+
+export const RECEIVE_USER = 'RECEIVE_USER';
+export const RECEIVE_ALL_USERS = 'RECEIVE_ALL_USERS';
 
 const receiveCurrentUser = currentUser => ({
     type: RECEIVE_CURRENT_USER,
@@ -23,9 +27,19 @@ export const clearErrors = () => ({
     type: CLEAR_SESSION_ERRORS,
 });
 
+const receiveUser = user => ({
+    type: RECEIVE_USER,
+    user
+})
+
+const receiveAllUsers = usersPayload => ({
+    type: RECEIVE_ALL_USERS,
+    usersPayload
+})
+
 export const signup = formUser => {
     return (dispatch) => {
-        return APIUtil.signup(formUser)
+        return SessionAPIUtil.signup(formUser)
             .then(user => { dispatch(receiveCurrentUser(user)) })
             .fail(error => { dispatch(receiveErrors(error.responseJSON)) })
     }
@@ -33,7 +47,7 @@ export const signup = formUser => {
 
 export const login = formUser => {
     return (dispatch) => {
-        return APIUtil.login(formUser)
+        return SessionAPIUtil.login(formUser)
             .then(user => { dispatch(receiveCurrentUser(user)) })
             .fail(error => { dispatch(receiveErrors(error.responseJSON))})
     }
@@ -41,7 +55,21 @@ export const login = formUser => {
 
 export const logout = () => {
     return (dispatch) => {
-        return APIUtil.logout()
+        return SessionAPIUtil.logout()
             .then(() => { dispatch(logoutCurrentUser()) })
+    }
+}
+
+export const fetchUser = (userId) => {
+    return (dispatch) => {
+        return UserAPIUtil.fetchUser(userId)
+            .then((user) => { dispatch(receiveUser(user))})
+    }
+}
+
+export const fetchAllUsers = () => {
+    return (dispatch) => {
+        return UserAPIUtil.fetchAllUsers()
+            .then((allUsers) => { dispatch(receiveAllUsers(allUsers))})
     }
 }

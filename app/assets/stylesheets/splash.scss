@@ -114,3 +114,21 @@ button, input {
 .login-input.errors {
     border: 1px solid red;
 }
+
+footer {
+    padding: 10px 50px 10px 50px;
+    display: flex;
+    color: dimgray;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 0 30% 0 0;
+}
+
+.copyright {
+    width: 20%;
+    text-align: center;
+}

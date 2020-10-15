@@ -183,7 +183,7 @@ class SessionForm extends React.Component {
                 {this.props.formType === 'Log In' ? <button className="demo-button" onClick={this.handleDemo}>Demo User</button> : null}
                 <div className="border"></div>
                 {this.props.formType === 'Log In' ? <button className='button-create' onClick={this.openModal}>Create New Account</button> : null}
-                {/* {this.props.formType === 'Log In' ? <button className='button-create' onClick={this.props.otherForm.then(this.setState({ email: '', password: '' }))}>Create New Account</button> : null} */}
+                
             </div>
         );
     }
