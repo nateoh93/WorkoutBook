@@ -1,6 +1,9 @@
+.profile-page {
+    background: #f0f2f5
+}
+
 .profile-info-container {
     margin: 0 37% 0 18%;
-    background: #f0f2f5;;
 }
 
 // .profile-header {
@@ -31,13 +34,12 @@
     height: 25px;
     width: 150px;
     // display: none;
-    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.cover-photo-btn:hover{
+.cover-photo-btn:hover {
     display: block;
     color: white;
     background: rgb(27, 21, 21);
@@ -55,6 +57,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.cover-photo-sub {
+
 }
 
 .upload-btn {
@@ -97,4 +103,6 @@
     color: white;
     font-weight: bold;
     font-size: 27px;
+    top: 270px;
+    left: 565px;
 }

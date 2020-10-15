@@ -5,7 +5,7 @@ import ProfileNav from './profile_nav';
 class Profile extends React.Component {
     render() {
         return(
-            <div>
+            <div className='profile-page'>
                 <div className='profile-info-container'>
                     <ProfileHeaderContainer/>
                     <ProfileNav />

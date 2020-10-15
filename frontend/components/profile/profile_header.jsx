@@ -17,7 +17,7 @@ class ProfileHeader extends React.Component {
 
     handleFile(field) {
         return(e) => {
-            let file = e.currentTarget.files[0];
+            let file = e.target.files[0];
             // debugger
             
             const fileReader = new FileReader();
