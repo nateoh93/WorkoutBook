@@ -25,6 +25,9 @@ user1 = User.create!(
 coverphoto1 = open('https://workoutbook-seeds.s3-us-west-1.amazonaws.com/test1.jpg')
 user1.cover_photo.attach(io: coverphoto1, filename: 'demo_users_cover_photo.jpg')
 
+profphoto1 = open('https://workoutbook-seeds.s3-us-west-1.amazonaws.com/default_prof_pic.png')
+user1.profile_photo.attach(io: profphoto1, filename: 'demo_users_prof_photo.jpg')
+
 user2 = User.create!(
     email: 'alex@squat.com',
     password: 'password',
@@ -36,6 +39,12 @@ user2 = User.create!(
     school: "Snack University",
     work: 'Professional Eater'
 )
+
+coverphoto2 = open('https://workoutbook-seeds.s3-us-west-1.amazonaws.com/cover_photo2.jpg')
+user2.cover_photo.attach(io: coverphoto2, filename: 'user2_cover_photo.jpg')
+
+profphoto2 = open('https://workoutbook-seeds.s3-us-west-1.amazonaws.com/user2_prof_pic.jpg')
+user2.profile_photo.attach(io: profphoto2, filename: 'user2_prof_photo.jpg')
 
 user3 = User.create!(
     email: 'ken@squat.com',
@@ -49,6 +58,12 @@ user3 = User.create!(
     work: 'Professional Faller'
 )
 
+coverphoto3 = open('https://workoutbook-seeds.s3-us-west-1.amazonaws.com/cover_photo3.jpg')
+user3.cover_photo.attach(io: coverphoto3, filename: 'user3_cover_photo.jpg')
+
+profphoto3 = open('https://workoutbook-seeds.s3-us-west-1.amazonaws.com/user3_prof_pic.jpg')
+user3.profile_photo.attach(io: profphoto3, filename: 'user3_prof_photo.jpg')
+
 user4 = User.create!(
     email: 'nate@squat.com',
     password: 'password',
@@ -61,6 +76,12 @@ user4 = User.create!(
     work: 'House Squatter'
 )
 
+coverphoto4 = open('https://workoutbook-seeds.s3-us-west-1.amazonaws.com/cover_photo4.jpg')
+user4.cover_photo.attach(io: coverphoto4, filename: 'user4_cover_photo.jpg')
+
+profphoto4 = open('https://workoutbook-seeds.s3-us-west-1.amazonaws.com/user4_prof_pic.jpg')
+user4.profile_photo.attach(io: profphoto4, filename: 'user4_prof_photo.jpg')
+
 user5 = User.create!(
     email: 'theo@squat.com',
     password: 'password',
@@ -72,3 +93,9 @@ user5 = User.create!(
     school: "Curl University",
     work: 'Dumbbell carrier'
 )
+
+coverphoto5 = open('https://workoutbook-seeds.s3-us-west-1.amazonaws.com/cover_photo5.jpg')
+user5.cover_photo.attach(io: coverphoto5, filename: 'user5_cover_photo.jpg')
+
+profphoto5 = open('https://workoutbook-seeds.s3-us-west-1.amazonaws.com/user5_prof_pic.jpg')
+user5.profile_photo.attach(io: profphoto5, filename: 'user5_prof_photo.jpg')

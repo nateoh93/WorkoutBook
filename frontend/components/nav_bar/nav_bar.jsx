@@ -41,7 +41,7 @@ class NavBar extends React.Component{
     
                         <div className='navbar-right'>
                             <div className='nav-button'>
-                                <li className='nav-profile-button'><Link to={`/users/${this.props.currentUser.id}`}>{this.props.currentUser.fname}'s Profile</Link></li>
+                                <li className='nav-profile-button'><Link to={`/users/${this.props.currentUser.id}`}>{this.props.currentUser.fname}</Link></li>
                                 <li className='nav-home-button'><Link to='/feed'>Home</Link></li>
                             </div>
                             

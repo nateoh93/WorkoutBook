@@ -9,10 +9,15 @@ class ProfileHeader extends React.Component {
             photoUrl: null,
         }
         this.handleFile = this.handleFile.bind(this);
+        this.clickFile = this.clickFile.bind(this);
     }
     
     componentDidMount() {
         this.props.fetchUser(this.props.match.params.userId)
+    }
+
+    clickFile() {
+        $('.upload-btn').click();
     }
 
     handleFile(field) {
@@ -28,7 +33,7 @@ class ProfileHeader extends React.Component {
                     const formData = new FormData();
                     if (this.state.photoFile) {
                         formData.append(`user[${field}]`, file)
-                        formData.append(`id`, this.props.match.params.userId)
+                        // formData.append(`id`, this.props.match.params.userId)
                         // debugger
                         this.props.updateUser(formData)
                     }
@@ -44,14 +49,16 @@ class ProfileHeader extends React.Component {
     }
 
     render() {
-        // console.log(this.props.user)
-        console.log('this is profile header component')
         return(
             <div className='profile-header'>
                 <div className='profile-cover-photo'><img src={`${this.props.user.coverPhoto}`} alt=""/></div>
-                <div className='cover-photo-btn'>Update Cover Photo
-                    <input className='upload-btn' type="file" onChange={this.handleFile('cover_photo')}/>
+                {/* <div className='camera-icon'></div> */}
+                <div className='cover-photo-btn-container'>
+                    <div className='cover-photo-btn' onClick={this.clickFile}>Update Cover Photo
+                        <input className='upload-btn' type="file" onChange={this.handleFile('cover_photo')}/>
+                    </div>
                 </div>
+                <div className='profile-profile-photo'><img src={`${this.props.user.profilePhoto}`} alt=""/></div>
                 <p className='profile-header-name'>{this.props.user.fname} {this.props.user.lname}</p>
             </div>
         );
