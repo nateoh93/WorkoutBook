@@ -33,7 +33,15 @@ class User < ApplicationRecord
     has_one_attached :cover_photo
     has_one_attached :profile_photo
     
+    has_many :friends,
+        through: :friendships,
+        source: :friend
     
+    has_many :friendships,
+        foreign_key: :user1_id,
+        class_name: :Friendships,
+        depedent: :destroy
+
     def password=(password)
         @password = password
         self.password_digest = BCrypt::Password.create(password)

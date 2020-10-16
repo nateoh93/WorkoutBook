@@ -9,6 +9,7 @@
 require 'open-uri'
 
 User.destroy_all
+Friendship.destroy_all
 
 user1 = User.create!(
     email: 'demo_user@squat.com',
@@ -99,3 +100,23 @@ user5.cover_photo.attach(io: coverphoto5, filename: 'user5_cover_photo.jpg')
 
 profphoto5 = open('https://workoutbook-seeds.s3-us-west-1.amazonaws.com/user5_prof_pic.jpg')
 user5.profile_photo.attach(io: profphoto5, filename: 'user5_prof_photo.jpg')
+
+friendship1 = Friendship.create!(
+    user1_id: user1.id
+    user2_id: user2.id
+)
+
+friendship2 = Friendship.create!(
+    user1_id: user1.id
+    user2_id: user3.id
+)
+
+friendship3 = Friendship.create!(
+    user1_id: user1.id
+    user2_id: user4.id
+)
+
+friendship4 = Friendship.create!(
+    user1_id: user1.id
+    user2_id: user5.id
+)
