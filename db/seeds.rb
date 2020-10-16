@@ -22,7 +22,7 @@ user1 = User.create!(
     work: 'Demo-lition'
 )
 
-coverphoto1 = open('https://workoutbook-seeds.s3-us-west-1.amazonaws.com/test1.jpg')
+coverphoto1 = open('https://workoutbook-seeds.s3-us-west-1.amazonaws.com/cover_photo1.jpg')
 user1.cover_photo.attach(io: coverphoto1, filename: 'demo_users_cover_photo.jpg')
 
 profphoto1 = open('https://workoutbook-seeds.s3-us-west-1.amazonaws.com/default_prof_pic.png')

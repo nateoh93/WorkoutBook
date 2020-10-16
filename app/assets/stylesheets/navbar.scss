@@ -14,11 +14,6 @@ nav {
     align-items: center;
 }
 
-img {
-    height: 30px;
-    // border: 2px solid #1877f2;
-}
-
 .navbar-right {
     display: flex;
     justify-content: space-between;
@@ -149,6 +144,10 @@ li:hover > button {
     height: 23px;
     width: 100%;
     outline: none;
+}
+
+.logo-img {
+    height: 30px;
 }
 
 .nav-logo {

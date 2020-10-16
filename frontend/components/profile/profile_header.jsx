@@ -16,8 +16,17 @@ class ProfileHeader extends React.Component {
         this.props.fetchUser(this.props.match.params.userId)
     }
 
-    clickFile() {
-        $('.upload-btn').click();
+    clickFile(field) {
+        return(e) => {
+            if (field === 'upload-cover-btn') {
+                // debugger
+                $('.upload-cover-btn').click();
+            } else {
+                // debugger
+                $('.upload-prof-btn').click();
+            }
+        }
+        
     }
 
     handleFile(field) {
@@ -52,13 +61,18 @@ class ProfileHeader extends React.Component {
         return(
             <div className='profile-header'>
                 <div className='profile-cover-photo'><img src={`${this.props.user.coverPhoto}`} alt=""/></div>
-                {/* <div className='camera-icon'></div> */}
+                <div className='camera-icon'></div>
                 <div className='cover-photo-btn-container'>
-                    <div className='cover-photo-btn' onClick={this.clickFile}>Update Cover Photo
-                        <input className='upload-btn' type="file" onChange={this.handleFile('cover_photo')}/>
+                    <div className='cover-photo-btn' onClick={this.clickFile('upload-cover-btn')}>Update Cover Photo
+                        <input className='upload-cover-btn' type="file" onChange={this.handleFile('cover_photo')}/>
+                    </div>
+
+                    <div className='profile-photo-container'><img className='prof-pic-img' src={`${this.props.user.profilePhoto}`} alt=""/></div>
+                    
+                    <div className='profile-photo-btn' onClick={this.clickFile('upload-prof-btn')}>Update
+                        <input className='upload-prof-btn' type="file" onChange={this.handleFile('profile_photo')}/>
                     </div>
                 </div>
-                <div className='profile-profile-photo'><img src={`${this.props.user.profilePhoto}`} alt=""/></div>
                 <p className='profile-header-name'>{this.props.user.fname} {this.props.user.lname}</p>
             </div>
         );

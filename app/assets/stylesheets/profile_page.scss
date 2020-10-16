@@ -40,40 +40,21 @@
     border: 1px solid white;
     padding: 5px;
     position: absolute;
-    // top: 65px;
-    // left: 385px;
-    opacity: 90%;
+    opacity: 0%;
     height: 25px;
     width: 150px;
     display: flex;
     align-items: center;
     justify-content: center;
-    // display: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
-// .cover-photo-btn:hover {
-//     display: block;
-    // color: white;
-    // background: rgb(27, 21, 21);
-    // font-size: 13px;
-    // border: 1px solid white;
-    // padding: 5px;
-    // position: absolute;
-    // top: 65px;
-    // left: 385px;
-    // opacity: 90%;
-    // height: 25px;
-    // width: 150px;
-    // // display: none;
-    // cursor: pointer;
-    // display: flex;
-    // align-items: center;
-    // justify-content: center;
-// }
+.cover-photo-btn:hover {
+    opacity: 90%;
+}
 
-.upload-btn {
+.upload-cover-btn {
     position: absolute;
     top: 36px;
     left: 0px;
@@ -129,4 +110,61 @@
     left: 305px;
     top: 77px;
     position: absolute
+}
+
+.profile-photo-container {
+    position: absolute;
+    border: 1px solid #cecccc;
+    height: 160px;
+    width: 160px;
+    border-radius: 100%;
+    top: 135px;
+    left: -7px
+}
+.prof-pic-img {
+    height: 152px;
+    width: 152px;
+    border-radius: 100%;
+    border: 4px solid white;
+}
+
+.profile-photo-btn-container {
+    border: 1px solid yellow;
+    position: absolute;
+    top: 65px;
+    left: 385px;
+    height: 50px;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-photo-btn {
+    color: white;
+    background: rgb(27, 21, 21);
+    font-size: 13px;
+    border: 1px solid white;
+    padding: 5px;
+    position: absolute;
+    top: 214px;
+    left: -7px;
+    opacity: 0%;
+    height: 71px;
+    width: 149px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 0 120px 120px;
+    cursor: pointer;
+}
+.profile-photo-btn:hover {
+    opacity: 90%;
+}
+
+.upload-prof-btn {
+    position: absolute;
+    top: 36px;
+    left: 0px;
+    opacity: 0;
 }
