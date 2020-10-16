@@ -225,6 +225,8 @@
     outline: none;
     width: 69%;
     height: 20px;
+    font-size: 12px;
+    font-family: inherit;
 }
 
 .close-x.update-form {
@@ -253,6 +255,8 @@ textarea {
     height: 100px;
     outline: none;
     border-radius: 3px;
+    font-family: inherit;
+    font-size: 12px;
 }
 
 .update-info-form button {
