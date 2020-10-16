@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import EditProfileContainer from './edit_profile_container';
 
 class ProfileHeader extends React.Component {
     constructor(props) {
@@ -84,6 +85,7 @@ class ProfileHeader extends React.Component {
                     </div>
                 </div>
                 <p className='profile-header-name'>{this.props.user.fname} {this.props.user.lname}</p>
+                {/* <EditProfileContainer /> */}
             </div>
         );
     }

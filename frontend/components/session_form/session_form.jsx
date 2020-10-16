@@ -38,10 +38,6 @@ class SessionForm extends React.Component {
         })
     }
 
-    componentDidUpdate() {
-        // if (this.props.openModal) return this.setState(this.props.reset)
-    }
-
     update(field) {
         return e => this.setState({
             [field]: e.currentTarget.value
