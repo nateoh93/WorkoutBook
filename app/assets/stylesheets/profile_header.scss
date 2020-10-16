@@ -213,7 +213,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    width: 400px;
+    height: 400px;
     background: white;
     border-radius: 3px;
     border: 1px solid #cecccc;
@@ -227,7 +228,14 @@
 }
 
 .close-x.update-form {
-    left: 297px;
+    left: 362px;
     top: -7px;
-    font-size: 22px;
+    font-size: 30px;
+}
+
+.update-info-form label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
