@@ -47,37 +47,37 @@ class NavBar extends React.Component{
                             
                             <div className='nav-icon-list'>
                                 <div className='navbar-friend-request-container'>
-                                    <div className='friend-request-icon' onClick={this.handleDropdown('friendsDropdown')}></div>
-                                    <div className={`friend-request-dropdown ${this.state.friendsDropdown}`}>
+                                    <button className='friend-request-icon'></button>
+                                    <div className={`friend-request-dropdown`}>
                                         <li className='friend-request'>Friend Requests</li>
                                         <li>You don't have any friend requests</li>
                                     </div>
                                 </div>
-                                
+
                                 <div className='navbar-messages-container'>
-                                    <div className='messenger-icon' onClick={this.handleDropdown('messagesDropdown')}></div>
-                                    <div className={`messages-dropdown ${this.state.messagesDropdown}`}>
+                                    <button className='messenger-icon'></button>
+                                    <div className={`messages-dropdown`}>
                                         <li className='messages'>Messages</li>
                                         <li>No new messages!</li>
                                     </div>
                                 </div>
 
                                 <div className='navbar-notifications-container'>
-                                    <div className='notifications-icon' onClick={this.handleDropdown('notifsDropdown')}></div>
-                                    <div className={`notifications-dropdown ${this.state.notifsDropdown}`}>
+                                    <button className='notifications-icon'></button>
+                                    <div className={`notifications-dropdown`}>
                                         <li className='notifs'>Notifications</li>
                                         <li>You are caught up on notifications</li>
                                     </div>
                                 </div>
 
                                 <div className='navbar-logout-container'>
-                                    <div className='logout-icon' onClick={this.handleDropdown('logoutDropdown')}></div>
-                                    <div className={`logout-dropdown ${this.state.logoutDropdown}`}>
+                                    <button className='logout-icon'></button>
+                                    <div className={`logout-dropdown`}>
                                         <li>
                                             {this.props.currentUser ? <button className="header-button" onClick={this.handleLogOut}>Logout</button> : null}
                                         </li>
                                     </div>
-                                </div>
+                                </div> 
                             </div>
                         </div>
                     </nav>

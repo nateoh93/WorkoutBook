@@ -85,8 +85,8 @@ user4.profile_photo.attach(io: profphoto4, filename: 'user4_prof_photo.jpg')
 user5 = User.create!(
     email: 'theo@squat.com',
     password: 'password',
-    fname: 'theo',
-    lname: 'oh',
+    fname: 'Theo',
+    lname: 'Oh',
     birthday: '05/01/2000',
     bio: "I only workout my arms!",
     city: "San Francisco",

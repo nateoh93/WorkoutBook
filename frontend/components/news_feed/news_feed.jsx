@@ -4,7 +4,7 @@ class NewsFeed extends React.Component {
 
     render() {
         return (
-            <div>Welcome to Feed</div>
+            <div className='newsfeed-container'>Welcome to Feed</div>
         );
     }
 }

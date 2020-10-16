@@ -130,6 +130,7 @@ nav {
     border-radius: 0;
     background: inherit;
     width: 100%;
+    outline: none;
 }
 
 li:hover > button {
@@ -166,214 +167,6 @@ li:hover > button {
     
 }
 
-.logout-dropdown.false {
-    display: none;
-    position: absolute;
-    left: -115px;
-    top: 38px;
-    height: 40px;
-    width: 170px;
-    font-size: 14px;
-    background: white;
-    border-radius: 3px;
-    border: 1px solid #ccc;
-    box-shadow: 2px 2px 5px -1px #ccc;
-    // white-space: nowrap;
-    // overflow: hidden;
-}
-
-.logout-dropdown.false:after {
-    content: '';
-    position: absolute;
-    right: 20px;
-    top: -9px;
-    border-top: none;
-    border-right: 15px solid transparent;
-    border-bottom: 15px solid white;
-    border-left: 15px solid transparent;
-}
-
-.logout-dropdown.true {
-    display: block;
-    position: absolute;
-    left: -115px;
-    top: 38px;
-    height: 40px;
-    width: 170px;
-    font-size: 14px;
-    background: white;
-    border-radius: 3px;
-    border: 1px solid #ccc;
-    box-shadow: 2px 2px 5px -1px #ccc;
-}
-
-.logout-dropdown.true:after {
-    content: '';
-    position: absolute;
-    right: 20px;
-    top: -9px;
-    border-top: none;
-    border-right: 15px solid transparent;
-    border-bottom: 15px solid white;
-    border-left: 15px solid transparent;
-}
-
-.notifications-dropdown.false {
-    display: none;
-    position: absolute;
-    left: 1090px;
-    top: 43px;
-    height: 50px;
-    width: 210px;
-    font-size: 14px;
-    background: white;
-    border-radius: 3px;
-    border: 1px solid #ccc;
-    box-shadow: 2px 2px 5px -1px #ccc;
-    // white-space: nowrap;
-    // overflow: hidden;
-}
-
-.notifications-dropdown.false:after {
-    content: '';
-    position: absolute;
-    right: 20px;
-    top: -9px;
-    border-top: none;
-    border-right: 15px solid transparent;
-    border-bottom: 15px solid white;
-    border-left: 15px solid transparent;
-}
-
-.notifications-dropdown.true {
-    display: block;
-    position: absolute;
-    left: 1090px;
-    top: 43px;
-    height: 50px;
-    width: 210px;
-    font-size: 14px;
-    background: white;
-    border-radius: 3px;
-    border: 1px solid #ccc;
-    box-shadow: 2px 2px 5px -1px #ccc;
-}
-
-.notifications-dropdown.true:after {
-    content: '';
-    position: absolute;
-    right: 20px;
-    top: -9px;
-    border-top: none;
-    border-right: 15px solid transparent;
-    border-bottom: 15px solid white;
-    border-left: 15px solid transparent;
-}
-
-.messages-dropdown.false {
-    display: none;
-    position: absolute;
-    left: 1049px;
-    top: 43px;
-    height: 50px;
-    width: 210px;
-    font-size: 14px;
-    background: white;
-    border-radius: 3px;
-    border: 1px solid #ccc;
-    box-shadow: 2px 2px 5px -1px #ccc;
-    // white-space: nowrap;
-    // overflow: hidden;
-}
-
-.messages-dropdown.false:after {
-    content: '';
-    position: absolute;
-    right: 20px;
-    top: -9px;
-    border-top: none;
-    border-right: 15px solid transparent;
-    border-bottom: 15px solid white;
-    border-left: 15px solid transparent;
-}
-
-.messages-dropdown.true {
-    display: block;
-    position: absolute;
-    left: 1049px;
-    top: 43px;
-    height: 50px;
-    width: 210px;
-    font-size: 14px;
-    background: white;
-    border-radius: 3px;
-    border: 1px solid #ccc;
-    box-shadow: 2px 2px 5px -1px #ccc;
-}
-
-.messages-dropdown.true:after {
-    content: '';
-    position: absolute;
-    right: 20px;
-    top: -9px;
-    border-top: none;
-    border-right: 15px solid transparent;
-    border-bottom: 15px solid white;
-    border-left: 15px solid transparent;
-}
-
-.friend-request-dropdown.false {
-    display: none;
-    position: absolute;
-    left: 1008px;
-    top: 43px;
-    height: 50px;
-    width: 210px;
-    font-size: 14px;
-    background: white;
-    border-radius: 3px;
-    border: 1px solid #ccc;
-    box-shadow: 2px 2px 5px -1px #ccc;
-    // white-space: nowrap;
-    // overflow: hidden;
-}
-
-.friend-request-dropdown.false:after {
-    content: '';
-    position: absolute;
-    right: 20px;
-    top: -9px;
-    border-top: none;
-    border-right: 15px solid transparent;
-    border-bottom: 15px solid white;
-    border-left: 15px solid transparent;
-}
-
-.friend-request-dropdown.true {
-    display: block;
-    position: absolute;
-    left: 1008px;
-    top: 43px;
-    height: 50px;
-    width: 210px;
-    font-size: 14px;
-    background: white;
-    border-radius: 3px;
-    border: 1px solid #ccc;
-    box-shadow: 2px 2px 5px -1px #ccc;
-}
-
-.friend-request-dropdown.true:after {
-    content: '';
-    position: absolute;
-    right: 20px;
-    top: -9px;
-    border-top: none;
-    border-right: 15px solid transparent;
-    border-bottom: 15px solid white;
-    border-left: 15px solid transparent;
-}
-
 .notifications-dropdown li, .messages-dropdown li, .friend-request-dropdown li {
     font-size: 13px;
     padding: 5px;
@@ -382,4 +175,128 @@ li:hover > button {
 .notifs, .messages, .friend-request {
     font-weight: bold;
     border-bottom: 1px solid #cecccc;
+}
+
+.friend-request-dropdown {
+    display: none;
+    position: absolute;
+    left: 996px;
+    top: 43px;
+    height: 50px;
+    width: 210px;
+    font-size: 14px;
+    background: white;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 5px -1px #ccc;
+    // white-space: nowrap;
+    // overflow: hidden;
+}
+
+.friend-request-dropdown:after {
+    content: '';
+    position: absolute;
+    right: 20px;
+    top: -9px;
+    border-top: none;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid white;
+    border-left: 15px solid transparent;
+}
+
+.newsfeed-container {
+    margin: 0 37% 0 18%;
+}
+.messages-dropdown {
+    display: none;
+    position: absolute;
+    left: 1037px;
+    top: 43px;
+    height: 50px;
+    width: 210px;
+    font-size: 14px;
+    background: white;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 5px -1px #ccc;
+    // white-space: nowrap;
+    // overflow: hidden;
+}
+
+.messages-dropdown:after {
+    content: '';
+    position: absolute;
+    right: 20px;
+    top: -9px;
+    border-top: none;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid white;
+    border-left: 15px solid transparent;
+}
+
+.notifications-dropdown {
+    display: none;
+    position: absolute;
+    left: 1078px;
+    top: 43px;
+    height: 50px;
+    width: 210px;
+    font-size: 14px;
+    background: white;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 5px -1px #ccc;
+    // white-space: nowrap;
+    // overflow: hidden;
+}
+
+.notifications-dropdown:after {
+    content: '';
+    position: absolute;
+    right: 20px;
+    top: -9px;
+    border-top: none;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid white;
+    border-left: 15px solid transparent;
+}
+
+.friend-request-icon:focus + .friend-request-dropdown, 
+.messenger-icon:focus + .messages-dropdown,
+.notifications-icon:focus + .notifications-dropdown,
+.logout-icon:focus + .logout-dropdown, .logout-dropdown:hover {
+    display: block;
+    cursor: default;
+}
+
+.friend-request-icon, .messenger-icon, .notifications-icon, .logout-icon {
+    outline: none
+}
+
+
+.logout-dropdown {
+    display: none;
+    position: absolute;
+    left: -115px;
+    top: 38px;
+    height: 40px;
+    width: 170px;
+    font-size: 14px;
+    background: white;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 5px -1px #ccc;
+    // white-space: nowrap;
+    // overflow: hidden;
+}
+
+.logout-dropdown:after {
+    content: '';
+    position: absolute;
+    right: 20px;
+    top: -9px;
+    border-top: none;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid white;
+    border-left: 15px solid transparent;
 }

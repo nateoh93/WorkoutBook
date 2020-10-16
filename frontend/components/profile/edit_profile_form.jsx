@@ -16,7 +16,8 @@ class EditProfileForm extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchUser(this.props.match.params.userId)
+        debugger
+        this.props.fetchUser(this.props.user.id)
             .then(() => {
                 return this.setState({
                     bio: this.props.user.bio,
@@ -36,26 +37,24 @@ class EditProfileForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state)
-        // this.props.updateUser(user).then(this.props.closeModal).then(this.props.history.push('/users/:userId'))
-        this.props.updateUserInfo(user)
+        debugger
+        // this.props.updateUserInfo(user).then(this.props.closeModal)
+        this.props.updateUserInfo(user).then(this.props.closeModal).then(this.props.history.push(`/users/${this.props.user.id}`))
     }
 
     render() {
         return (
             <form className='update-info-form' onSubmit={this.handleSubmit}>
                 <span onClick={this.props.closeModal} className="close-x update-form">&times;</span>
-                <label>About Me
-                    <textarea cols="30" rows="10" onChange={this.update('bio')} value={this.state.bio}></textarea>
-                </label>
-                <label>Current City
-                    <input type="text" onChange={this.update('city')} value={this.state.city}/>
-                </label>
-                <label>Education
-                    <input type="text" onChange={this.update('school')} value={this.state.school}/>
-                </label>
-                <label>Profession
-                    <input type="text" onChange={this.update('work')} value={this.state.work}/>
-                </label>
+                <h3>Edit Profile </h3>
+                <label>About Me</label>
+                <textarea  onChange={this.update('bio')} value={this.state.bio}></textarea>
+                <label>Current City</label>
+                <input type="text" onChange={this.update('city')} value={this.state.city}/>
+                <label>Education</label>
+                <input type="text" onChange={this.update('school')} value={this.state.school}/>
+                <label>Profession</label>
+                <input type="text" onChange={this.update('work')} value={this.state.work}/>
                 <button>Update Info</button>
             </form>
         );

@@ -7,7 +7,7 @@ import {fetchUser, updateUserInfo} from '../../actions/session_actions'
 
 const mapStateToProps = (state, ownProps) => {
     return ({
-        user: state.entities.users[ownProps.match.params.userId],
+        user: state.entities.users[state.session.id],
         // errors: state.errors.session,
         openModal: state.ui.modal,
     });
