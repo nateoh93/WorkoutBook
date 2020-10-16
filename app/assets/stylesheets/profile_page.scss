@@ -38,7 +38,7 @@
     background: rgb(27, 21, 21);
     font-size: 13px;
     border: 1px solid white;
-    padding: 5px;
+    padding: 5px 5px 5px 30px;
     position: absolute;
     opacity: 0%;
     height: 25px;
@@ -99,17 +99,34 @@
     -webkit-text-stroke: 1px black
 }
 
-.camera-icon {
+.camera-icon-cover {
     background: image-url('icons.png');
     background-size: 360%;
     background-repeat: no-repeat;
     height: 23px;
     width: 24px;
     background-position: -22px -2056px;
-    opacity: 70%;
-    left: 305px;
+    // opacity: 70%;
+    left: 378px;
     top: 77px;
-    position: absolute
+    position: absolute;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.camera-icon-prof {
+    background: image-url('icons.png');
+    background-size: 360%;
+    background-repeat: no-repeat;
+    height: 23px;
+    width: 24px;
+    background-position: -22px -2056px;
+    // opacity: 70%;
+    left: 68px;
+    top: 6px;
+    position: absolute;
+    z-index: 1;
+    cursor: pointer;
 }
 
 .profile-photo-container {
