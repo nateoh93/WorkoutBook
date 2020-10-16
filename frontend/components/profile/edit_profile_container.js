@@ -18,9 +18,9 @@ const mapDispatchToProps = (dispatch) => {
         fetchUser: (userId) => dispatch(fetchUser(userId)),
         updateUserInfo: (user) => {
             return dispatch(updateUserInfo(user))
-        }
+        },
         // processForm: (user) => dispatch(login(user)),
-        // otherForm: () => dispatch(openModal('Sign Up')),
+        otherForm: () => dispatch(openModal('Update Info')),
         // closeModal: () => dispatch(closeModal()),
     });
 };

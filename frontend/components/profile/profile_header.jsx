@@ -12,6 +12,7 @@ class ProfileHeader extends React.Component {
         this.handleFile = this.handleFile.bind(this);
         this.clickFile = this.clickFile.bind(this);
         this.renderCoverPhoto = this.renderCoverPhoto.bind(this);
+        this.openModal = this.openModal.bind(this);
     }
     
     componentDidMount() {
@@ -55,11 +56,15 @@ class ProfileHeader extends React.Component {
         // debugger
         return () => {
             if (this.props.user.coverPhoto) {
-            <img src={`${this.props.user.coverPhoto}`} />
-        } else {
-            <img src='https://i.stack.imgur.com/l60Hf.png'/>
+                <img src={`${this.props.user.coverPhoto}`} />
+            } else {
+                <img src='https://i.stack.imgur.com/l60Hf.png'/>
+            }
         }
     }
+
+    openModal() {
+        this.props.otherForm()
     }
 
     render() {
@@ -83,9 +88,12 @@ class ProfileHeader extends React.Component {
                         <div className='camera-icon-prof'></div>
                         <input className='upload-prof-btn' type="file" onChange={this.handleFile('profile_photo')}/>
                     </div>
+                    
                 </div>
+
                 <p className='profile-header-name'>{this.props.user.fname} {this.props.user.lname}</p>
-                {/* <EditProfileContainer /> */}
+                
+                <button className='update-info-btn' onClick={this.openModal}>Update Info</button>
             </div>
         );
     }
