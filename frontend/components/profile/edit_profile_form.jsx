@@ -36,13 +36,14 @@ class EditProfileForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state)
-        // this.props.updateUser(user).then(this.props.closeModal)
+        // this.props.updateUser(user).then(this.props.closeModal).then(this.props.history.push('/users/:userId'))
         this.props.updateUserInfo(user)
     }
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
+            <form className='update-info-form' onSubmit={this.handleSubmit}>
+                <span onClick={this.props.closeModal} className="close-x update-form">&times;</span>
                 <label>About Me
                     <textarea cols="30" rows="10" onChange={this.update('bio')} value={this.state.bio}></textarea>
                 </label>

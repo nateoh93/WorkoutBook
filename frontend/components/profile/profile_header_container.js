@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { fetchUser, updateUser } from '../../actions/session_actions';
 import ProfileHeader from './profile_header';
 import {withRouter} from 'react-router-dom';
+import { openModal } from '../../actions/modal_actions'
 
 const mapStateToProps = (state, ownProps) => {
     return {

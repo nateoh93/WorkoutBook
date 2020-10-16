@@ -208,3 +208,26 @@
 .update-info-btn:hover {
     background: #f0f2f5;
 }
+
+.update-info-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background: white;
+    border-radius: 3px;
+    border: 1px solid #cecccc;
+
+}
+
+.update-info-form input {
+    border-radius: 3px;
+    border: 1px solid #cecccc;
+    outline: none;
+}
+
+.close-x.update-form {
+    left: 297px;
+    top: -7px;
+    font-size: 22px;
+}

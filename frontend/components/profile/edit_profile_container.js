@@ -7,9 +7,9 @@ import {fetchUser, updateUserInfo} from '../../actions/session_actions'
 
 const mapStateToProps = (state, ownProps) => {
     return ({
-        user: state.entities.users[ownProps.match.params.userId]
+        user: state.entities.users[ownProps.match.params.userId],
         // errors: state.errors.session,
-        // openModal: state.ui.modal,
+        openModal: state.ui.modal,
     });
 };
 
@@ -19,9 +19,8 @@ const mapDispatchToProps = (dispatch) => {
         updateUserInfo: (user) => {
             return dispatch(updateUserInfo(user))
         },
-        // processForm: (user) => dispatch(login(user)),
         otherForm: () => dispatch(openModal('Update Info')),
-        // closeModal: () => dispatch(closeModal()),
+        closeModal: () => dispatch(closeModal()),
     });
 };
 
