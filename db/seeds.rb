@@ -25,8 +25,8 @@ user1 = User.create!(
 coverphoto1 = open('https://workoutbook-seeds.s3-us-west-1.amazonaws.com/cover_photo1.jpg')
 user1.cover_photo.attach(io: coverphoto1, filename: 'demo_users_cover_photo.jpg')
 
-profphoto1 = open('https://workoutbook-seeds.s3-us-west-1.amazonaws.com/default_prof_pic.png')
-user1.profile_photo.attach(io: profphoto1, filename: 'demo_users_prof_photo.jpg')
+profphoto1 = open('https://workoutbook-seeds.s3-us-west-1.amazonaws.com/demo_users_prof_photo1.jpg')
+user1.profile_photo.attach(io: profphoto1, filename: 'demo_users_prof_photo1.jpg')
 
 user2 = User.create!(
     email: 'alex@squat.com',
