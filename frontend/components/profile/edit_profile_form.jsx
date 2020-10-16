@@ -37,12 +37,12 @@ class EditProfileForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state)
         // this.props.updateUser(user).then(this.props.closeModal)
-        this.props.updateUser(user)
+        this.props.updateUserInfo(user)
     }
 
     render() {
         return (
-            <form>
+            <form onSubmit={this.handleSubmit}>
                 <label>About Me
                     <textarea cols="30" rows="10" onChange={this.update('bio')} value={this.state.bio}></textarea>
                 </label>
@@ -55,7 +55,7 @@ class EditProfileForm extends React.Component {
                 <label>Profession
                     <input type="text" onChange={this.update('work')} value={this.state.work}/>
                 </label>
-                <button onSubmit={this.handleSubmit}>Update Info</button>
+                <button>Update Info</button>
             </form>
         );
     }
