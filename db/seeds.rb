@@ -15,11 +15,11 @@ user1 = User.create!(
     password: 'password',
     fname: 'Demo',
     lname: 'User',
-    birthday: '2000/01/01',
+    birthday: '01/01/2000',
     bio: "Running is the best form of exercise.",
     city: "San Francisco",
     school: "Marathon University",
-    work: 'Demo-lition'
+    work: 'Demo-litionist'
 )
 
 coverphoto1 = open('https://workoutbook-seeds.s3-us-west-1.amazonaws.com/cover_photo1.jpg')
@@ -33,7 +33,7 @@ user2 = User.create!(
     password: 'password',
     fname: 'Alex',
     lname: 'Yudit',
-    birthday: '2000/02/01',
+    birthday: '02/01/2000',
     bio: "I like to eat!",
     city: "San Francisco",
     school: "Snack University",
@@ -51,7 +51,7 @@ user3 = User.create!(
     password: 'password',
     fname: 'Ken',
     lname: 'Ashe',
-    birthday: '2000/03/01',
+    birthday: '03/01/2000',
     bio: "I like to do burpees!",
     city: "San Francisco",
     school: "Burpee University",
@@ -69,7 +69,7 @@ user4 = User.create!(
     password: 'password',
     fname: 'Nate',
     lname: 'Oh',
-    birthday: '2000/04/01',
+    birthday: '04/01/2000',
     bio: "I like to squat!",
     city: "San Francisco",
     school: "Squat University",
@@ -87,11 +87,11 @@ user5 = User.create!(
     password: 'password',
     fname: 'theo',
     lname: 'oh',
-    birthday: '2000/05/01',
+    birthday: '05/01/2000',
     bio: "I only workout my arms!",
     city: "San Francisco",
     school: "Curl University",
-    work: 'Dumbbell carrier'
+    work: 'Dumbbell Carrier'
 )
 
 coverphoto5 = open('https://workoutbook-seeds.s3-us-west-1.amazonaws.com/cover_photo5.jpg')

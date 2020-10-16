@@ -14,7 +14,9 @@
  *= require splash
  *= require modal
  *= require navbar
- *= require profile_page
+ *= require profile_header
+ *= require profile_bio
+
  *= require_tree .
  *= require_self
  */

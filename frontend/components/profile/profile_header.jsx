@@ -10,6 +10,7 @@ class ProfileHeader extends React.Component {
         }
         this.handleFile = this.handleFile.bind(this);
         this.clickFile = this.clickFile.bind(this);
+        this.renderCoverPhoto = this.renderCoverPhoto.bind(this);
     }
     
     componentDidMount() {
@@ -19,10 +20,8 @@ class ProfileHeader extends React.Component {
     clickFile(field) {
         return(e) => {
             if (field === 'upload-cover-btn') {
-                // debugger
                 $('.upload-cover-btn').click();
             } else {
-                // debugger
                 $('.upload-prof-btn').click();
             }
         }
@@ -32,18 +31,13 @@ class ProfileHeader extends React.Component {
     handleFile(field) {
         return(e) => {
             let file = e.target.files[0];
-            // debugger
-            
             const fileReader = new FileReader();
 
             // fileReader.onloadend = () => {
-                // debugger
                 this.setState({photoFile: file, photoUrl: null}, () => {
                     const formData = new FormData();
                     if (this.state.photoFile) {
                         formData.append(`user[${field}]`, file)
-                        // formData.append(`id`, this.props.match.params.userId)
-                        // debugger
                         this.props.updateUser(formData)
                     }
                 })
@@ -54,20 +48,35 @@ class ProfileHeader extends React.Component {
             // }
     
         }
-        // debugger
+    }
+
+    renderCoverPhoto() {
+        debugger
+        return () => {
+            if (this.props.user.coverPhoto) {
+            <img src={`${this.props.user.coverPhoto}`} />
+        } else {
+            <img src='https://i.stack.imgur.com/l60Hf.png'/>
+        }
+    }
     }
 
     render() {
+
+        const renderCoverPhoto = (this.props.user.coverPhoto) ? <img src={`${this.props.user.coverPhoto}`} /> : <img src='https://i.stack.imgur.com/l60Hf.png'/>
+        const renderProfilePhoto = (this.props.user.profilePhoto) ? <img className='prof-pic-img' src={`${this.props.user.profilePhoto}`} /> : <img className='prof-pic-img' src='https://i.stack.imgur.com/l60Hf.png'/>
+
         return(
             <div className='profile-header'>
-                <div className='profile-cover-photo'><img src={`${this.props.user.coverPhoto}`} alt=""/></div>
+                {/* <div className='profile-cover-photo'><img src={`${this.props.user.coverPhoto}`}/></div> */}
+                <div className='profile-cover-photo'>{renderCoverPhoto}</div>
                 <div className='camera-icon-cover' onClick={this.clickFile('upload-cover-btn')}></div>
                 <div className='cover-photo-btn-container'>
                     <div className='cover-photo-btn' onClick={this.clickFile('upload-cover-btn')}>Update Cover Photo
                         <input className='upload-cover-btn' type="file" onChange={this.handleFile('cover_photo')}/>
                     </div>
 
-                    <div className='profile-photo-container'><img className='prof-pic-img' src={`${this.props.user.profilePhoto}`} alt=""/></div>
+                    <div className='profile-photo-container'>{renderProfilePhoto}</div>
                     
                     <div className='profile-photo-btn' onClick={this.clickFile('upload-prof-btn')}>Update
                         <div className='camera-icon-prof'></div>
