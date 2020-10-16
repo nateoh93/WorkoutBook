@@ -12,11 +12,9 @@ class EditProfileForm extends React.Component {
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.update = this.update.bind(this);
-        // this.openModal = this.openModal.bind(this);
     }
 
     componentDidMount() {
-        debugger
         this.props.fetchUser(this.props.user.id)
             .then(() => {
                 return this.setState({
@@ -37,7 +35,7 @@ class EditProfileForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state)
-        debugger
+
         // this.props.updateUserInfo(user).then(this.props.closeModal)
         this.props.updateUserInfo(user).then(this.props.closeModal).then(this.props.history.push(`/users/${this.props.user.id}`))
     }

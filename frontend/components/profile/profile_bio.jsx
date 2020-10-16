@@ -26,6 +26,18 @@ class ProfileBio extends React.Component {
             })
     }
 
+    componentDidUpdate(prevProps, prevState) {
+        if (prevProps.user !== this.props.user) {
+            return this.setState({
+                birthday: this.props.user.birthday,
+                bio: this.props.user.bio,
+                city: this.props.user.city,
+                school: this.props.user.school,
+                work: this.props.user.work
+            })
+        }
+    }
+
     render () {
         return (
             <div className='profile-left'>
