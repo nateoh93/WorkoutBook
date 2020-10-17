@@ -40,7 +40,7 @@ class User < ApplicationRecord
     has_many :friendships,
         foreign_key: :user1_id,
         class_name: :Friendships,
-        depedent: :destroy
+        dependent: :destroy
 
     def password=(password)
         @password = password
