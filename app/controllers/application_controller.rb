@@ -8,7 +8,6 @@ class ApplicationController < ActionController::Base
         @current_user ||= User.find_by(session_token: session[:session_token])
     end
 
-    # redirect to '/'?
     def require_logged_in
         unless logged_in?
             render json: { base: ["Invalid credentials"]}, status: 401

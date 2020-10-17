@@ -11,12 +11,7 @@ class ProfileHeader extends React.Component {
         }
         this.handleFile = this.handleFile.bind(this);
         this.clickFile = this.clickFile.bind(this);
-        this.renderCoverPhoto = this.renderCoverPhoto.bind(this);
         this.openModal = this.openModal.bind(this);
-    }
-    
-    componentDidMount() {
-        this.props.fetchUser(this.props.match.params.userId)
     }
 
     clickFile(field) {
@@ -35,31 +30,19 @@ class ProfileHeader extends React.Component {
             let file = e.target.files[0];
             const fileReader = new FileReader();
 
-            // fileReader.onloadend = () => {
-                this.setState({photoFile: file, photoUrl: null}, () => {
-                    const formData = new FormData();
-                    if (this.state.photoFile) {
-                        formData.append(`user[${field}]`, file)
-                        this.props.updateUser(formData)
-                    }
-                })
-            // }
-
-            // if (file) {
-            //     fileReader.readAsDataURL(file);
-            // }
-    
-        }
-    }
-
-    renderCoverPhoto() {
-        // debugger
-        return () => {
-            if (this.props.user.coverPhoto) {
-                <img src={`${this.props.user.coverPhoto}`} />
-            } else {
-                <img src='https://i.stack.imgur.com/l60Hf.png'/>
+            fileReader.onloadend = () => {
+                this.setState({photoFile: file, photoUrl: null})
+                const formData = new FormData();
+                if (this.state.photoFile) {
+                    formData.append(`user[${field}]`, file)
+                    this.props.updateUser(formData)
+                }
             }
+
+            if (file) {
+                fileReader.readAsDataURL(file);
+            }
+    
         }
     }
 
@@ -74,7 +57,6 @@ class ProfileHeader extends React.Component {
 
         return(
             <div className='profile-header'>
-                {/* <div className='profile-cover-photo'><img src={`${this.props.user.coverPhoto}`}/></div> */}
                 <div className='profile-cover-photo'>{renderCoverPhoto}</div>
                 <div className='camera-icon-cover' onClick={this.clickFile('upload-cover-btn')}></div>
                 <div className='cover-photo-btn-container'>

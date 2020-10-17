@@ -6,16 +6,19 @@ import { fetchAllUsers } from '../../actions/session_actions';
 import { withRouter } from 'react-router-dom';
 
 const mSTP = (state, ownProps) => {
-    debugger
+    // debugger
+    const postProfileId = ownProps.match.params.userId || state.session.id
+
     return ({
         openModal: state.ui.modal,
         formType: 'Create Post',
         currentUser: state.entities.users[state.session.id],
-        user: state.entities.users[ownProps.match.params.userId]
+        postProfileId: postProfileId
     })
 }
 
 const mDTP = (dispatch) => {
+    // debugger
     return ({
         otherForm: () => dispatch(openModal('Create Post')),
         createPost: (post) => dispatch(createPost(post)),

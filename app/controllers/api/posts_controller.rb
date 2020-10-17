@@ -1,5 +1,5 @@
 class Api::PostsController < ApplicationController
-    before_action :require_logged_in
+    # before_action :require_logged_in
 
     def index
         @posts = Post.all
@@ -9,8 +9,10 @@ class Api::PostsController < ApplicationController
     def show
         @post = Post.find_by(id: params[:id])
         render :show
+    end
 
     def create
+        # debugger
         @post = Post.new(post_params)
         if @post.save
             render :show
