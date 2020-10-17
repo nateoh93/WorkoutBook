@@ -43,6 +43,14 @@ class User < ApplicationRecord
         through: :friendships,
         source: :friend
 
+    has_many :authored_posts,
+        foreign_key: :post_author_id,
+        class_name: :Post
+
+    has_many :received_posts,
+        foreign_key: :profile_user_id,
+        class_name: :Post
+
     def password=(password)
         @password = password
         self.password_digest = BCrypt::Password.create(password)
