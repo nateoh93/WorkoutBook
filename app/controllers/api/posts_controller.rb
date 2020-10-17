@@ -2,6 +2,7 @@ class Api::PostsController < ApplicationController
     # before_action :require_logged_in
 
     def index
+        debugger
         @posts = Post.all
         render :index
     end
