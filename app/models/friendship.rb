@@ -1,7 +1,7 @@
 class Friendship < ApplicationRecord
     validates :user1_id, :user2_id, presence: true
     validates :user1_id, uniqueness: { scope: :user2_id}
-    validates :reject_self_add
+    validate :reject_self_add
 
     belongs_to :user,
         foreign_key: :user1_id,

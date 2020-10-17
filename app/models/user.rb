@@ -33,14 +33,15 @@ class User < ApplicationRecord
     has_one_attached :cover_photo
     has_one_attached :profile_photo
     
+    has_many :friendships,
+        foreign_key: :user1_id,
+        class_name: :Friendship,
+        dependent: :destroy
+        # inverse_of: :user
+    
     has_many :friends,
         through: :friendships,
         source: :friend
-    
-    has_many :friendships,
-        foreign_key: :user1_id,
-        class_name: :Friendships,
-        dependent: :destroy
 
     def password=(password)
         @password = password

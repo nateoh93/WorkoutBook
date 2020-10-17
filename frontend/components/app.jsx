@@ -20,7 +20,7 @@ const App = () => {
 
             <Switch>
                 <ProtectedRoute path='/users/:userId' component={ProfileContainer} />
-                <ProtectedRoute exact path='/feed' component={NewsFeedContainer} />
+                <ProtectedRoute path='/feed' component={NewsFeedContainer} />
                 <AuthRoute exact path='/' component={SplashContainer} />
                 <Redirect to='/feed' />
                 

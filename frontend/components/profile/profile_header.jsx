@@ -53,7 +53,7 @@ class ProfileHeader extends React.Component {
     }
 
     renderCoverPhoto() {
-        // debugger
+        debugger
         return () => {
             if (this.props.user.coverPhoto) {
                 <img src={`${this.props.user.coverPhoto}`} />
@@ -88,11 +88,9 @@ class ProfileHeader extends React.Component {
                         <div className='camera-icon-prof'></div>
                         <input className='upload-prof-btn' type="file" onChange={this.handleFile('profile_photo')}/>
                     </div>
-                    
                 </div>
-
-                <p className='profile-header-name'>{this.props.user.fname} {this.props.user.lname}</p>
                 
+                <p className='profile-header-name'>{this.props.user.fname} {this.props.user.lname}</p>
                 <button className='update-info-btn' onClick={this.openModal}>Update Info</button>
             </div>
         );
