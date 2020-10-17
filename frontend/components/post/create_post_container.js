@@ -23,7 +23,7 @@ const mDTP = (dispatch) => {
         otherForm: () => dispatch(openModal('Create Post')),
         createPost: (post) => dispatch(createPost(post)),
         closeModal: () => dispatch(closeModal()),
-        fetchusers: () => dispatch(fetchAllUsers())
+        fetchUsers: () => dispatch(fetchAllUsers())
     })
 }
 

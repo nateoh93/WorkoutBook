@@ -1,8 +1,7 @@
 import { connect } from 'react-redux';
-import {  } from '../../actions/post_actions';
-import WallPostIndex from './post_form';
+import { fetchPosts } from '../../actions/post_actions';
+import WallPostIndex from './wall_post_index';
 import { openModal, closeModal } from '../../actions/modal_actions'
-import {  } from '../../actions/session_actions';
 import { withRouter } from 'react-router-dom';
 
 const mSTP = (state, ownProps) => {
@@ -10,7 +9,8 @@ const mSTP = (state, ownProps) => {
     // const postProfileId = ownProps.match.params.userId || state.session.id
 
     return ({
-        // openModal: state.ui.modal,
+        openModal: state.ui.modal,
+        posts: Object.values(state.entities.posts),
         // formType: 'Create Post',
         // currentUser: state.entities.users[state.session.id],
         // postProfileId: postProfileId
@@ -20,10 +20,10 @@ const mSTP = (state, ownProps) => {
 const mDTP = (dispatch) => {
     // debugger
     return ({
-        // otherForm: () => dispatch(openModal('Create Post')),
+        otherForm: () => dispatch(openModal('Edit Post')),
         // createPost: (post) => dispatch(createPost(post)),
         // closeModal: () => dispatch(closeModal()),
-        // fetchusers: () => dispatch(fetchAllUsers())
+        fetchPosts: () => dispatch(fetchPosts())
     })
 }
 

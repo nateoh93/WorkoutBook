@@ -1,0 +1,32 @@
+.wallpost-index li {
+    width: 100%;
+    border: 1px solid #cecccc;
+    margin: 2% 0 0 0;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 3px;
+}
+
+.wallpost-photos {
+    width: 90%;
+    margin: 2% 0 2% 0;
+}
+
+.wallpost-body {
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    margin: 2% 0 2% 0;
+    width: 90%
+}
+
+.like-comment-container {
+    width: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 15px;
+    padding: 2% 0 2% 0;
+    border-bottom: 1px solid #cecccc
+}

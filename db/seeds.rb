@@ -149,6 +149,6 @@ post2.post_photo.attach(io: postphoto1, filename: 'water.jpg')
 
 post3 = Post.create!(
     body: 'Ever thought about just eating burgers and sitting on a couch all day?',
-    profile_user_id: user1.id,
+    profile_user_id: user2.id,
     post_author_id: user3.id
 )

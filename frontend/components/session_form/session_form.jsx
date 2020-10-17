@@ -21,14 +21,6 @@ class SessionForm extends React.Component {
         this.displayEmailError = this.displayEmailError.bind(this);
         this.openModal = this.openModal.bind(this)
     }
-
-    componentDidMount() {
-        this.props.clearErrors();
-        this.setState({
-            email: '',
-            password: '',
-        })
-    }
     
     componentWillUnmount() {
         this.props.clearErrors();
