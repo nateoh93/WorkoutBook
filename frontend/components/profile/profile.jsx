@@ -3,6 +3,7 @@ import ProfileHeaderContainer from './profile_header_container'
 import ProfileNav from './profile_nav';
 import ProfileBioContainer from './profile_bio_container'
 import CreatePostContainer from '../post/create_post_container';
+import WallPostIndexContainer from '../post/wall_post_index_container'
 
 class Profile extends React.Component {
     //consider fetching all user info here. then passing it down to each container as its own props.
@@ -23,6 +24,7 @@ class Profile extends React.Component {
                         </div>
                         <div className='profile-right'>
                             <CreatePostContainer/>
+                            <WallPostIndexContainer />
                         </div>
                     </div>
                 </div>

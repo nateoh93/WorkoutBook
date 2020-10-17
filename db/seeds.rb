@@ -10,6 +10,7 @@ require 'open-uri'
 
 User.destroy_all
 Friendship.destroy_all
+Post.destroy_all
 
 user1 = User.create!(
     email: 'demo_user@squat.com',
@@ -126,4 +127,28 @@ friendship4 = Friendship.create!(
 friendship5 = Friendship.create!(
     user_id: user1.id,
     friend_id: user5.id
+)
+
+post1 = Post.create!(
+    body: 'I just ran 50 miles in 5 hours! It hurt soooo good. Yoga time to unwind!',
+    profile_user_id: user1.id,
+    post_author_id: user1.id,
+)
+
+postphoto2 = open('https://workoutbook-seeds.s3-us-west-1.amazonaws.com/yoga.jpg')
+post1.post_photo.attach(io: postphoto2, filename: 'yoga.jpg')
+
+post2 = Post.create!(
+    body: "I heard you also ran an ultramarathon last week. You should hydrate.",
+    profile_user_id: user1.id,
+    post_author_id: user2.id,
+)
+
+postphoto1 = open('https://workoutbook-seeds.s3-us-west-1.amazonaws.com/water.jpg')
+post2.post_photo.attach(io: postphoto1, filename: 'water.jpg')
+
+Post.create!(
+    body: 'Ever thought about just eating burgers and sitting on a couch all day?',
+    profile_user_id: user1.id,
+    post_author_id: user3.id,
 )
