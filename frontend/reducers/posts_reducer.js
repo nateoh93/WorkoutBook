@@ -16,8 +16,8 @@ const postsReducer = (state={}, action) => {
             delete nextState[action.postId]
             return nextState;
         default:
-            state;
+            return state;
     }
 }
 
-export default postsReducer
+export default postsReducer;

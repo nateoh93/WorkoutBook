@@ -41,7 +41,7 @@ class ProfileBio extends React.Component {
 
     render () {
         return (
-            <div className='profile-left'>
+            <>
                 <div className='profile-bio-container'>
                     <div className='profile-intro-icon'></div>
                     <h3>Intro</h3>
@@ -67,7 +67,7 @@ class ProfileBio extends React.Component {
                 </div>
 
                 <FriendsInfoContainer friendIds={this.props.friendIds}/>
-            </div>
+            </>
         );
     }
 }
