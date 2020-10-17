@@ -24,6 +24,7 @@ class ProfileBio extends React.Component {
                     work: this.props.user.work
                 })
             })
+
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -65,7 +66,7 @@ class ProfileBio extends React.Component {
                     <p>No photos to display</p>
                 </div>
 
-                <FriendsInfoContainer/>
+                <FriendsInfoContainer friendIds={this.props.friendIds}/>
             </div>
         );
     }

@@ -5,13 +5,14 @@ import FriendsInfo from './friends_info';
 
 const mSTP = (state, ownProps) => {
     return ({
-        // user: state.entities.users[ownProps.match.params.userId]
+        user: state.entities.users[ownProps.match.params.userId],
+        friendsIds: ownProps.friendsIds
     })
 }
 
 const mDTP = dispatch => {
     return ({
-        // fetchUser: (userId) => dispatch(fetchUser(userId))
+        fetchUser: (userId) => dispatch(fetchUser(userId))
     })
 }
 

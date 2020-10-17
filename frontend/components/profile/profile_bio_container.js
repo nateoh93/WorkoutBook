@@ -4,14 +4,17 @@ import { fetchUser } from '../../actions/session_actions';
 import ProfileBio from './profile_bio';
 
 const mSTP = (state, ownProps) => {
+    // debugger
     return({
-        user: state.entities.users[ownProps.match.params.userId]
+        user: state.entities.users[ownProps.match.params.userId],
+        friendships: state.entities.friendships,
     })
 }
 
 const mDTP = dispatch => {
+    // debugger
     return({
-        fetchUser: (userId) => dispatch(fetchUser(userId))
+        fetchUser: (userId) => dispatch(fetchUser(userId)),
     })
 }
 

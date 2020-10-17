@@ -53,7 +53,7 @@ class ProfileHeader extends React.Component {
     }
 
     renderCoverPhoto() {
-        debugger
+        // debugger
         return () => {
             if (this.props.user.coverPhoto) {
                 <img src={`${this.props.user.coverPhoto}`} />

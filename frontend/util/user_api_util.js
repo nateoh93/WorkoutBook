@@ -29,3 +29,11 @@ export const updateUserInfo = (user) => {
         data: {user}
     })
 }
+
+// export const fetchFriends = () => {
+//     debugger
+//     return $.ajax({
+//         method: 'GET',
+//         url: '/api/users',
+//     })
+// }

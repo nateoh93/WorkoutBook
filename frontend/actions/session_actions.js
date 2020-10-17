@@ -87,3 +87,12 @@ export const updateUserInfo = (user) => {
             .then( (newUser) => dispatch(receiveUser(newUser)))
     }
 }
+
+// export const fetchFriends = () => {
+//     debugger
+//     return (dispatch) => {
+//         debugger
+//         return UserAPIUtil.fetchFriends()
+//             .then( allFriends => dispatch(receiveAllUsers(allFriends)))
+//     }
+// }

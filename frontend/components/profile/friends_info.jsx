@@ -5,6 +5,8 @@ class FriendsInfo extends React.Component{
         super(props)
     }
 
+    
+
     render() {
         return (
             <div className='profile-friends-container'>
