@@ -9,12 +9,13 @@ class PostIndexItem extends React.Component{
 
     destroyPost(e) {
         e.preventDefault();
-        debugger
+        // debugger
         this.props.deletePost(this.props.post.id)
     }
     
     displayDropdownMenu() {
-        if (this.props.currentUser.id === this.props.postProfile.id) {
+        // debugger
+        if (this.props.currentUser.id === this.props.post.post_author_id || this.props.currentUser.id === this.props.postProfile.id) {
             return(
                 <>
                     <button className='post-menu-btn-icon'></button>
