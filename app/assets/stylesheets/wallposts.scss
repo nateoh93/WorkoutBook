@@ -42,19 +42,19 @@
     opacity: 55%;
     cursor: pointer;
     top: 1%;
-    left: 92%
+    left: 92%;
+    outline: none
 }
 
 .post-menu-dropdown-list {
     position: absolute;
-    top: 20%;
+    top: 5%;
     width: 15%;
     border: 1px solid #cecccc;
     left: 81%;
     cursor: pointer;
     display: none;
     font-size: 13px;
-    display: flex;
     flex-direction: column;
     background: white;
     border-radius: 3px;
