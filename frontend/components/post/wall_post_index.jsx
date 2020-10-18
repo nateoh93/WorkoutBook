@@ -13,7 +13,7 @@ class WallPostIndex extends React.Component {
 
     render() {
         const postIndexList = this.props.posts.map( post => {
-            return <PostIndexItem key={post.id} post={post} />
+            return <PostIndexItem key={post.id} post={post} deletePost={this.props.deletePost}/>
         })
 
         return(

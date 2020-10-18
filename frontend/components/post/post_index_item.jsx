@@ -8,6 +8,13 @@ class PostIndexItem extends React.Component{
     render() {
         return (
             <li>
+                <div>
+                    <button className='post-menu-btn-icon'></button>
+                    <ul className='post-menu-dropdown-list'>
+                        <li>Edit</li>
+                        <li>Delete</li>
+                    </ul>
+                </div>
                 <div className='wallpost-body'>{this.props.post.body}</div>
                 <img className='wallpost-photos' src={this.props.post.postPhoto} />
                 <div className='like-comment-container'>

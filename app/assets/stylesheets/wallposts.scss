@@ -7,6 +7,7 @@
     flex-direction: column;
     align-items: center;
     border-radius: 3px;
+    position: relative;
 }
 
 .wallpost-photos {
@@ -29,4 +30,40 @@
     font-size: 15px;
     padding: 2% 0 2% 0;
     border-bottom: 1px solid #cecccc
+}
+
+.post-menu-btn-icon {
+    background: image-url('options-icon.png');
+    height: 20px;
+    width: 20px;
+    background-size: 75%;
+    background-repeat: no-repeat;
+    position: absolute;
+    opacity: 55%;
+    cursor: pointer;
+    top: 1%;
+    left: 92%
+}
+
+.post-menu-dropdown-list {
+    position: absolute;
+    top: 5%;
+    width: 15%;
+    border: 1px solid #cecccc;
+    left: 81%;
+    cursor: pointer;
+    display: none;
+    font-size: 13px;
+    display: flex;
+    flex-direction: column;
+}
+
+.post-menu-dropdown-list li {
+    display: flex;
+    justify-content: start;
+    border: none;
+}
+
+.post-menu-btn-icon:focus + .post-menu-dropdown-list, .post-menu-dropdown-list:hover {
+    display: block;
 }

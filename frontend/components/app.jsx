@@ -17,7 +17,7 @@ const App = () => {
         <div>
             <Modal />
             <NavBarContainer />
-
+            
             <Switch>
                 <ProtectedRoute path='/users/:userId' component={ProfileContainer} />
                 <ProtectedRoute path='/feed' component={NewsFeedContainer} />

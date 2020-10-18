@@ -23,7 +23,8 @@ const mDTP = (dispatch) => {
         otherForm: () => dispatch(openModal('Edit Post')),
         // createPost: (post) => dispatch(createPost(post)),
         // closeModal: () => dispatch(closeModal()),
-        fetchPosts: () => dispatch(fetchPosts())
+        fetchPosts: () => dispatch(fetchPosts()),
+        deletePost: (postId) => dispatch(deletePost(postId))
     })
 }
 
