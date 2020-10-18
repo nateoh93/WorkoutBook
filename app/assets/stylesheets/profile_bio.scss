@@ -138,3 +138,20 @@ font {
     left: 11px;
 }
 
+.friends-display {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 5%;
+}
+
+.friend-tile {
+    display: flex;
+    flex-wrap: column;
+}
+
+.friend-tile-photo {
+    height: 85px;
+    width: 85px;
+}
+

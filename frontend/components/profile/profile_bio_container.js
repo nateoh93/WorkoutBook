@@ -8,6 +8,7 @@ const mSTP = (state, ownProps) => {
     return({
         user: state.entities.users[ownProps.match.params.userId],
         friendships: state.entities.friendships,
+        users: state.entities.users
     })
 }
 

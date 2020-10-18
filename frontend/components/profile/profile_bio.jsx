@@ -1,5 +1,6 @@
 import React from 'react';
 import FriendsInfoContainer from './friends_container'
+import FriendsInfo from './friends_info'
 
 class ProfileBio extends React.Component {
     constructor(props) {
@@ -67,7 +68,9 @@ class ProfileBio extends React.Component {
                     <p>No photos to display</p>
                 </div>
 
-                <FriendsInfoContainer friendIds={this.props.friendIds}/>
+                {/* <FriendsInfoContainer friendIds={this.props.user.friendIds} users={this.props.users}/> */}
+                <FriendsInfo friendsIds={this.props.user.friendIds} 
+                    users={this.props.users}/>
             </>
         );
     }
