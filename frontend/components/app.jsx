@@ -8,6 +8,7 @@ import ProfileContainer from './profile/profile_container';
 import NewsFeedContainer from './news_feed/news_feed_container';
 import {AuthRoute, ProtectedRoute} from '../util/route_util'
 import Modal from './modal/modal'
+import Profile from './profile/profile'
 
 //test
 
@@ -20,6 +21,7 @@ const App = () => {
             
             <Switch>
                 <ProtectedRoute path='/users/:userId' component={ProfileContainer} />
+                {/* <ProtectedRoute path='/users/:userId' component={Profile} /> */}
                 <ProtectedRoute path='/feed' component={NewsFeedContainer} />
                 <AuthRoute exact path='/' component={SplashContainer} />
                 <Redirect to='/feed' />

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 class PostIndexItem extends React.Component{
     constructor(props) {
@@ -35,10 +36,11 @@ class PostIndexItem extends React.Component{
     displayPostAuthor() {
         // debugger
         const postAuthor = this.props.users[this.props.post.post_author_id]
+        // debugger
         return (
             <div className='post-author-container'>
-                <img className='post-author-pic' src={postAuthor.profilePhoto}/>
-                <div className='post-author'>{postAuthor.fname} {postAuthor.lname}</div>
+                <Link to={`/users/${postAuthor.id}`}><img className='post-author-pic' src={postAuthor.profilePhoto} /></Link>
+                <div className='post-author'><Link to={`/users/${postAuthor.id}`}>{postAuthor.fname} {postAuthor.lname}</Link></div>
             </div>
         )
     }

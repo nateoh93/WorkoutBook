@@ -21,27 +21,31 @@ class Profile extends React.Component {
     render() {
         // const userData = this.props.fetchUser(this.props.match.params.userId)
         // debugger
-        console.log(this.props)
-        return(
-            <div className='profile-page'>
-                <div className='profile-info-container'>
-                    <ProfileHeaderContainer/>
-                    <ProfileNav />
+        if (Object.values(this.props.users).length < 2) {
+            return (<div></div>)
+        } else {
 
-                    <div className='profile-bottom'>
-                        <div className='profile-left'>
-                            <ProfileBioContainer />
+            return(
+                <div className='profile-page'>
+                    <div className='profile-info-container'>
+                        <ProfileHeaderContainer/>
+                        <ProfileNav />
+
+                        <div className='profile-bottom'>
+                            <div className='profile-left'>
+                                <ProfileBioContainer />
+                            </div>
+
+                            <div className='profile-right'>
+                                <CreatePostContainer/>
+                                <WallPostIndexContainer />
+                            </div>
+
                         </div>
-
-                        <div className='profile-right'>
-                            <CreatePostContainer/>
-                            <WallPostIndexContainer />
-                        </div>
-
                     </div>
                 </div>
-            </div>
-        );
+            )
+        }
     }
 }
 

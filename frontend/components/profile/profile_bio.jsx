@@ -14,6 +14,7 @@ class ProfileBio extends React.Component {
     }
 
     componentDidMount() {
+        // debugger
         this.props.fetchUser(this.props.match.params.userId)
             .then( () => {
                 return this.setState({
