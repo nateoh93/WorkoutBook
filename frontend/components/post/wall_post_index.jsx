@@ -6,10 +6,10 @@ class WallPostIndex extends React.Component {
         super(props);
     }
 
-    componentDidMount() {
-        // debugger
-        this.props.fetchPosts(this.props.postProfile.id)
-    }
+    // componentDidMount() {
+    //     // debugger
+    //     this.props.fetchPosts(this.props.postProfile.id)
+    // }
 
     componentDidUpdate(prevProps, prevState) {
         if (prevProps.postProfile !== this.props.postProfile) {

@@ -4,9 +4,14 @@ import { fetchUser } from '../../actions/session_actions';
 import FriendsInfo from './friends_info';
 
 const mSTP = (state, ownProps) => {
+    let profileUser = state.entities.users[ownProps.match.params.userId];
+    const friendIds = profileUser.friendIds
+    
+    debugger
     return ({
-        user: state.entities.users[ownProps.match.params.userId],
-        friendsIds: ownProps.friendsIds
+        profileId: state.entities.users[ownProps.match.params.userId],
+        users: state.entities.users,
+        friendsIds: friendIds
     })
 }
 
