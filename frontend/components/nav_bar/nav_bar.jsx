@@ -40,6 +40,8 @@ class NavBar extends React.Component{
                         </div>
     
                         <div className='navbar-right'>
+                            <div className='nav-profile-photo'><Link to={`/users/${this.props.currentUser.id}`}><img className='navbar-pic' src={this.props.currentUser.profilePhoto} /></Link></div>
+                            
                             <div className='nav-button'>
                                 <li className='nav-profile-button'><Link to={`/users/${this.props.currentUser.id}`}>{this.props.currentUser.fname}</Link></li>
                                 <li className='nav-home-button'><Link to='/feed'>Home</Link></li>

@@ -300,3 +300,17 @@ li:hover > button {
     border-bottom: 15px solid white;
     border-left: 15px solid transparent;
 }
+
+.nav-profile-photo {
+    padding: 0;    
+}
+
+.navbar-pic {
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+}
+
+// .navbar-pic:hover {
+//     background: inherit
+// }
