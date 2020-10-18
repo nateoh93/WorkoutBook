@@ -12,8 +12,8 @@ const mSTP = (state, ownProps) => {
         openModal: state.ui.modal,
         posts: Object.values(state.entities.posts),
         // formType: 'Create Post',
-        // currentUser: state.entities.users[state.session.id],
-        // postProfileId: postProfileId
+        currentUser: state.entities.users[state.session.id],
+        postProfile: state.entities.users[ownProps.match.params.userId]
     })
 }
 
@@ -23,7 +23,8 @@ const mDTP = (dispatch) => {
         otherForm: () => dispatch(openModal('Edit Post')),
         // createPost: (post) => dispatch(createPost(post)),
         // closeModal: () => dispatch(closeModal()),
-        fetchPosts: () => dispatch(fetchPosts()),
+        fetchPosts: (wallId) => dispatch(fetchPosts(wallId)),
+        // fetchPosts: () => dispatch(fetchPosts()),
         deletePost: (postId) => dispatch(deletePost(postId))
     })
 }

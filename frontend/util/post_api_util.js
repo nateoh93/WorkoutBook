@@ -1,7 +1,10 @@
-export const fetchPosts = () => {
+// export const fetchPosts = () => {
+export const fetchPosts = (wallId) => {
+    debugger
     return $.ajax({
         url: `/api/posts`,
-        method: `GET`
+        method: `GET`,
+        data: {wallId}
     })
 }
 

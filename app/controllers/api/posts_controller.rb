@@ -2,8 +2,13 @@ class Api::PostsController < ApplicationController
     # before_action :require_logged_in
 
     def index
-        # debugger
+        debugger
+
         @posts = Post.all
+
+        if params[:wallId]
+            @posts = @posts.where(profile_user_id: params[:wallId])
+        end
         render :index
     end
 
