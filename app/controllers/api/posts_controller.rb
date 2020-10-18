@@ -32,12 +32,12 @@ class Api::PostsController < ApplicationController
     end
 
     def destroy
-        @post = Post.find(id: params[:id])
-
-        if @post.destroy
+        # debugger
+        @post = Post.find_by(id: params[:id])
+        if current_user.id == @post.post_author_id && @post.destroy
             render :show
         else
-            render json: @post.errors.full_messages, status: 422
+            render json: ["Can't delete this post"], status: 422
         end
     end
     private

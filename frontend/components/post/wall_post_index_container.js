@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchPosts } from '../../actions/post_actions';
+import { fetchPosts, deletePost } from '../../actions/post_actions';
 import WallPostIndex from './wall_post_index';
 import { openModal, closeModal } from '../../actions/modal_actions'
 import { withRouter } from 'react-router-dom';
