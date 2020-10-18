@@ -47,7 +47,7 @@
 
 .post-menu-dropdown-list {
     position: absolute;
-    top: 5%;
+    top: 20%;
     width: 15%;
     border: 1px solid #cecccc;
     left: 81%;
@@ -56,14 +56,36 @@
     font-size: 13px;
     display: flex;
     flex-direction: column;
+    background: white;
+    border-radius: 3px;
 }
 
 .post-menu-dropdown-list li {
     display: flex;
-    justify-content: start;
+    align-items: flex-start;
     border: none;
+    // padding: 0 0 0 6%;
+    width: 100%;
+}
+
+.post-menu-dropdown-list li:hover {
+    background: #4267b2;
+    color: white;
+    border-radius: none;
 }
 
 .post-menu-btn-icon:focus + .post-menu-dropdown-list, .post-menu-dropdown-list:hover {
     display: block;
+    
+}
+
+.post-menu-dropdown-btn {
+    width: 100%;
+    background: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    padding: 2% 0 2% 10%;
+    font-weight: normal;
+    border-radius: 0;
 }
