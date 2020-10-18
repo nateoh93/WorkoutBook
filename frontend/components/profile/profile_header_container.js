@@ -8,7 +8,7 @@ const mapStateToProps = (state, ownProps) => {
     return {
         user: state.entities.users[ownProps.match.params.userId],
         openModal: state.ui.modal,
-        current_user: state.entities.users[state.session.id]
+        currentUser: state.entities.users[state.session.id]
     };
 };
 

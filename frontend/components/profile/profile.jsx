@@ -9,14 +9,19 @@ class Profile extends React.Component {
     //consider fetching all user info here. then passing it down to each container as its own props.
     // that way you don't have to keep calling componentdidmount() and fetch user. looks like there are multiple
     //queries to fetch data.
+    constructor(props) {
+        super(props);
+    }
 
     componentDidMount() {
-        // debugger
+        debugger
+        this.props.fetchAllUsers()
     }
 
     render() {
         // const userData = this.props.fetchUser(this.props.match.params.userId)
         // debugger
+        console.log(this.props)
         return(
             <div className='profile-page'>
                 <div className='profile-info-container'>

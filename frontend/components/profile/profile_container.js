@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Profile from './profile';
-import {fetchFriends, fetchUser} from '../../actions/session_actions'
+import {fetchAllUsers, fetchFriends, fetchUser} from '../../actions/session_actions'
 
 const mapStateToProps = (state, ownProps) => {
     return {
@@ -12,7 +12,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
     // debugger
     return {
-        fetchUser: (userId) => dispatch(fetchUser(userId))
+        fetchUser: (userId) => dispatch(fetchUser(userId)),
+        fetchAllUsers: () => dispatch(fetchAllUsers())
     }
 };
 

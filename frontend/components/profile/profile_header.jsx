@@ -12,6 +12,9 @@ class ProfileHeader extends React.Component {
         this.handleFile = this.handleFile.bind(this);
         this.clickFile = this.clickFile.bind(this);
         this.openModal = this.openModal.bind(this);
+        this.displayUpdateInfo = this.displayUpdateInfo.bind(this);
+        this.displayUploadCoverPhoto = this.displayUploadCoverPhoto.bind(this);
+        this.displayUploadProfilePhoto = this.displayUploadProfilePhoto.bind(this);
     }
 
     clickFile(field) {
@@ -50,6 +53,46 @@ class ProfileHeader extends React.Component {
         this.props.otherForm('Update Info')
     }
 
+    displayUpdateInfo() {
+        if (this.props.currentUser.id === this.props.user.id) {
+            return (
+                <button className='update-info-btn' onClick={this.openModal}>Update Info</button>                
+            )
+        } else {
+            null
+        }
+    }
+
+    displayUploadCoverPhoto() {
+        if (this.props.currentUser.id === this.props.user.id) {
+            return (
+                <div className='cover-photo-btn-container'>
+                        <div className='camera-icon-cover' onClick={this.clickFile('upload-cover-btn')}></div>
+                    <div className='cover-photo-btn' onClick={this.clickFile('upload-cover-btn')}>Update Cover Photo
+                        <input className='upload-cover-btn' type="file" onChange={this.handleFile('cover_photo')} />
+                    </div>
+                </div>
+            )
+        } else {
+            null
+        }
+    }
+
+    displayUploadProfilePhoto() {
+        if (this.props.currentUser.id === this.props.user.id) {
+            return (
+                <div className='profile-photo-btn-container'>
+                    <div className='profile-photo-btn' onClick={this.clickFile('upload-prof-btn')}>Update
+                        <div className='camera-icon-prof'></div>
+                        <input className='upload-prof-btn' type="file" onChange={this.handleFile('profile_photo')} />
+                    </div>
+                </div>
+            )
+        } else {
+            null
+        }
+    }
+
     render() {
 
         const renderCoverPhoto = (this.props.user.coverPhoto) ? <img src={`${this.props.user.coverPhoto}`} /> : <img src='https://i.stack.imgur.com/l60Hf.png'/>
@@ -57,8 +100,14 @@ class ProfileHeader extends React.Component {
 
         return(
             <div className='profile-header'>
+
                 <div className='profile-cover-photo'>{renderCoverPhoto}</div>
-                <div className='camera-icon-cover' onClick={this.clickFile('upload-cover-btn')}></div>
+                {this.displayUploadCoverPhoto()}
+                <div className='profile-photo'>{renderProfilePhoto}</div>
+                {this.displayUploadProfilePhoto()}
+                
+                    
+                {/* <div className='camera-icon-cover' onClick={this.clickFile('upload-cover-btn')}></div>
                 <div className='cover-photo-btn-container'>
                     <div className='cover-photo-btn' onClick={this.clickFile('upload-cover-btn')}>Update Cover Photo
                         <input className='upload-cover-btn' type="file" onChange={this.handleFile('cover_photo')}/>
@@ -70,10 +119,10 @@ class ProfileHeader extends React.Component {
                         <div className='camera-icon-prof'></div>
                         <input className='upload-prof-btn' type="file" onChange={this.handleFile('profile_photo')}/>
                     </div>
-                </div>
+                </div> */}
                 
                 <p className='profile-header-name'>{this.props.user.fname} {this.props.user.lname}</p>
-                <button className='update-info-btn' onClick={this.openModal}>Update Info</button>
+                {this.displayUpdateInfo()}
             </div>
         );
     }
