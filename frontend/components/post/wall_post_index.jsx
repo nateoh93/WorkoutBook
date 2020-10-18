@@ -20,6 +20,7 @@ class WallPostIndex extends React.Component {
                 currentUser={this.props.currentUser}
                 postProfile={this.props.postProfile}
                 otherForm={this.props.otherForm}
+                users={this.props.users}
                 />
         })
 

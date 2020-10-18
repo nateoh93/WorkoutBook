@@ -5,6 +5,7 @@ class PostIndexItem extends React.Component{
         super(props)
         this.destroyPost = this.destroyPost.bind(this);
         this.displayDropdownMenu = this.displayDropdownMenu.bind(this);
+        this.displayPostAuthor = this.displayPostAuthor.bind(this);
     }
 
     destroyPost(e) {
@@ -31,9 +32,21 @@ class PostIndexItem extends React.Component{
         }
     }
 
+    displayPostAuthor() {
+        // debugger
+        const postAuthor = this.props.users[this.props.post.post_author_id]
+        return (
+            <div className='post-author-container'>
+                <img className='post-author-pic' src={postAuthor.profilePhoto}/>
+                <div className='post-author'>{postAuthor.fname} {postAuthor.lname}</div>
+            </div>
+        )
+    }
+
     render() {
         return (
             <li>
+                {this.displayPostAuthor()}
                 <div>
                     {this.displayDropdownMenu()}
                 </div>
