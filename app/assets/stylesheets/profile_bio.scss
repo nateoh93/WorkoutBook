@@ -123,7 +123,7 @@ font {
     margin: 4% 4% 0 0;
     background: white;
     border-radius: 3px;
-    height: 100px;
+    // height: 100px;
     font-size: 13px;
 }
 
@@ -142,12 +142,13 @@ font {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin: 5%;
+    margin: 0 5% 5% 5%;
 }
 
 .friend-tile {
     display: flex;
-    flex-wrap: column;
+    flex-direction: column;
+    margin-top: 5%
 }
 
 .friend-tile-photo {
@@ -155,3 +156,23 @@ font {
     width: 85px;
 }
 
+.friend-tile-name {
+    margin-top: 10%
+}
+
+.profile-friends-container h3 {
+    display: flex;
+    align-items: center;
+}
+
+.dot {
+    font-size: 15px;
+    margin: 1% 2% 0 2%;
+
+}
+
+.friend-count {
+    font-size: 13px;
+    color: #90949c;
+    margin-top: 1%
+}

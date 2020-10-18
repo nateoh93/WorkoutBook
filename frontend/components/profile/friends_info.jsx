@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 class FriendsInfo extends React.Component{
     constructor(props) {
@@ -21,16 +22,19 @@ class FriendsInfo extends React.Component{
 
         const displayFriends = this.props.friendsIds.map(friendId => {
             return (
-                <div className='friend-tile'>
+                <div className='friend-tile'><Link to={`/users/${friendId}`}>
                     <div className=''><img key={friendId} className='friend-tile-photo' src={this.props.users[friendId].profilePhoto}/></div>
-                    <div>{this.props.users[friendId].fname} {this.props.users[friendId].lname}</div>
-                </div>
+                    <div className='friend-tile-name'><font>{this.props.users[friendId].fname} {this.props.users[friendId].lname}</font></div>
+                </Link></div>
             )
         })
         return (
             <div className='profile-friends-container'>
                 <div className='profile-friends-icon'></div>
-                <h3>Friends</h3>
+                <h3>Friends 
+                    <p className='dot'>•</p>
+                    <p className='friend-count'>{this.props.friendsIds.length}</p>
+                </h3>
                 {/* {this.displayFriends()} */}
                 <div className='friends-display'>
                     {displayFriends}
