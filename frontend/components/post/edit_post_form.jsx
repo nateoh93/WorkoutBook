@@ -1,59 +1,44 @@
-// import React from 'react';
+import React from 'react';
 
-// class PostForm extends React.Component {
-//     constructor(props) {
-//         super(props)
-//         this.state = {
-//             body: '',
-//             photoFile: null,
-//         }
-//         this.handleSubmit = this.handleSubmit.bind(this);
-//         this.update = this.update.bind(this);
-//         this.handleFile = this.handleFile.bind(this);
-//     }
+class EditPostForm extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            body: this.props.post.body,
+        }
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.update = this.update.bind(this);
+    }
 
-//     handleFile(e) {
-//         const file = e.currentTarget.files[0];
-//         const fileReader = new FileReader();
-//         fileReader.onloadend = () => {
-//             this.setState({ photoFile: file });
-//         };
-//         if (file) {
-//             fileReader.readAsDataURL(file);
-//         }
-//     }
+    handleSubmit(e) {
+        // debugger
+        e.preventDefault();
 
-//     handleSubmit(e) {
-//         e.preventDefault();
-//         const formData = new FormData();
-//         formData.append('post[body]', this.state.body)
-//         // formData.append('post[body]', this.state.body)
-//         // formData.append('post[body]', this.state.body)
+        this.props.updatePost(this.state).then(this.props.closeModal)
 
-//         if (this.state.photoFile) {
-//             formData.append(`user[post_photo]`, this.state.photoFile)
-//             // this.props.updatePost(formData)
-//             // this.props.createPost(formData)
-//         }
-//     }
+        this.setState({
+            body: '',
+            photoFile: null,
+            photoUrl: null,
+        })
+    }
 
-//     update(field) {
-//         return e => this.setState({
-//             [field]: e.currentTarget.value
-//         })
-//     }
+    update(field) {
+        return e => this.setState({
+            [field]: e.currentTarget.value
+        })
+    }
 
-//     render() {
-//         return (
-//             <div>
-//                 <form onSubmit={this.handleSubmit}>
-//                     <textarea onChange={this.update('body')} value={this.state.body}></textarea>
-//                     <input type="file" onChange={this.handleFile} />
-//                     <button>Create Post</button>
-//                 </form>
-//             </div>
-//         );
-//     }
-// }
+    render() {
+        return (
+            <form className='update-post-form' onSubmit={this.handleSubmit}>
+                <span onClick={this.props.closeModal} className="close-x update-form">&times;</span>
+                <h3>Edit Post </h3>
+                <textarea  onChange={this.update('body')} value={this.state.body}></textarea>
+                <button>Save</button>
+            </form>
+        );
+    }
+}
 
-// export default PostForm;
+export default EditPostForm;

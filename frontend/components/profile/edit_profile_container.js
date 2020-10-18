@@ -19,7 +19,8 @@ const mapDispatchToProps = (dispatch) => {
         updateUserInfo: (user) => {
             return dispatch(updateUserInfo(user))
         },
-        otherForm: () => dispatch(openModal('Update Info')),
+        // otherForm: () => dispatch(openModal('Update Info')),
+        otherForm: (modal) => dispatch(openModal(modal)),
         closeModal: () => dispatch(closeModal()),
     });
 };

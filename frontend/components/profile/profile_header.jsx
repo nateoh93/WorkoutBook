@@ -47,7 +47,7 @@ class ProfileHeader extends React.Component {
     }
 
     openModal() {
-        this.props.otherForm()
+        this.props.otherForm('Update Info')
     }
 
     render() {

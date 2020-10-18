@@ -20,7 +20,8 @@ const mSTP = (state, ownProps) => {
 const mDTP = (dispatch) => {
     // debugger
     return ({
-        otherForm: () => dispatch(openModal('Create Post')),
+        // otherForm: () => dispatch(openModal('Create Post')),
+        otherForm: (modal) => dispatch(openModal(modal)),
         createPost: (post) => dispatch(createPost(post)),
         closeModal: () => dispatch(closeModal()),
         fetchUsers: () => dispatch(fetchAllUsers())

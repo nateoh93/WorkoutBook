@@ -5,14 +5,14 @@ import LoginFormContainer from '../session_form/login_form_container';
 import SignupFormContainer from '../session_form/signup_form_container';
 import EditProfileContainer from '../profile/edit_profile_container';
 import CreatePostContainer from '../post/create_post_container';
-import UpdatePostContainer from '../post/update_post_container'
+import EditPostContainer from '../post/edit_post_container';
 
 function Modal({ modal, closeModal }) {
     if (!modal) {
         return null;
     }
     let component;
-    switch (modal) {
+    switch (modal.modal) {
         case 'Log In':
             component = <LoginFormContainer />;
             break;
@@ -24,11 +24,14 @@ function Modal({ modal, closeModal }) {
             break;
         case 'Create Post':
             component = <CreatePostContainer />;
+            break;
         case 'Update Post':
-            component = <UpdatePostContainer />;
+            component = <EditPostContainer id={modal.id}/>;
+            break;
         default:
             return null;
     }
+
     return (
         <div className="modal-background" onClick={closeModal}>
             <div className="modal-child" onClick={e => e.stopPropagation()}>

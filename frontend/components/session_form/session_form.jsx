@@ -22,6 +22,14 @@ class SessionForm extends React.Component {
         this.openModal = this.openModal.bind(this)
     }
     
+    componentDidMount() {
+        this.props.clearErrors();
+        this.setState({
+            email: '',
+            password: '',
+        })
+    }
+
     componentWillUnmount() {
         this.props.clearErrors();
         this.setState({
@@ -130,7 +138,7 @@ class SessionForm extends React.Component {
             password: '',
         })
 
-        this.props.otherForm()
+        this.props.otherForm('Sign Up')
     }
 
     render() {
