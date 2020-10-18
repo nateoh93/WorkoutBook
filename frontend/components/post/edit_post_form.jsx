@@ -13,8 +13,10 @@ class EditPostForm extends React.Component {
     handleSubmit(e) {
         // debugger
         e.preventDefault();
-
-        this.props.updatePost(this.state).then(this.props.closeModal)
+        const formData = new FormData();
+        formData.id = this.props.post.id;
+        formData.append('post[body]', this.state.body);
+        this.props.updatePost(formData).then(this.props.closeModal())
 
         this.setState({
             body: '',

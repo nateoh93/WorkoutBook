@@ -26,6 +26,7 @@ export const createPost = (post) => {
 }
 
 export const updatePost = (post) => {
+    debugger
     return $.ajax({
         url: `/api/posts/${post.id}`,
         method: `PATCH`,
