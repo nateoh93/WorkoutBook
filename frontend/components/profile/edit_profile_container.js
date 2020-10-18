@@ -6,7 +6,7 @@ import EditProfileForm from './edit_profile_form';
 import {fetchUser, updateUserInfo} from '../../actions/session_actions'
 
 const mapStateToProps = (state, ownProps) => {
-    debugger
+    // debugger
     return ({
         user: state.entities.users[state.session.id],
         // errors: state.errors.session,

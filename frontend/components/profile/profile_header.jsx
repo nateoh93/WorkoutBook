@@ -106,21 +106,6 @@ class ProfileHeader extends React.Component {
                 <div className='profile-photo'>{renderProfilePhoto}</div>
                 {this.displayUploadProfilePhoto()}
                 
-                    
-                {/* <div className='camera-icon-cover' onClick={this.clickFile('upload-cover-btn')}></div>
-                <div className='cover-photo-btn-container'>
-                    <div className='cover-photo-btn' onClick={this.clickFile('upload-cover-btn')}>Update Cover Photo
-                        <input className='upload-cover-btn' type="file" onChange={this.handleFile('cover_photo')}/>
-                    </div>
-
-                    <div className='profile-photo-container'>{renderProfilePhoto}</div>
-                    
-                    <div className='profile-photo-btn' onClick={this.clickFile('upload-prof-btn')}>Update
-                        <div className='camera-icon-prof'></div>
-                        <input className='upload-prof-btn' type="file" onChange={this.handleFile('profile_photo')}/>
-                    </div>
-                </div> */}
-                
                 <p className='profile-header-name'>{this.props.user.fname} {this.props.user.lname}</p>
                 {this.displayUpdateInfo()}
             </div>

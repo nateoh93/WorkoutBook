@@ -6,13 +6,14 @@ import { withRouter } from 'react-router-dom';
 
 const mSTP = (state, ownProps) => {
     // debugger
-    // const postProfileId = ownProps.match.params.userId || state.session.id
+    const postProfileId = ownProps.match.params.userId || state.session.id
 
     return ({
         openModal: state.ui.modal,
         posts: Object.values(state.entities.posts),
         currentUser: state.entities.users[state.session.id],
-        postProfile: state.entities.users[ownProps.match.params.userId]
+        // postProfile: state.entities.users[ownProps.match.params.userId]
+        postProfile: state.entities.users[postProfileId]
     })
 }
 
