@@ -4,26 +4,14 @@ class EditProfileForm extends React.Component {
     constructor(props) {
         super(props),
         this.state = {
-            bio: '',
-            city: '',
-            school: '',
-            work: ''
+            bio: this.props.user.bio,
+            city: this.props.user.city,
+            school: this.props.user.school,
+            work: this.props.user.work
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.update = this.update.bind(this);
-    }
-
-    componentDidMount() {
-        this.props.fetchUser(this.props.user.id)
-            .then(() => {
-                return this.setState({
-                    bio: this.props.user.bio,
-                    city: this.props.user.city,
-                    school: this.props.user.school,
-                    work: this.props.user.work
-                })
-            })
     }
 
     update(field) {
