@@ -6,5 +6,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :friendships, only: [:create, :destroy, :index]
     resources :posts, only: [:create, :update, :destroy, :index, :show]
+    resources :comments, only: [:create, :update, :destroy, :index]
   end
+  
 end
