@@ -18,19 +18,40 @@ class PostIndexItem extends React.Component{
     displayDropdownMenu() {
         // debugger
         //consider whether to allow the profileUser to also delete / edit posts that are on his profile
-        // if (this.props.currentUser.id === this.props.post.post_author_id || this.props.currentUser.id === this.props.postProfile.id) {
-
-        if (this.props.currentUser.id === this.props.post.post_author_id) {
-            return(
-                <>
-                    <button className='post-menu-btn-icon'></button>
-                    <ul className='post-menu-dropdown-list'>
-                        <li><button className='post-menu-dropdown-btn' onClick={() => this.props.otherForm('Update Post', this.props.post.id)}>Edit</button></li>
-                        <li><button className='post-menu-dropdown-btn' onClick={this.destroyPost}>Delete</button></li>
-                    </ul>
-                </>
-            )
+        if (this.props.currentUser.id === this.props.post.post_author_id || this.props.currentUser.id === this.props.postProfile.id) {
+            if (this.props.currentUser.id === this.props.post.post_author_id) {
+                return (
+                    <>
+                        <button className='post-menu-btn-icon'></button>
+                        <ul className='post-menu-dropdown-list'>
+                            <li><button className='post-menu-dropdown-btn' onClick={() => this.props.otherForm('Update Post', this.props.post.id)}>Edit</button></li>
+                            <li><button className='post-menu-dropdown-btn' onClick={this.destroyPost}>Delete</button></li>
+                        </ul>
+                    </>
+                )    
+            } else {
+                return (
+                    <>
+                        <button className='post-menu-btn-icon'></button>
+                        <ul className='post-menu-dropdown-list'>
+                            <li><button className='post-menu-dropdown-btn' onClick={this.destroyPost}>Delete</button></li>
+                        </ul>
+                    </>
+                )
+            }
         }
+
+        // if (this.props.currentUser.id === this.props.post.post_author_id) {
+        //     return(
+        //         <>
+        //             <button className='post-menu-btn-icon'></button>
+        //             <ul className='post-menu-dropdown-list'>
+        //                 <li><button className='post-menu-dropdown-btn' onClick={() => this.props.otherForm('Update Post', this.props.post.id)}>Edit</button></li>
+        //                 <li><button className='post-menu-dropdown-btn' onClick={this.destroyPost}>Delete</button></li>
+        //             </ul>
+        //         </>
+        //     )
+        // }
     }
 
     displayPostAuthor() {
