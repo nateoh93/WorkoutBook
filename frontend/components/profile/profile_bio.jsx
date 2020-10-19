@@ -42,6 +42,11 @@ class ProfileBio extends React.Component {
     }
 
     render () {
+        let month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+        month = month[this.state.birthday.slice(5, 7) - 1];
+        let year = this.state.birthday.slice(0, 4);
+        let day = this.state.birthday.slice(8, 10);
+        
         return (
             <>
                 <div className='profile-bio-container'>
@@ -49,7 +54,7 @@ class ProfileBio extends React.Component {
                     <h3>Intro</h3>
                     <p>{this.state.bio}</p>
                     <ul className='profile-bio-list'>
-                        <li>Born on <font>{this.state.birthday}</font></li>
+                        <li>Born on <font>{month} {day}, {year}</font></li>
                         <li>Lives in <font>{this.state.city}</font></li>
                         <li>Studied at <font>{this.state.school}</font></li>
                         <li>Works as a <font>{this.state.work}</font></li>
