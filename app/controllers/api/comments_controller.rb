@@ -6,7 +6,7 @@ class Api::CommentsController < ApplicationController
         if params[:postId]
             @comments = @comments.where(post_id: params[:postId])
         end
-        
+
         render :index
     end
 
@@ -33,7 +33,7 @@ class Api::CommentsController < ApplicationController
         if @comment.destroy
             render json: {}
         else
-            # render json:
+            render json: @comment.errors.full_messages, status: 422
         end
     end
 
