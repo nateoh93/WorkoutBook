@@ -39,7 +39,19 @@ class PostIndexItem extends React.Component{
         let year = this.props.post.created_at.slice(0, 4);
         let day = this.props.post.created_at.slice(8, 10);
 
-        let time = this.props.post.created_at.slice(11, 16)
+        let hour = this.props.post.created_at.slice(11, 13)
+        let min = this.props.post.created_at.slice(13, 16)
+        let time;
+
+        if (hour < 1) {
+            hour = 12;
+            time = `${hour}${min} AM`;
+        } else if (hour > 12) {
+            hour = hour % 12;
+            time = `${hour}${min} PM`;
+        } else {
+            time = `${hour}${min} AM`;
+        }
         
         const postAuthor = this.props.users[this.props.post.post_author_id]
         return (
