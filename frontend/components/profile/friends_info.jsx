@@ -8,7 +8,7 @@ class FriendsInfo extends React.Component{
     }
 
     displayFriends() {
-        debugger
+        // debugger
 
         this.props.friendsIds.map( friendId => {
             // return <div>{this.props.users[friendId].fname}</div>
@@ -18,7 +18,7 @@ class FriendsInfo extends React.Component{
     
 
     render() {
-        debugger
+        // debugger
 
         const displayFriends = this.props.friendsIds.map(friendId => {
             return (

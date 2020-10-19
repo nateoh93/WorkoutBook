@@ -7,7 +7,7 @@ const mSTP = (state, ownProps) => {
     let profileUser = state.entities.users[ownProps.match.params.userId];
     const friendIds = profileUser.friendIds
     
-    debugger
+    // debugger
     return ({
         profileId: state.entities.users[ownProps.match.params.userId],
         users: state.entities.users,
