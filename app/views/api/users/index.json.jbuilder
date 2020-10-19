@@ -1,3 +1,4 @@
+json.users do
 @users.each do |user|
     json.set! user.id do
         json.extract! user, :id, :email, :fname, :lname, :birthday, :bio, :city, :work, :school
@@ -5,6 +6,7 @@
         json.profilePhoto url_for(user.profile_photo) if user.profile_photo.attached?
         json.friendIds user.friend_ids
     end
+end
 end
 
 json.friendships do

@@ -4,17 +4,17 @@ import { Link } from 'react-router-dom'
 class FriendsInfo extends React.Component{
     constructor(props) {
         super(props)
-        this.displayFriends = this.displayFriends.bind(this);
+        // this.displayFriends = this.displayFriends.bind(this);
     }
 
-    displayFriends() {
-        // debugger
+    // displayFriends() {
+    //     // debugger
 
-        this.props.friendsIds.map( friendId => {
-            // return <div>{this.props.users[friendId].fname}</div>
-            return <div>hi</div>
-        })
-    }
+    //     this.props.friendsIds.map( friendId => {
+    //         // return <div>{this.props.users[friendId].fname}</div>
+    //         return <div>hi</div>
+    //     })
+    // }
     
 
     render() {

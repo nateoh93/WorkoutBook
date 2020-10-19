@@ -1,5 +1,5 @@
 import React from 'react';
-import FriendsInfoContainer from './friends_container'
+// import FriendsInfoContainer from './friends_container'
 import FriendsInfo from './friends_info'
 
 class ProfileBio extends React.Component {
