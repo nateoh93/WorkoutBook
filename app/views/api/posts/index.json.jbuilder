@@ -1,7 +1,10 @@
-@posts.each do |post|
-    json.set! post.id do
-        json.extract! post, :id, :body, :profile_user_id, :post_author_id, :created_at
-        json.postPhoto url_for(post.post_photo) if post.post_photo.attached?
+json.posts do
+    @posts.each do |post|
+        json.set! post.id do
+            json.extract! post, :id, :body, :profile_user_id, :post_author_id, :created_at
+            json.postPhoto url_for(post.post_photo) if post.post_photo.attached?
+            json.commentIds post.comment_ids
+        end
     end
 end
 

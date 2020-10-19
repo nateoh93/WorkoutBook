@@ -13,11 +13,9 @@ const commentsReducer = (state = {}, action) => {
             delete nextState[action.commentId]
             return nextState;
         case RECEIVE_ALL_POSTS:
-            nextState = action.posts.comments;
-            return nextState
+            return Object.assign(nextState, action.posts.comments)
         case RECEIVE_POST:
-            nextState = action.posts.comments;
-            return nextState           
+            return Object.assign(nextState, action.post.comments)
         default:
             return state;
     }

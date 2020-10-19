@@ -7,7 +7,7 @@ const postsReducer = (state={}, action) => {
 
     switch (action.type) {
         case RECEIVE_ALL_POSTS:
-            nextState = action.posts
+            nextState = action.posts.posts
             return nextState;
         case RECEIVE_POST:
             nextState[action.post.id] = action.post
