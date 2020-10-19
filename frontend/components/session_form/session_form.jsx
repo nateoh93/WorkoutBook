@@ -186,12 +186,3 @@ class SessionForm extends React.Component {
 }
 
 export default withRouter(SessionForm);
-
-
-// onblur(this.handlerequired)
-
-// handlerequired() {
-//     return() => {
-
-//     }
-// }
