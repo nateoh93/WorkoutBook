@@ -177,8 +177,19 @@
     border-radius: 100%
 }
 
+.post-author-time-container {
+    margin: 0 0 0 3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .post-author {
-    margin: 2% 0 0 3%;
-    font-size: 14px;
-    
+    font-size: 17px;   
+    padding-bottom: 3%;
+}
+
+.post-time {
+    font-size: 11px;
+    color: #90949c
 }

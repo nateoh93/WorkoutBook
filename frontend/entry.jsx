@@ -25,4 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     window.store = store;
+    window.getState = store.getState();
+    
 })

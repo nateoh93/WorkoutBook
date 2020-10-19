@@ -22,8 +22,8 @@ class FriendsInfo extends React.Component{
 
         const displayFriends = this.props.friendsIds.map(friendId => {
             return (
-                <div className='friend-tile'><Link to={`/users/${friendId}`}>
-                    <div className=''><img key={friendId} className='friend-tile-photo' src={this.props.users[friendId].profilePhoto}/></div>
+                <div className='friend-tile' key={friendId}><Link to={`/users/${friendId}`}>
+                    <div className=''><img className='friend-tile-photo' src={this.props.users[friendId].profilePhoto}/></div>
                     <div className='friend-tile-name'><font>{this.props.users[friendId].fname} {this.props.users[friendId].lname}</font></div>
                 </Link></div>
             )

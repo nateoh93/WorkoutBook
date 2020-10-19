@@ -34,13 +34,22 @@ class PostIndexItem extends React.Component{
     }
 
     displayPostAuthor() {
-        // debugger
+        let month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+        month = month[this.props.post.updated_at.slice(5, 7) - 1];
+        let year = this.props.post.updated_at.slice(0, 4);
+        let day = this.props.post.updated_at.slice(8, 10);
+
+        let time = this.props.post.updated_at.slice(11, 16)
+        console.log(this.props.post.updated_at)
+        
         const postAuthor = this.props.users[this.props.post.post_author_id]
-        // debugger
         return (
             <div className='post-author-container'>
                 <Link to={`/users/${postAuthor.id}`}><img className='post-author-pic' src={postAuthor.profilePhoto} /></Link>
-                <div className='post-author'><Link to={`/users/${postAuthor.id}`}>{postAuthor.fname} {postAuthor.lname}</Link></div>
+                <div className='post-author-time-container'>
+                    <div className='post-author'><Link to={`/users/${postAuthor.id}`}>{postAuthor.fname} {postAuthor.lname}</Link></div>
+                    <div className='post-time'>{month} {day}, {year} at {time}</div>
+                </div>
             </div>
         )
     }
