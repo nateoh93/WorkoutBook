@@ -76,11 +76,20 @@ class PostForm extends React.Component {
                 <img className='image-preview' src={this.state.photoUrl} />
             </div>) : null
 
+        let postButton;
+        if (this.state.body === '' && this.state.photoFile === null) {
+            postButton = <button className='create-post-btn no-submit'>Post</button>
+        } else {
+            postButton = <button className='create-post-btn' onClick={this.handleSubmit}>Post</button>
+        }
+        
+
         return(
             <div className='profile-right-post'>
                 <h3>Create Post</h3>
                 <div className='post-form-container'>
-                    <form className='create-post-form' onSubmit={this.handleSubmit}>
+                    {/* <form className='create-post-form' onSubmit={this.handleSubmit}> */}
+                    <form className='create-post-form'>
                         <div className='post-body-container'>
                             <textarea className='post-body' onChange={this.update('body')} value={this.state.body} placeholder="What's on your mind?"></textarea>
                         </div>
@@ -93,7 +102,8 @@ class PostForm extends React.Component {
                         </div>
                         <div className='create-post-btn-container'>
 
-                        <button className='create-post-btn'>Post</button>
+                        {postButton}
+                        {/* <button className='create-post-btn'>Post</button> */}
                         </div>
                     </form>
                 </div>

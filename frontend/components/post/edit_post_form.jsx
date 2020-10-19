@@ -35,10 +35,11 @@ class EditPostForm extends React.Component {
         let postButton;
 
         if (this.state.body === '') {
-            postButton = <button>Save</button>
+            postButton = <button className='no-submit'>Save</button>
         } else {
             postButton = <button onClick={this.handleSubmit}>Save</button>
         }
+
         return (
             // <form className='update-post-form' onSubmit={this.handleSubmit}>
             <form className='update-post-form'>
