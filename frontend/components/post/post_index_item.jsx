@@ -71,8 +71,8 @@ class PostIndexItem extends React.Component{
                     {postAuthor.id === this.props.postProfile.id ? <div className='post-author'><Link to={`/users/${postAuthor.id}`}>{postAuthor.fname} {postAuthor.lname}</Link></div>
                         : <div className='post-author'><Link to={`/users/${postAuthor.id}`}>{postAuthor.fname} {postAuthor.lname}</Link> ▸ <Link to={`/users/${this.props.postProfile.id}`}>{this.props.postProfile.fname} {this.props.postProfile.lname}</Link></div>}
                     <div className='post-time'>{month} {day}, {year} at {time}</div>
-                    {this.displayDropdownMenu()}
                 </div>
+                    {this.displayDropdownMenu()}
             </div>
         )
     }
@@ -81,9 +81,7 @@ class PostIndexItem extends React.Component{
         return (
             <li>
                 {this.displayPostAuthor()}
-                {/* <div className='dropdown-container'>
-                    {this.displayDropdownMenu()}
-                </div> */}
+                
                 <div className='wallpost-body'>{this.props.post.body}</div>
                 <img className='wallpost-photos' src={this.props.post.postPhoto} />
                 <div className='like-comment-container'>
