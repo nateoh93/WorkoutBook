@@ -12,7 +12,7 @@ class WallPostIndex extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState) {
-        debugger
+        // debugger
         if (prevProps.postProfile.id !== this.props.postProfile.id) {
             this.props.fetchPosts(this.props.postProfile.id)
         }

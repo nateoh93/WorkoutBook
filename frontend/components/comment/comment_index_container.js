@@ -5,7 +5,7 @@ import { fetchPost } from '../../actions/post_actions';
 import CommentIndex from './comment_index'
 
 const mSTP = (state, ownProps) => {
-    debugger
+    // debugger
 
     let comments = [];
     if (ownProps.post.commentIds) {

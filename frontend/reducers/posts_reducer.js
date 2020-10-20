@@ -31,7 +31,7 @@ const postsReducer = (state={}, action) => {
             }
             return nextState;
         case REMOVE_COMMENT:
-            debugger
+            // debugger
             let newCommentIds = nextState[action.comment.post_id].commentIds.filter(id => {
                 id !== action.comment.id
             })

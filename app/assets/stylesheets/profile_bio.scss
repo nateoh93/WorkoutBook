@@ -141,7 +141,7 @@ font {
 .friends-display {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    // justify-content: space-between;
     margin: 0 5% 5% 5%;
 }
 
@@ -151,9 +151,13 @@ font {
     margin-top: 5%
 }
 
+.friends-display > .friend-tile:nth-child(3n-1) {
+    margin: 5% 6% 0 6%
+}
+
 .friend-tile-photo {
-    height: 85px;
-    width: 85px;
+    height: 86px;
+    width: 86px;
 }
 
 .friend-tile-name {

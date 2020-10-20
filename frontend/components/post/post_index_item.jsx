@@ -58,7 +58,7 @@ class PostIndexItem extends React.Component{
 
 
     displayPostAuthor() {
-        debugger
+        // debugger
         
         let month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
         month = month[this.props.post.created_at.slice(5, 7) - 1];
