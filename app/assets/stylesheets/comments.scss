@@ -74,3 +74,63 @@
 .comment-body {
     padding: 0 15px 0 0;
 }
+
+.comment-menu-btn-icon {
+    background: image-url('options-icon.png');
+    height: 20px;
+    width: 20px;
+    background-size: 30%;
+    background-repeat: no-repeat;
+    position: absolute;
+    opacity: 55%;
+    cursor: pointer;
+    top: 40%;
+    left: 97%;
+    outline: none
+}
+
+.comment-menu-dropdown-list {
+    position: absolute;
+    width: 19%;
+    border: 1px solid #cecccc;
+    top: 66%;
+    left: 80%;
+    cursor: pointer;
+    display: none;
+    font-size: 13px;
+    flex-direction: column;
+    background: white;
+    border-radius: 3px;
+    z-index: 2;
+}
+
+.comment-menu-dropdown-list li {
+    display: flex;
+    align-items: flex-start;
+    border: none;
+    // padding: 0 0 0 6%;
+    width: 100%;
+}
+
+.comment-menu-dropdown-list li:hover {
+    background: #4267b2;
+    color: white;
+    border-radius: none;
+}
+
+.comment-menu-btn-icon:focus + .comment-menu-dropdown-list, .comment-menu-dropdown-list:hover {
+    display: block;
+    
+}
+
+.comment-menu-dropdown-btn {
+    width: 100%;
+    background: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    padding: 2% 0 2% 10%;
+    font-weight: normal;
+    border-radius: 0;
+    outline: none;
+}

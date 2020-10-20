@@ -27,6 +27,7 @@ class CommentIndex extends React.Component {
                 updateComment={this.props.updateComment}
                 currentUser={this.props.currentUser}
                 users={this.props.users}
+                postProfile={this.props.postProfile}
             />
         })
 

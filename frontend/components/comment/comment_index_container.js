@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { deleteComment, updateComment } from '../../actions/comment_actions';
 import CommentIndex from './comment_index'
 
@@ -14,7 +15,7 @@ const mSTP = (state, ownProps) => {
         // posts: Object.values(state.entities.posts),
         currentUser: state.entities.users[state.session.id],
         users: state.entities.users,
-        // postProfile: state.entities.users[postProfileId],
+        postProfile: state.entities.users[ownProps.match.params.userId],
         comments: comments
     })
 }
@@ -27,4 +28,4 @@ const mDTP = (dispatch) => {
     })
 }
 
-export default connect(mSTP, mDTP)(CommentIndex)
+export default withRouter(connect(mSTP, mDTP)(CommentIndex))
