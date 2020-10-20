@@ -66,7 +66,7 @@ class CommentIndexItem extends React.Component {
     }
 
     handleSubmit(e) {
-        debugger
+        // debugger
         const formData = new FormData();
         formData.id = this.props.comment.id;
         formData.append('comment[body]', this.state.body);
@@ -74,7 +74,7 @@ class CommentIndexItem extends React.Component {
         this.props.updateComment(formData)
         this.setState({
             edit: false,
-            body: '',
+            
         })
     }
 

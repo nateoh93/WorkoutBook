@@ -7,10 +7,11 @@ const commentsReducer = (state = {}, action) => {
 
     switch (action.type) {
         case RECEIVE_COMMENT:
-            debugger
+            // debugger
             nextState[action.comment.id] = action.comment
             return nextState;
         case REMOVE_COMMENT:
+            debugger
             delete nextState[action.commentId]
             return nextState;
         case RECEIVE_ALL_POSTS:
