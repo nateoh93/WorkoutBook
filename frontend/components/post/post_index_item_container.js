@@ -23,3 +23,10 @@ const mDTP = (dispatch) => {
 }
 
 export default withRouter(connect(mSTP, mDTP)(PostIndexItem))
+
+
+
+
+
+
+// DELETE AFTER MAKING SURE IT'S NOT USED ANYWHERE
