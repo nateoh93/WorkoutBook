@@ -43,6 +43,7 @@ class CommentForm extends React.Component {
                         placeholder='Write a comment...' 
                         value={this.state.body}
                         onChange={this.update('body')}
+                        id={`comment-form-input-id-${this.props.post.id}`}
                         // onKeyPress={this.handleSubmit}
                     />
                 </form>

@@ -27,10 +27,25 @@
     width: 90%;
     display: flex;
     justify-content: space-evenly;
-    font-size: 15px;
-    padding: 2% 0 2% 0;
+    font-size: 14px;
+    padding: 1% 0 1% 0;
+    margin: 1% 0 1% 0;
     border-bottom: 1px solid #cecccc;
     border-top: 1px solid #cecccc
+}
+
+.like-comment-container div {
+    padding: 1% 6% 1% 6%;
+    width: 14%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // border: 1px solid black
+}
+
+.like-comment-container div:hover {
+    cursor: pointer;
+    background: #f5f6f7;
 }
 
 .dropdown-container {
@@ -96,4 +111,16 @@
     font-weight: normal;
     border-radius: 0;
     outline: none;
+}
+
+.likebtn, .fa-comment-alt{
+    font-weight: normal;
+    font-size: 18px;
+    padding: 0 5% 0 0;
+}
+
+.fas {
+    font-weight: normal;
+    font-size: 18px;
+    padding: 0 5% 0 0;
 }

@@ -9,6 +9,7 @@ class PostIndexItem extends React.Component{
         this.destroyPost = this.destroyPost.bind(this);
         this.displayDropdownMenu = this.displayDropdownMenu.bind(this);
         this.displayPostAuthor = this.displayPostAuthor.bind(this);
+        this.focusComment = this.focusComment.bind(this)
     }
 
     destroyPost(e) {
@@ -81,6 +82,11 @@ class PostIndexItem extends React.Component{
         )
     }
 
+    focusComment(e) {
+        e.preventDefault();
+        document.getElementById(`comment-form-input-id-${this.props.post.id}`).focus();
+    }
+
     render() {
         return (
             <li>
@@ -89,8 +95,8 @@ class PostIndexItem extends React.Component{
                 <div className='wallpost-body'>{this.props.post.body}</div>
                 <img className='wallpost-photos' src={this.props.post.postPhoto} />
                 <div className='like-comment-container'>
-                    <div>Like</div>
-                    <div>Comment</div>
+                    <div><i className="fas fa-thumbs-up likebtn"></i>Like</div>
+                    <div onClick={this.focusComment}><i className="far fa-comment-alt"></i>Comment</div>
                 </div>
 
                 <CommentIndexContainer post={this.props.post}/>
