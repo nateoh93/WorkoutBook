@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { openModal, closeModal } from '../../actions/modal_actions'
 import { withRouter } from 'react-router-dom';
 import PostIndexItem from './post_index_item';
+import { fetchPost } from '../../actions/post_actions';
 
 const mSTP = (state, ownProps) => {
     // debugger
@@ -18,7 +19,7 @@ const mSTP = (state, ownProps) => {
 const mDTP = (dispatch) => {
     // debugger
     return ({
-
+        fetchPost: (postId) => dispatch(fetchPost(postId))
     })
 }
 
