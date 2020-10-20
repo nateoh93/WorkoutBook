@@ -26,6 +26,7 @@ const removeComment = comment => {
 }
 
 export const createComment = (comment) => dispatch => {
+    // debugger
     return (CommentAPIUtil.createComment(comment))
         .then(newComment => dispatch(receiveComment(newComment)))
 }

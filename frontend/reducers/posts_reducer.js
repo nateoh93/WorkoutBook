@@ -9,7 +9,7 @@ const postsReducer = (state={}, action) => {
     // // } else {
     // }
 
-    debugger
+    // debugger
     Object.freeze(state);
     let nextState = Object.assign({}, state);
 
@@ -24,7 +24,7 @@ const postsReducer = (state={}, action) => {
             delete nextState[action.postId]
             return nextState;
         case RECEIVE_COMMENT:
-            let post = action.comment.post_id;
+            let post = nextState[action.comment.post_id];
             if (!post.commentIds.includes(action.comment.id)) {
                 post.commentIds.push(action.comment.id)
             }

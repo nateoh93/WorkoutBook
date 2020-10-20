@@ -17,11 +17,14 @@ class CommentForm extends React.Component {
     }
 
     handleSubmit(e) {
-        // debugger
+        debugger
         e.preventDefault();
 
-        const newComment = Object.assign({}, this.state)
-        newComment.post_id = this.props.post.id
+        let newComment = Object.assign({}, this.state);
+        newComment['post_id'] = this.props.post.id;
+        this.props.createComment(newComment);
+
+        this.setState({body: ''});
     }
 
     update(field) {
