@@ -37,6 +37,7 @@ export const updateComment = (comment) => dispatch => {
 }
 
 export const deleteComment = (comment) => dispatch => {
+    // debugger
     return (CommentAPIUtil.deleteComment(comment.id))
         .then(() => dispatch(removeComment(comment)))
 }

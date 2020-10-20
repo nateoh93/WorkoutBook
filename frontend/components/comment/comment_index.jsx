@@ -19,7 +19,7 @@ class CommentIndex extends React.Component {
     }
 
     render() {
-        debugger
+        // debugger
         const CommentIndexList = this.props.comments.map(comment => {
             return <CommentIndexItem key={comment.id}
                 comment={comment}

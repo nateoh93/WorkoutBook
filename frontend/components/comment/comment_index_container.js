@@ -4,7 +4,7 @@ import { deleteComment, updateComment } from '../../actions/comment_actions';
 import CommentIndex from './comment_index'
 
 const mSTP = (state, ownProps) => {
-    debugger
+    // debugger
 
     let comments = [];
     ownProps.post.commentIds.forEach( commentId => {

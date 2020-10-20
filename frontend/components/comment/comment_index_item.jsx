@@ -6,7 +6,6 @@ class CommentIndexItem extends React.Component {
         super(props)
         this.destroyComment = this.destroyComment.bind(this);
         this.displayDropdownMenu = this.displayDropdownMenu.bind(this);
-        // this.displayPostAuthor = this.displayPostAuthor.bind(this);
     }
 
     destroyComment(e) {
@@ -16,7 +15,7 @@ class CommentIndexItem extends React.Component {
     }
 
     displayDropdownMenu() {
-        debugger
+        // debugger
         if (this.props.currentUser.id === this.props.comment.comment_author_id || this.props.currentUser.id === this.props.postProfile.id) {
             if (this.props.currentUser.id === this.props.comment.comment_author_id) {
                 return (
@@ -42,7 +41,7 @@ class CommentIndexItem extends React.Component {
     }
 
     render() {
-        debugger
+        // debugger
         return (
             <li>
                 <Link to={`/users/${this.props.comment.comment_author_id}`}>
