@@ -30,14 +30,20 @@ class ProfileBio extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState) {
-        if (prevProps.user !== this.props.user) {
-            return this.setState({
-                birthday: this.props.user.birthday,
-                bio: this.props.user.bio,
-                city: this.props.user.city,
-                school: this.props.user.school,
-                work: this.props.user.work
-            })
+        debugger
+        if (prevProps.user.id !== this.props.user.id || 
+            prevProps.user.bio !== this.props.user.bio || prevProps.user.city !== this.props.user.city ||
+            prevProps.user.school !== this.props.user.school || prevProps.user.work !== this.props.user.work) {
+            this.props.fetchUser(this.props.user.id)
+                .then( () => {
+                    return this.setState({
+                        birthday: this.props.user.birthday,
+                        bio: this.props.user.bio,
+                        city: this.props.user.city,
+                        school: this.props.user.school,
+                        work: this.props.user.work
+                    })
+                })
         }
     }
 
@@ -47,6 +53,8 @@ class ProfileBio extends React.Component {
         let year = this.state.birthday.slice(0, 4);
         let day = this.state.birthday.slice(8, 10);
         
+        debugger
+
         return (
             <>
                 <div className='profile-bio-container'>
@@ -73,8 +81,8 @@ class ProfileBio extends React.Component {
                     <p>No photos to display</p>
                 </div>
 
-                {/* <FriendsInfoContainer friendIds={this.props.user.friendIds} users={this.props.users}/> */}
-                <FriendsInfo friendsIds={this.props.user.friendIds} 
+                <FriendsInfo 
+                    friendships={this.props.friendships}
                     users={this.props.users}/>
             </>
         );

@@ -5,6 +5,7 @@ import EditPostForm from './edit_post_form'
 import {openModal, closeModal} from '../../actions/modal_actions'
 
 const mSTP = (state, ownProps) => {
+    // debugger
     return ({
         openModal: state.ui.modal,
         // formType: 'Update Post',

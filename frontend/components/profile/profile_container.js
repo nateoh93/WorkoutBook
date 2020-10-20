@@ -5,7 +5,7 @@ import {fetchAllUsers, fetchFriends, fetchUser} from '../../actions/session_acti
 const mapStateToProps = (state, ownProps) => {
     // debugger
     return {
-        friends: state.entities.friends,
+        friends: state.entities.friendships,
         user: state.entities.users[ownProps.match.params.userId],
         users: state.entities.users
     };

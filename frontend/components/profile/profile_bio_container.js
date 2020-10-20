@@ -5,10 +5,16 @@ import ProfileBio from './profile_bio';
 
 const mSTP = (state, ownProps) => {
     // debugger
+    let friendships = [];
+    if (state.entities.friendships[ownProps.match.params.userId] !== undefined) {
+        friendships = Object.values(state.entities.friendships[ownProps.match.params.userId])
+    }
+
     return({
         user: state.entities.users[ownProps.match.params.userId],
-        friendships: state.entities.friendships,
-        users: state.entities.users
+        friendships: friendships,
+        users: state.entities.users,
+        // friendsIds: state.entities.users[ownProps.match.params.userId].friendIds
     })
 }
 

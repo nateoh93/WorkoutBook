@@ -8,6 +8,10 @@ class Api::PostsController < ApplicationController
 
         if params[:wallId]
             @posts = @posts.where(profile_user_id: params[:wallId])
+            # @posts = Post.all.where(profile_user_id: params[:wallId])
+            # if @posts.length == 0
+            #     return nil
+            # end
         end
         render :index
     end
@@ -40,7 +44,7 @@ class Api::PostsController < ApplicationController
     def destroy
         # debugger
         @post = Post.find_by(id: params[:id])
-        if current_user.id == @post.post_author_id && @post.destroy
+        if @post.destroy
             render :show
         else
             render json: ["Can't delete this post"], status: 422

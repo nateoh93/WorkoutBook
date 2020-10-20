@@ -3,14 +3,15 @@ import { RECEIVE_ALL_USERS, RECEIVE_CURRENT_USER, RECEIVE_USER } from '../action
 const usersReducer = (state = {}, action) => {
     Object.freeze(state);
     let nextState = Object.assign({}, state);
+    debugger
     switch (action.type) {
         case RECEIVE_ALL_USERS:
             return Object.assign({}, action.usersPayload.users)
         case RECEIVE_CURRENT_USER:
-            nextState[action.currentUser.id] = action.currentUser
+            nextState[action.currentUser.user.id] = action.currentUser.user
             return nextState;
         case RECEIVE_USER:
-            nextState[action.user.id] = action.user
+            nextState[action.user.user.id] = action.user.user
             return nextState;
         default:
             return state;

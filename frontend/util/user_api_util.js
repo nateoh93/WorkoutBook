@@ -23,10 +23,13 @@ export const updateUser = (user) => {
 }
 
 export const updateUserInfo = (user) => {
+    debugger
     return $.ajax({
         method: 'PATCH',
         url: `/api/users/${user.id}`,
-        data: {user}
+        data: user,
+        contentType: false,
+        processData: false
     })
 }
 

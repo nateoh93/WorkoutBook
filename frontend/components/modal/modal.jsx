@@ -20,7 +20,7 @@ function Modal({ modal, closeModal }) {
             component = <SignupFormContainer />;
             break;
         case 'Update Info':
-            component = <EditProfileContainer />;
+            component = <EditProfileContainer id={modal.id}/>;
             break;
         case 'Create Post':
             component = <CreatePostContainer />;
