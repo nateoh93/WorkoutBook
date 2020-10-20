@@ -129,6 +129,31 @@ friendship5 = Friendship.create!(
     friend_id: user5.id
 )
 
+friendship6 = Friendship.create!(
+    user_id: user2.id,
+    friend_id: user1.id
+)
+
+friendship7 = Friendship.create!(
+    user_id: user3.id,
+    friend_id: user1.id
+)
+
+friendship8 = Friendship.create!(
+    user_id: user4.id,
+    friend_id: user1.id
+)
+
+friendship9 = Friendship.create!(
+    user_id: user5.id,
+    friend_id: user1.id
+)
+
+friendship10 = Friendship.create!(
+    user_id: user5.id,
+    friend_id: user2.id
+)
+
 post1 = Post.create!(
     body: 'I just ran 50 miles in 5 hours! It hurt soooo good. Yoga time to unwind!',
     profile_user_id: user1.id,
