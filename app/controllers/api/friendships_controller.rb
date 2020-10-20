@@ -6,7 +6,7 @@ class Api::FriendshipsController < ApplicationController
             @friends = @friends.where(user_id: params[:wallId])
         end
         # debugger
-        render :index+
+        render :index
     end
 
     def create
