@@ -1,4 +1,4 @@
-import { RECEIVE_COMMENT } from "../actions/comment_actions";
+import { RECEIVE_COMMENT, REMOVE_COMMENT } from "../actions/comment_actions";
 import { RECEIVE_ALL_POSTS, RECEIVE_POST, REMOVE_POST } from "../actions/post_actions";
 
 
@@ -9,7 +9,7 @@ const postsReducer = (state={}, action) => {
     // // } else {
     // }
 
-    // debugger
+    debugger
     Object.freeze(state);
     let nextState = Object.assign({}, state);
 
@@ -28,6 +28,13 @@ const postsReducer = (state={}, action) => {
             if (!post.commentIds.includes(action.comment.id)) {
                 post.commentIds.push(action.comment.id)
             }
+            return nextState;
+        case REMOVE_COMMENT:
+            let newCommentIds = nextState[action.comment.post_id].commentIds.filter(id => {
+                id !== action.comment.id
+            })
+            nextState[action.comment.post_id] = newCommentIds;
+            debugger
             return nextState;
         default:
             return state;
