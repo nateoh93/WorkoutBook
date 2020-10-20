@@ -3,13 +3,13 @@ import { RECEIVE_ALL_POSTS, RECEIVE_POST, REMOVE_POST } from "../actions/post_ac
 
 
 const postsReducer = (state={}, action) => {
-    let posts;
+    // let posts;
     // if (action.posts.posts !== undefined) {
     //     posts = action.posts.posts
     // // } else {
     // }
 
-    // debugger
+    debugger
     Object.freeze(state);
     let nextState = Object.assign({}, state);
 
@@ -22,6 +22,12 @@ const postsReducer = (state={}, action) => {
             return nextState;
         case REMOVE_POST:
             delete nextState[action.postId]
+            return nextState;
+        case RECEIVE_COMMENT:
+            let post = action.comment.post_id;
+            if (!post.commentIds.includes(action.comment.id)) {
+                post.commentIds.push(action.comment.id)
+            }
             return nextState;
         default:
             return state;
