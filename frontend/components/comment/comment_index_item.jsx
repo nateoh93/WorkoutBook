@@ -46,10 +46,14 @@ class CommentIndexItem extends React.Component {
         debugger
         return (
             <li>
-                <img className='comment-author-pic' src={this.props.users[this.props.comment.comment_author_id].profilePhoto}/>
+                <Link to={`/users/${this.props.comment.comment_author_id}`}>
+                    <img className='comment-author-pic' src={this.props.users[this.props.comment.comment_author_id].profilePhoto} />
+                </Link>
                 <div className='comment-index-item-container'>
                     <div className='comment-name'>
-                        {this.props.users[this.props.comment.comment_author_id].fname} {this.props.users[this.props.comment.comment_author_id].lname}
+                        <Link to={`/users/${this.props.comment.comment_author_id}`}>
+                            {this.props.users[this.props.comment.comment_author_id].fname} {this.props.users[this.props.comment.comment_author_id].lname}
+                        </Link>
                     </div>
                     <div className='comment-body'>{this.props.comment.body}</div>
                 </div>
