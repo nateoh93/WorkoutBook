@@ -30,7 +30,7 @@ class ProfileBio extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState) {
-        debugger
+        // debugger
         if (prevProps.user.id !== this.props.user.id || 
             prevProps.user.bio !== this.props.user.bio || prevProps.user.city !== this.props.user.city ||
             prevProps.user.school !== this.props.user.school || prevProps.user.work !== this.props.user.work) {
@@ -53,7 +53,7 @@ class ProfileBio extends React.Component {
         let year = this.state.birthday.slice(0, 4);
         let day = this.state.birthday.slice(8, 10);
         
-        debugger
+        // debugger
 
         return (
             <>
