@@ -152,3 +152,63 @@ post3 = Post.create!(
     profile_user_id: user2.id,
     post_author_id: user3.id
 )
+
+post4 = Post.create!(
+    body: 'Should I get a burger? I just worked out though...',
+    profile_user_id: user1.id,
+    post_author_id: user5.id
+)
+
+post5 = Post.create!(
+    body: "I'm about to do the murph challenge. 1 mile run, 100 pullups, 200 pushups, 300 squats, 1 mile run. Wish me luck!",
+    profile_user_id: user4.id,
+    post_author_id: user4.id
+)
+
+post6 = Post.create!(
+    body: "Hey Ken, show us your burpee form!",
+    profile_user_id: user3.id,
+    post_author_id: user4.id
+)
+
+post7 = Post.create!(
+    body: "Can't wait to see you this weekend for a brutal workout followed by a yummy smoothie!",
+    profile_user_id: user5.id,
+    post_author_id: user4.id
+)
+
+post8 = Post.create!(
+    body: "Amazing morning session!",
+    profile_user_id: user2.id,
+    post_author_id: user5.id
+)
+
+# postphoto3 = open('https://workoutbook-seeds.s3-us-west-1.amazonaws.com/morning_session.jpg')
+# post8.post_photo.attach(io: postphoto3, filename: 'morning_workout.jpg')
+
+post9 = Post.create!(
+    body: "Fall leaves and chill weather but still getting after it!",
+    profile_user_id: user3.id,
+    post_author_id: user3.id
+)
+
+# postphoto4 = open('https://workoutbook-seeds.s3-us-west-1.amazonaws.com/fall_run.jpg')
+# post9.post_photo.attach(io: postphoto4, filename: 'fall_run.jpg')
+
+post10 = Post.create!(
+    body: "Check out this view from my hike the other day!",
+    profile_user_id: user4.id,
+    post_author_id: user5.id
+)
+
+# postphoto5 = open('https://workoutbook-seeds.s3-us-west-1.amazonaws.com/hike1.jpg')
+# post10.post_photo.attach(io: postphoto5, filename: 'hike1.jpg')
+
+post11 = Post.create!(
+    body: "You showed me an awesome pic so I wanted to try to one up you. How cool is this?",
+    profile_user_id: user5.id,
+    post_author_id: user4.id
+)
+
+# postphoto6 = open('https://workoutbook-seeds.s3-us-west-1.amazonaws.com/hike2.jpg')
+# post11.post_photo.attach(io: postphoto6, filename: 'hik2.jpg')
