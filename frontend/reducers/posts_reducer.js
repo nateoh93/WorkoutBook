@@ -16,7 +16,7 @@ const postsReducer = (state={}, action) => {
     switch (action.type) {
         case RECEIVE_ALL_POSTS:
             // nextState = action.posts.posts
-            return Object.assign(nextState, action.posts.posts);
+            return Object.assign({}, action.posts.posts);
         case RECEIVE_POST:
             nextState[action.post.post.id] = action.post.post
             return nextState;
@@ -24,6 +24,7 @@ const postsReducer = (state={}, action) => {
             delete nextState[action.postId]
             return nextState;
         case RECEIVE_COMMENT:
+            debugger
             let post = nextState[action.comment.post_id];
             if (!post.commentIds.includes(action.comment.id)) {
                 post.commentIds.push(action.comment.id)

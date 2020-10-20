@@ -8,9 +8,11 @@ const mSTP = (state, ownProps) => {
     // debugger
 
     let comments = [];
-    ownProps.post.commentIds.forEach( commentId => {
-        comments.push(state.entities.comments[commentId])
-    })
+    if (ownProps.post.commentIds) {
+        ownProps.post.commentIds.forEach( commentId => {
+            comments.push(state.entities.comments[commentId])
+        })
+    }
 
     return ({
         // posts: Object.values(state.entities.posts),
