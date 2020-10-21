@@ -59,19 +59,42 @@
     background: #f5f6f7;
 }
 
+.feed-link {
+    margin-top: 5%;
+    position: relative;
+    height: 25px;
+}
+
 .feed-home-button {
     border: 1px solid #cecccc;
     background: white;
-    height: 10%;
+    height: 100%;
     display: flex;
     align-items: center;
-    padding: 0 0 0 15%;
+    padding: 0 0 0 20%;
     font-size: 13px;
     margin-top: 5%
+
+}
+
+.feed-home-icon {
+    position: absolute;
+    background: image-url('icons.png');
+    width: 20px;
+    height: 18px;
+    background-position-y: -887px;
+    background-position-x: 0px;
+    background-size: 58px 1608px;
+    top: 49%;
+    left: 3%
 }
 
 .newsfeed-name {
     padding-left: 5%;
+}
+
+.newsfeed-name:hover {
+    background: white;
 }
 
 .link-icon {

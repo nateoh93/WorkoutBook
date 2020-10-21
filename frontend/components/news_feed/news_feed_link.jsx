@@ -17,7 +17,10 @@ class NewsFeedLink extends React.Component {
                     </Link>
                 </div>
 
-                <li className='feed-home-button'><Link to='/feed'>News Feed</Link></li>
+                <div className='feed-link'>
+                    <div className='feed-home-button'><Link to='/feed'>News Feed</Link></div>
+                    <div className='feed-home-icon'></div>
+                </div>
 
                 <div className='newsfeed-outside-links'>
                     <h1>Shortcuts</h1>
