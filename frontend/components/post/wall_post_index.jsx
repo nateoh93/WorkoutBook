@@ -43,15 +43,3 @@ class WallPostIndex extends React.Component {
 }
 
 export default WallPostIndex
-
-
-// wallpost index container 
-// V
-// wallpost index
-// V
-// post-index item container
-// post-index item
-// V
-// comment index
-// V
-// comment index item
