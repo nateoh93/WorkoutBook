@@ -13,6 +13,7 @@ class CommentIndexItem extends React.Component {
         this.changeComment = this.changeComment.bind(this);
         this.update = this.update.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleCancel = this.handleCancel.bind(this);
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -54,9 +55,12 @@ class CommentIndexItem extends React.Component {
         }
     }
 
-    changeComment() {
+    changeComment(e) {
         // debugger
+        // e.preventDefault();
         this.setState({edit: true})
+
+        // document.getElementById(`comment-edit-input-id-${this.props.comment.id}`).focus();
     }
 
     update(field) {
@@ -78,20 +82,28 @@ class CommentIndexItem extends React.Component {
         })
     }
 
+    handleCancel(e) {
+        e.preventDefault();
+        this.setState({edit: false})
+    }
+
 
     render() {
         // debugger
         let commentDisplay;
-        this.state.edit === true ? commentDisplay = <input className='comment-body' type="text"
-            onChange={this.update('body')}
-            value={this.state.body}
-            onKeyPress={ e => {
-                if (e.key === 'Enter') {
-                e.preventDefault();
-                this.handleSubmit();}
-            }
-            }
-        /> : commentDisplay = <div className='comment-body'>{this.state.body}</div>
+        this.state.edit === true ? commentDisplay = 
+            <>
+                <input className='comment-body' type="text"
+                    onChange={this.update('body')}
+                    value={this.state.body}
+                    onKeyPress={ e => {
+                        if (e.key === 'Enter') {
+                        e.preventDefault();
+                        this.handleSubmit();}
+                    }}
+                />
+                {/* <button onClick={this.setState({edit: false})}>Cancel</button> */}
+            </> : commentDisplay = <div className='comment-body'>{this.state.body}</div>
     
 
         return (
@@ -106,7 +118,13 @@ class CommentIndexItem extends React.Component {
                         </Link>
                     </div>
                     {commentDisplay}
+
+                    {this.state.edit === true ? 
+                        <div className='cancel-edit-comment'
+                            // id={`comment-edit-input-id-${this.props.comment.id}`}
+                            onClick={this.handleCancel}>Cancel</div> : null}
                 </div>
+                
                 {this.displayDropdownMenu()}
             </li>
         );
