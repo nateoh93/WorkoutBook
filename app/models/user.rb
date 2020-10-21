@@ -55,6 +55,14 @@ class User < ApplicationRecord
         foreign_key: :comment_author_id,
         class_name: :Comment
 
+    has_many :sent_requests,
+        foreign_key: :requester_id,
+        class_name: :FriendRequest
+
+    has_many :received_requests,
+        foreign_key: :requestee_id,
+        class_name: :FriendRequest
+
     def password=(password)
         @password = password
         self.password_digest = BCrypt::Password.create(password)
