@@ -38,7 +38,10 @@ class Profile extends React.Component {
                             </div>
 
                             <div className='profile-right'>
-                                <CreatePostContainer/>
+                                <div className='profile-right-post'>
+                                    <CreatePostContainer/>
+                                </div>
+
                                 <WallPostIndexContainer />
                             </div>
 

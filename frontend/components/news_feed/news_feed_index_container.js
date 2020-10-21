@@ -1,21 +1,19 @@
 import { connect } from 'react-redux';
-
-import { fetchAllUsers } from '../../actions/session_actions';
-import NewsFeed from './news_feed';
+import NewsFeedIndex from './news_feed_index';
 
 const mapStateToProps = (state) => {
     return {
-        currentUser: state.entities.users[state.session.id]
+        // currentUser: state.entities.users[state.session.id]
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchAllUsers: () => dispatch(fetchAllUsers())
+        // fetchAllUsers: () => dispatch(fetchAllUsers())
     }
 };
 
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(NewsFeed);
+)(NewsFeedIndex);

@@ -85,7 +85,7 @@ class PostForm extends React.Component {
         
 
         return(
-            <div className='profile-right-post'>
+            <>
                 <h3>Create Post</h3>
                 <div className='post-form-container'>
                     {/* <form className='create-post-form' onSubmit={this.handleSubmit}> */}
@@ -107,7 +107,7 @@ class PostForm extends React.Component {
                         </div>
                     </form>
                 </div>
-            </div>
+            </>
         );
     }
 }

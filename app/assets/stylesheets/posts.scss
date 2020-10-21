@@ -119,9 +119,20 @@
     z-index: 1;
 }
 
+.profile-right-post {
+    margin: 3% 0 0 0%;
+}
+
 .profile-right-post h3 {
     border-top-right-radius: 3px;
     border-top-left-radius: 3px;
+    padding: 2% 0 2% 2%;
+    font-size: 16px;
+    font-weight: bold;
+    border-top: 1px solid #cecccc;
+    border-right: 1px solid #cecccc;
+    border-left: 1px solid #cecccc;
+    background: #f5f6f7;
 }
 
 .update-post-form {
