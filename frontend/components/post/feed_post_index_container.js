@@ -7,7 +7,7 @@ import { deletePost, fetchPosts } from '../../actions/post_actions';
 import FeedPostIndex from './feed_post_index'
 
 const mSTP = (state, ownProps) => {
-    debugger
+    // debugger
 
     const postProfileId = ownProps.match.params.userId || state.session.id
 

@@ -1,6 +1,6 @@
 // export const fetchPosts = () => {
 export const fetchPosts = (wallId) => {
-    debugger
+    // debugger
     return $.ajax({
         url: `/api/posts`,
         method: `GET`,

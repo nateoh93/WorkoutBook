@@ -45,12 +45,12 @@ class FeedPostIndex extends React.Component {
     // }
 
     render() {
-        debugger
+        // debugger
         if (this.props.posts.length === 0) {
             return null;
         } else {
             let allPosts = [];
-            debugger
+            // debugger
             this.props.newsfeedUsers.forEach( user => {
                 // debugger
                 this.props.posts.forEach( post => {
@@ -63,7 +63,7 @@ class FeedPostIndex extends React.Component {
     
             const postIndexList = allPosts.reverse().map(post => {
             // const postIndexList = this.state.posts.reverse().map(post => {
-                debugger
+                // debugger
                 return <PostIndexItem key={post.id}
                     post={post}
                     deletePost={this.props.deletePost}
@@ -73,7 +73,7 @@ class FeedPostIndex extends React.Component {
                     users={this.props.users}
                 />
             });
-            debugger
+            // debugger
             return (
                 <ul className='wallpost-index'>
                     {postIndexList}

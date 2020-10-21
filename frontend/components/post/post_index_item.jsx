@@ -15,7 +15,7 @@ class PostIndexItem extends React.Component{
 
     componentDidUpdate(prevProps, prevState) {
         // if (prevProps.post.commentIds.length !== this.props.post.commentIds.length) {
-        //     this.props.fetchPost(this.props.postProfile.id)
+        //     this.props.fetchPost(this.props.post.profile_user_id)
         // }
     }
 
@@ -29,8 +29,8 @@ class PostIndexItem extends React.Component{
     displayDropdownMenu() {
         // debugger
         //consider whether to allow the profileUser to also delete / edit posts that are on his profile
-        if (this.props.currentUser.id === this.props.post.post_author_id || this.props.currentUser.id === this.props.postProfile.id) {
-        // if (this.props.currentUser.id === this.state.post_author_id || this.props.currentUser.id === this.props.postProfile.id) {
+        if (this.props.currentUser.id === this.props.post.post_author_id || this.props.currentUser.id === this.props.post.profile_user_id) {
+        // if (this.props.currentUser.id === this.state.post_author_id || this.props.currentUser.id === this.props.post.profile_user_id) {
             // if (this.props.currentUser.id === this.state.post_author_id) {
             if (this.props.currentUser.id === this.props.post.post_author_id) {
                 return (
@@ -83,15 +83,17 @@ class PostIndexItem extends React.Component{
         } else {
             time = `${hour}${min} AM`;
         }
-        debugger
+        // debugger
         const postAuthor = this.props.users[this.props.post.post_author_id]
         // const postAuthor = this.props.users[this.state.post_author_id]
         return (
             <div className='post-author-container'>
                 <Link to={`/users/${postAuthor.id}`}><img className='post-author-pic' src={postAuthor.profilePhoto} /></Link>
                 <div className='post-author-time-container'>
-                    {postAuthor.id === this.props.postProfile.id ? <div className='post-author'><Link to={`/users/${postAuthor.id}`}>{postAuthor.fname} {postAuthor.lname}</Link></div>
-                        : <div className='post-author'><Link to={`/users/${postAuthor.id}`}>{postAuthor.fname} {postAuthor.lname}</Link> ▸ <Link to={`/users/${this.props.postProfile.id}`}>{this.props.postProfile.fname} {this.props.postProfile.lname}</Link></div>}
+                    {postAuthor.id === this.props.post.profile_user_id ? <div className='post-author'><Link to={`/users/${postAuthor.id}`}>{postAuthor.fname} {postAuthor.lname}</Link></div>
+                        : <div className='post-author'>
+                            <Link to={`/users/${postAuthor.id}`}>{postAuthor.fname} {postAuthor.lname}</Link> ▸ <Link to={`/users/${this.props.post.profile_user_id}`}>
+                                {this.props.users[this.props.post.profile_user_id].fname} {this.props.users[this.props.post.profile_user_id].lname}</Link></div>}
                     <div className='post-time'>{month} {day}, {year} at {time}</div>
                 </div>
                     {this.displayDropdownMenu()}
