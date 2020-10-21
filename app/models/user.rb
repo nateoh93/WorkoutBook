@@ -63,6 +63,10 @@ class User < ApplicationRecord
         foreign_key: :requestee_id,
         class_name: :FriendRequest
 
+    has_many :likes,
+        foreign_key: :author_id,
+        class_name: :Likes
+        
     def password=(password)
         @password = password
         self.password_digest = BCrypt::Password.create(password)

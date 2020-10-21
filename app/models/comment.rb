@@ -8,4 +8,8 @@ class Comment < ApplicationRecord
     belongs_to :author,
         foreign_key: :comment_author_id,
         class_name: :User
+
+    has_many :likes, as: :likeable,
+        dependent: :destroy
+
 end
