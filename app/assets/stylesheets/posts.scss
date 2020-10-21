@@ -85,18 +85,28 @@
 
 .post-body {
     border-radius: 0;
-    width: 88%;
+    width: 83%;
     border: none;
     // resize: none;
-    padding-top: 3%;
+    padding-top: 5%;
     font-size: 13px;
-    
+    height: 80px;
 }
 
 .post-body-container {
     display: flex;
     justify-content: flex-end;
-    width: 100%
+    width: 100%;
+    position: relative;
+}
+
+.post-form-photo {
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    position: absolute;
+    top: 12%;
+    left: 5%;
 }
 
 .upload-photo-container {

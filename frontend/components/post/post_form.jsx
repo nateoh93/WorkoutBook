@@ -91,6 +91,7 @@ class PostForm extends React.Component {
                     {/* <form className='create-post-form' onSubmit={this.handleSubmit}> */}
                     <form className='create-post-form'>
                         <div className='post-body-container'>
+                            <img className='post-form-photo' src={this.props.currentUser.profilePhoto}/>
                             <textarea className='post-body' onChange={this.update('body')} value={this.state.body} placeholder="What's on your mind?"></textarea>
                         </div>
                         {showPreview}
