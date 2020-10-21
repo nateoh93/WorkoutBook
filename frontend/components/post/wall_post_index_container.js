@@ -24,7 +24,6 @@ const mDTP = (dispatch) => {
         // createPost: (post) => dispatch(createPost(post)),
         // closeModal: () => dispatch(closeModal()),
         fetchPosts: (wallId) => dispatch(fetchPosts(wallId)),
-        // fetchPosts: () => dispatch(fetchPosts()),
         deletePost: (postId) => dispatch(deletePost(postId))
     })
 }

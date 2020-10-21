@@ -7,6 +7,7 @@ json.comments do
     @post.comments.each do |comment|
         json.set! comment.id do 
             json.extract! comment, :id, :body, :post_id, :comment_author_id
+            json.likeIds comment.like_ids
         end 
     end
 end
