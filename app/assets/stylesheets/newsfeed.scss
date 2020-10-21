@@ -35,6 +35,7 @@
     height: 35px;
     display: flex;
     align-items: center;
+    border-radius: 3px;
 }
 
 .feed-profile-photo a {
@@ -81,6 +82,7 @@
     align-items: center;
     padding: 0 0 0 20%;
     font-size: 13px;
+    border-radius: 3px;
 }
 
 .feed-home-icon {
@@ -127,7 +129,10 @@
 
 .newsfeed-outside-links a:hover {
     background: white;
+}
 
+.newsfeed-outside-links a {
+    border-radius: 3px;
 }
 
 .newsfeed-outside-links h1 {
