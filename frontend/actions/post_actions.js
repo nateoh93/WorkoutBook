@@ -5,6 +5,7 @@ export const RECEIVE_POST = 'RECEIVE_POST';
 export const REMOVE_POST = 'REMOVE_POST';
 
 const receiveAllPosts = posts => {
+    debugger
     return({
         type: RECEIVE_ALL_POSTS,
         posts
@@ -27,6 +28,7 @@ const removePost = postId => {
 
 // export const fetchPosts = () => dispatch => {
 export const fetchPosts = (wallId) => dispatch => {
+    debugger
     return PostAPIUtil.fetchPosts(wallId)
         .then(allPosts => dispatch(receiveAllPosts(allPosts)))
 }

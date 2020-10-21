@@ -83,7 +83,7 @@ class PostIndexItem extends React.Component{
         } else {
             time = `${hour}${min} AM`;
         }
-        
+        debugger
         const postAuthor = this.props.users[this.props.post.post_author_id]
         // const postAuthor = this.props.users[this.state.post_author_id]
         return (

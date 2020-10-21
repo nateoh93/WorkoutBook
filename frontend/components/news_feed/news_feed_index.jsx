@@ -1,5 +1,6 @@
 import React from 'react';
 import CreatePostContainer from '../post/create_post_container';
+import FeedPostIndexContainer from '../post/feed_post_index_container';
 
 class NewsFeedIndex extends React.Component {
     constructor(props) {
@@ -15,6 +16,7 @@ class NewsFeedIndex extends React.Component {
             <div className='newsfeed-main'>
                 <div className='news-feed-post-form-container'>
                     <CreatePostContainer />
+                    <FeedPostIndexContainer />
                 </div>
             </div>
         );

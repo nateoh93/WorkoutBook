@@ -4,11 +4,12 @@ class Api::PostsController < ApplicationController
     def index
         # debugger
 
-        @posts = Post.all
-
-        if params[:wallId]
-            @posts = @posts.where(profile_user_id: params[:wallId])
-            # @posts = Post.all.where(profile_user_id: params[:wallId])
+        
+        if params[:wallId] == 'all'
+            @posts = Post.all
+        else
+            # @posts = @posts.where(profile_user_id: params[:wallId])
+            @posts = Post.all.where(profile_user_id: params[:wallId])
             # if @posts.length == 0
             #     return nil
             # end

@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { fetchPosts } from '../../actions/post_actions';
 
 import { fetchAllUsers } from '../../actions/session_actions';
 import NewsFeed from './news_feed';
@@ -11,7 +12,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchAllUsers: () => dispatch(fetchAllUsers())
+        fetchAllUsers: () => dispatch(fetchAllUsers()),
+        fetchPosts: (wallId) => dispatch(fetchPosts(wallId))
     }
 };
 

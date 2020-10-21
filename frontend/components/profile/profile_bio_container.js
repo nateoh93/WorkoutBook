@@ -4,11 +4,11 @@ import { fetchUser } from '../../actions/session_actions';
 import ProfileBio from './profile_bio';
 
 const mSTP = (state, ownProps) => {
-    // debugger
     let friendships = [];
     if (state.entities.friendships[ownProps.match.params.userId] !== undefined) {
         friendships = Object.values(state.entities.friendships[ownProps.match.params.userId])
     }
+    // debugger
 
     return({
         user: state.entities.users[ownProps.match.params.userId],
