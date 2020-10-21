@@ -68,7 +68,7 @@ class ProfileBio extends React.Component {
                         <li>Works as a <font>{this.state.work}</font></li>
                     </ul>
                     <ul className='profile-bio-icons'>
-                        <div className='heart-icon'></div>
+                        <div className='birth-icon'></div>
                         <div className='school-icon'></div>
                         <div className='house-icon'></div>
                         <div className='work-icon'></div>

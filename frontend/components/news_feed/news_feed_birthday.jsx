@@ -13,9 +13,20 @@ class NewsFeedBirthday extends React.Component {
     render() {
         return (
             <div className='newsfeed-right'>
-
-                Birthdays go here
-                <div className='copyright'>&copy; Nathan Oh 2020</div>
+                <div className='birthdays'>
+                    <div className='birthday-icon'></div>
+                    <p>No upcoming birthdays</p>
+                </div>
+                
+                <div className='calendar'>
+                    <div className='calendar-icon'></div>
+                    <p>No upcoming events</p>
+                </div>
+                
+                <div className='credits-container'>
+                    <div className='credits'>Inspired by Facebook</div>
+                    <div className='copyright-newsfeed'>&copy; Nathan Oh 2020</div>
+                </div>
             </div>
         );
     }
