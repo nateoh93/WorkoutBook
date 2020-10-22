@@ -1,25 +1,16 @@
-class Api::CommentsController < ApplicationController
+class Api::FriendRequestsController < ApplicationController
     # before_action :require_logged_in
 
-    def index
-        @requests = FriendRequest.where(requestee_id: current_user.id)
-        render :index
-    end
-
     def create
-        @request = FriendRequest.new(friend_params)
+        # debugger
+        @request = FriendRequest.new(request_params)
+        @request.requester_id = current_user.id
 
         if @request.save
             render :show
         else
             render json: @request.errors.full_messages, status: 422
         end
-    end
-
-    def update
-        @request = FriendRequest.find_by(id: params[:id])
-
-        
     end
 
     def destroy
@@ -34,6 +25,6 @@ class Api::CommentsController < ApplicationController
 
     private
     def request_params
-        params.require(:friend_requests).permit(:requester_id, :requestee_id)
+        params.require(:friend_request).permit(:requester_id, :requestee_id)
     end
 end
