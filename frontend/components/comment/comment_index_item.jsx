@@ -34,7 +34,7 @@ class CommentIndexItem extends React.Component {
             likeable_id: this.props.comment.id
         };
         let toggle = false;
-        debugger
+        // debugger
         this.props.likes.forEach(like => {
             if (like.author_id === this.props.currentUser.id) {
                 newLike = like;

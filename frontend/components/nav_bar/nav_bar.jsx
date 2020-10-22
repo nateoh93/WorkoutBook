@@ -1,6 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
+import FriendRequestContainer from '../friend/friend_request_container';
+
 class NavBar extends React.Component{
     constructor(props) {
         super(props)
@@ -40,6 +42,9 @@ class NavBar extends React.Component{
                         </div>
     
                         <div className='navbar-right'>
+                            
+                            <FriendRequestContainer />
+
                             <div className='nav-profile-photo'><Link to={`/users/${this.props.currentUser.id}`}><img className='navbar-pic' src={this.props.currentUser.profilePhoto} /></Link></div>
                             
                             <div className='nav-button'>

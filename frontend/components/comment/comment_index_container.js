@@ -8,7 +8,7 @@ import { getLikes } from '../../reducers/selectors';
 
 
 const mSTP = (state, ownProps) => {
-    debugger
+    // debugger
 
     let comments = [];
     if (ownProps.post.commentIds) {
@@ -32,7 +32,7 @@ const mSTP = (state, ownProps) => {
 }
 
 const mDTP = (dispatch) => {
-    debugger
+    // debugger
     return ({
         updateComment: (comment) => dispatch(updateComment(comment)),
         deleteComment: (comment) => dispatch(deleteComment(comment)),

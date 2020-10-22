@@ -13,6 +13,7 @@ Friendship.destroy_all
 Post.destroy_all
 Comment.destroy_all
 Like.destroy_all
+FriendRequest.destroy_all
 
 user1 = User.create!(
     email: 'demo_user@squat.com',
@@ -111,7 +112,7 @@ friendship1 = Friendship.create!(
     friend_id: user2.id
 )
 
-friendship6 = Friendship.create!(
+friendship_inverse1 = Friendship.create!(
     user_id: user2.id,
     friend_id: user1.id
 )
@@ -121,39 +122,51 @@ friendship2 = Friendship.create!(
     friend_id: user3.id
 )
 
-friendship7 = Friendship.create!(
+friendship_inverse2 = Friendship.create!(
     user_id: user3.id,
     friend_id: user1.id
 )
 
 friendship3 = Friendship.create!(
-    user_id: user1.id,
-    friend_id: user4.id
-)
-
-friendship8 = Friendship.create!(
-    user_id: user4.id,
-    friend_id: user1.id
-)
-
-friendship4 = Friendship.create!(
-    user_id: user1.id,
-    friend_id: user5.id
-)
-
-friendship9 = Friendship.create!(
-    user_id: user5.id,
-    friend_id: user1.id
-)
-friendship5 = Friendship.create!(
     user_id: user2.id,
     friend_id: user5.id
 )
 
-friendship10 = Friendship.create!(
+friendship_inverse3 = Friendship.create!(
     user_id: user5.id,
     friend_id: user2.id
 )
+
+request1 = FriendRequest.create!(
+    requester_id: user1.id,
+    requestee_id: user4.id,
+)
+
+request2 = FriendRequest.create!(
+    requester_id: user5.id,
+    requestee_id: user1.id,
+)
+
+# friendship3 = Friendship.create!(
+#     user_id: user1.id,
+#     friend_id: user4.id
+# )
+
+# friendship_inverse3 = Friendship.create!(
+#     user_id: user4.id,
+#     friend_id: user1.id
+# )
+
+# friendship4 = Friendship.create!(
+#     user_id: user1.id,
+#     friend_id: user5.id
+# )
+
+# friendship_inverse4 = Friendship.create!(
+#     user_id: user5.id,
+#     friend_id: user1.id
+# )
+
 
 post1 = Post.create!(
     body: 'I just ran 50 miles in 5 hours! It hurt soooo good. Yoga time to unwind!',

@@ -10,3 +10,17 @@ export const getLikes = (state, item ) => {
 
     return likes
 }
+
+export const receivedRequests = (state, id) => {
+    debugger
+    let requestedUsers = [];
+    if (Object.keys(state.entities.friendRequests).length === 0) {
+        return requestedUsers;
+    } else {
+        Object.values(state.entities.friendRequests[id]).forEach ( request => {
+            requestedUsers.push(state.entities.users[request.requester_id]);
+        });
+    
+        return requestedUsers
+    }
+}

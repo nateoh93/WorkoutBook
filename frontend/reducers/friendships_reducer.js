@@ -1,3 +1,4 @@
+import { ACCEPT_FRIENDSHIP, REMOVE_FRIENDSHIP } from '../actions/friend_actions';
 import { RECEIVE_ALL_USERS, RECEIVE_USER } from '../actions/session_actions'
 
 const friendshipReducer = (state = {}, action) => {
@@ -12,6 +13,9 @@ const friendshipReducer = (state = {}, action) => {
         case ACCEPT_FRIENDSHIP:
             nextState[action.friendship.friend.id] = action.friendship.friend
             nextState[action.friendship.inverse_friend.id] = action.friendship.inverse_friend
+            return nextState;
+        case REMOVE_FRIENDSHIP:
+            delete nextState[action.friendship.id];
             return nextState;
         default:
             return state;

@@ -18,13 +18,13 @@ const commentsReducer = (state = {}, action) => {
         case RECEIVE_ALL_POSTS:
             return Object.assign(nextState, action.posts.comments)
         case RECEIVE_LIKE:
-            debugger
+            // debugger
             if (action.like.likeable_type === 'Comment') {
                 nextState[action.like.likeable_id].likeIds.push(action.like.id)
             }
             return nextState;
         case REMOVE_LIKE:
-            debugger
+            // debugger
             if (action.like.likeable_type === 'Comment') {
                 let newLikeIds = nextState[action.like.likeable_id].likeIds.filter(id => id !== action.like.id);
                 nextState[action.like.likeable_id].likeIds = newLikeIds;

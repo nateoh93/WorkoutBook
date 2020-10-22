@@ -15,7 +15,7 @@ class Like extends React.Component {
 
         // const display = { amount = this.props.likes.length, liked: this.props.liked}
 
-        debugger
+        // debugger
 
         if (this.props.type === 'Post') {
             if (amount === 0) {
