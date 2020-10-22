@@ -6,7 +6,10 @@ import CommentIndexContainer from '../comment/comment_index_container';
 class PostIndexItem extends React.Component{
     constructor(props) {
         super(props);
-        // this.state = this.props.post
+        this.state = {
+            isLiked: false,
+        }
+
         this.destroyPost = this.destroyPost.bind(this);
         this.displayDropdownMenu = this.displayDropdownMenu.bind(this);
         this.displayPostAuthor = this.displayPostAuthor.bind(this);
@@ -18,6 +21,8 @@ class PostIndexItem extends React.Component{
         //     this.props.fetchPost(this.props.post.profile_user_id)
         // }
     }
+
+
 
     destroyPost(e) {
         e.preventDefault();

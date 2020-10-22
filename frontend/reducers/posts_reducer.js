@@ -1,4 +1,5 @@
 import { RECEIVE_COMMENT, REMOVE_COMMENT } from "../actions/comment_actions";
+import { RECEIVE_LIKE, REMOVE_LIKE } from "../actions/like_actions";
 import { RECEIVE_ALL_POSTS, RECEIVE_POST, REMOVE_POST } from "../actions/post_actions";
 
 
@@ -32,9 +33,20 @@ const postsReducer = (state={}, action) => {
             }
             return nextState;
         case REMOVE_COMMENT:
-            debugger
+            // debugger
             let newCommentIds = nextState[action.comment.post_id].commentIds.filter(id => id !== action.comment.id)
             nextState[action.comment.post_id].commentIds = newCommentIds;
+            return nextState;
+        case RECEIVE_LIKE:
+            if (action.like.likeable_type === 'Post') {
+                nextState[action.like.likeable_id].likeIds.push(action.like.id)
+            }
+            return nextState;
+        case REMOVE_LIKE:
+            if (action.like.likeable_type === 'Post') {
+                let newLikeIds = nextState[action.like.likeable_id].likeIds.filter(id => id !== action.like.id);
+                nextState[action.like.likeable_id].likeIds = newLikeIds;
+            }
             return nextState;
         default:
             return state;
