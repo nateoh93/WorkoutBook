@@ -1,9 +1,10 @@
 import { connect } from 'react-redux';
 import Profile from './profile';
 import {fetchAllUsers, fetchFriends, fetchUser} from '../../actions/session_actions'
+import {withRouter} from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
-    // debugger
+    debugger
     return {
         friends: state.entities.friendships,
         user: state.entities.users[ownProps.match.params.userId],
@@ -19,7 +20,7 @@ const mapDispatchToProps = dispatch => {
     }
 };
 
-export default connect(
+export default withRouter(connect(
     mapStateToProps,
     mapDispatchToProps
-)(Profile);
+)(Profile));

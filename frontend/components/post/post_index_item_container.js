@@ -8,7 +8,7 @@ import { getLikes } from '../../reducers/selectors';
 const mSTP = (state, ownProps) => {
     // debugger
     const postProfileId = ownProps.match.params.userId || state.session.id
-    debugger
+    // debugger
     return ({
         users: state.entities.users,
         currentUser: state.entities.users[state.session.id],

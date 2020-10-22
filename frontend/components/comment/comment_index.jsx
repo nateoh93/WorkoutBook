@@ -1,5 +1,6 @@
 import React from 'react';
-import CommentIndexItem from './comment_index_item'
+import CommentIndexItem from './comment_index_item';
+import CommentIndexItemContainer from './comment_index_item_container';
 
 class CommentIndex extends React.Component {
     constructor(props) {
@@ -19,16 +20,16 @@ class CommentIndex extends React.Component {
     }
 
     render() {
-        // debugger
+        debugger
         const CommentIndexList = this.props.comments.map(comment => {
-            return <CommentIndexItem key={comment.id}
+            return <CommentIndexItemContainer key={comment.id}
                 comment={comment}
-                deleteComment={this.props.deleteComment}
-                updateComment={this.props.updateComment}
-                currentUser={this.props.currentUser}
-                users={this.props.users}
-                postProfile={this.props.postProfile}
-                fetchPost={this.props.fetchPost}
+                // deleteComment={this.props.deleteComment}
+                // updateComment={this.props.updateComment}
+                // currentUser={this.props.currentUser}
+                // users={this.props.users}
+                // postProfile={this.props.postProfile}
+                // fetchPost={this.props.fetchPost}
                 // post={this.props.post}
             />
         })

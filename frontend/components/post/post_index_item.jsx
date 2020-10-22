@@ -30,7 +30,7 @@ class PostIndexItem extends React.Component{
             likeable_id: this.props.post.id
         };
         let toggle = false;
-        debugger
+        // debugger
         this.props.likes.forEach( like => {
             if (like.author_id === this.props.currentUser.id) {
                 newLike = like;
@@ -46,7 +46,7 @@ class PostIndexItem extends React.Component{
     }
 
     displayLikes() {
-        debugger
+        // debugger
         let liked = false;
         this.props.likes.forEach(like => {
             if (like.author_id === this.props.currentUser.id) {
@@ -57,10 +57,11 @@ class PostIndexItem extends React.Component{
 
 
         if (this.props.likes.length !== undefined ) {
-            debugger
+            // debugger
             return <Like currentUser={this.props.currentUser}
                 liked={liked}
                 likes={this.props.likes}
+                type='Post'
             />
         } else {
             return null

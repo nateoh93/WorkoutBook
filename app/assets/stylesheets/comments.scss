@@ -159,3 +159,52 @@
 .cancel-edit-comment:hover {
     cursor: pointer;
 }
+
+.like-comment-btn {
+    position: absolute;
+    top: 94%;
+    left: 14%;
+    font-size: 11px;
+    color: #385898;
+}
+
+.like-comment-btn:hover {
+    cursor: pointer;
+}
+
+.display-like-count-comment {
+    width: 35px;
+    height: 22px;
+    top: 15px;
+    left: -20px;
+    margin: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    // background: white;
+    // border: 1px solid #cecccc;
+}
+
+.like-amount-comment {
+    // padding-left: 6%;
+    // font-size: 13px;
+    padding-left: 62%;
+}
+
+.like-icon-blue.comment {
+    top: 2%;
+    left: 11%
+}
+
+.like-icon-blue-comment {
+    background: image-url('icons-5.png');
+    background-size: auto;
+    background-position: 0 -1703px;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 4%;
+    left: 9%;
+}

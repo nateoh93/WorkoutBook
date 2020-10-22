@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { deleteComment, updateComment } from '../../actions/comment_actions';
 import { fetchPost } from '../../actions/post_actions';
-import CommentIndex from './comment_index';
+import CommentIndexItem from './comment_index_item';
 import { createLike, deleteLike } from '../../actions/like_actions';
 import { getLikes } from '../../reducers/selectors';
 
@@ -10,29 +10,29 @@ import { getLikes } from '../../reducers/selectors';
 const mSTP = (state, ownProps) => {
     debugger
 
-    let comments = [];
-    if (ownProps.post.commentIds) {
-        ownProps.post.commentIds.forEach( commentId => {
-            comments.push(state.entities.comments[commentId])
-        })
-    }
+    // let comments = [];
+    // if (ownProps.post.commentIds) {
+    //     ownProps.post.commentIds.forEach(commentId => {
+    //         comments.push(state.entities.comments[commentId])
+    //     })
+    // }
 
     const postProfileId = ownProps.match.params.userId || state.session.id
 
     return ({
-        posts: Object.values(state.entities.posts),
+        // posts: Object.values(state.entities.posts),
         currentUser: state.entities.users[state.session.id],
         users: state.entities.users,
-        postProfile: state.entities.users[ownProps.match.params.userId],
+        // postProfile: state.entities.users[ownProps.match.params.userId],
         postProfile: state.entities.users[postProfileId],
-        comments: comments,
-        post: ownProps.post,
-        likes: getLikes(state, ownProps.post)
+        comment: ownProps.comment,
+        // post: ownProps.post,
+        likes: getLikes(state, ownProps.comment)
     })
 }
 
 const mDTP = (dispatch) => {
-    debugger
+    // debugger
     return ({
         updateComment: (comment) => dispatch(updateComment(comment)),
         deleteComment: (comment) => dispatch(deleteComment(comment)),
@@ -42,4 +42,4 @@ const mDTP = (dispatch) => {
     })
 }
 
-export default withRouter(connect(mSTP, mDTP)(CommentIndex))
+export default withRouter(connect(mSTP, mDTP)(CommentIndexItem))

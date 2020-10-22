@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Like from '../likes/like'
 
 class CommentIndexItem extends React.Component {
     constructor(props) {
@@ -14,6 +15,8 @@ class CommentIndexItem extends React.Component {
         this.update = this.update.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleCancel = this.handleCancel.bind(this);
+        this.toggleLike = this.toggleLike.bind(this);
+        this.displayLikes = this.displayLikes.bind(this);
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -23,6 +26,52 @@ class CommentIndexItem extends React.Component {
         // }
     }
 
+    toggleLike(e) {
+        e.preventDefault();
+
+        let newLike = {
+            likeable_type: "Comment",
+            likeable_id: this.props.comment.id
+        };
+        let toggle = false;
+        debugger
+        this.props.likes.forEach(like => {
+            if (like.author_id === this.props.currentUser.id) {
+                newLike = like;
+                toggle = true;
+            }
+        })
+
+        if (toggle) {
+            this.props.deleteLike(newLike);
+        } else {
+            this.props.createLike(newLike);
+        }
+    }
+
+    displayLikes() {
+        debugger
+        let liked = false;
+        this.props.likes.forEach(like => {
+            if (like.author_id === this.props.currentUser.id) {
+                liked = true;
+            }
+        })
+
+
+
+        if (this.props.likes.length !== undefined) {
+            debugger
+            return <Like currentUser={this.props.currentUser}
+                liked={liked}
+                likes={this.props.likes}
+                type='Comment'
+            />
+        } else {
+            return null
+        }
+    }
+
     destroyComment(e) {
         e.preventDefault();
         // debugger
@@ -30,8 +79,9 @@ class CommentIndexItem extends React.Component {
     }
 
     displayDropdownMenu() {
-        // debugger
+        debugger
         if (this.props.currentUser.id === this.props.comment.comment_author_id || this.props.currentUser.id === this.props.postProfile.id) {
+            debugger
             if (this.props.currentUser.id === this.props.comment.comment_author_id) {
                 return (
                     <>
@@ -117,14 +167,19 @@ class CommentIndexItem extends React.Component {
                             {this.props.users[this.props.comment.comment_author_id].fname} {this.props.users[this.props.comment.comment_author_id].lname}
                         </Link>
                     </div>
+
                     {commentDisplay}
 
                     {this.state.edit === true ? 
                         <div className='cancel-edit-comment'
                             // id={`comment-edit-input-id-${this.props.comment.id}`}
                             onClick={this.handleCancel}>Cancel</div> : null}
+
                 </div>
+
+                {this.displayLikes()}
                 
+                <div className='like-comment-btn' onClick={this.toggleLike}>Like</div>
                 {this.displayDropdownMenu()}
             </li>
         );
