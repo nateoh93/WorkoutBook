@@ -4,7 +4,7 @@ import {fetchAllUsers, fetchFriends, fetchUser} from '../../actions/session_acti
 import {withRouter} from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
-    debugger
+    // debugger
     return {
         friends: state.entities.friendships,
         user: state.entities.users[ownProps.match.params.userId],

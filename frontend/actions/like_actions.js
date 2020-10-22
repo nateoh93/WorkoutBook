@@ -12,7 +12,7 @@ const receiveLike = like => {
 }
 
 const removeLike = like => {
-    debugger
+    // debugger
     return({
         type: REMOVE_LIKE,
         like
@@ -26,7 +26,7 @@ export const createLike = (like) => dispatch => {
 }
 
 export const deleteLike = (like) => dispatch => {
-    debugger
+    // debugger
     return (LikeAPIUtil.deleteLike(like))
         .then( () => dispatch(removeLike(like)))
 }

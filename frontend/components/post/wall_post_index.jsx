@@ -20,7 +20,7 @@ class WallPostIndex extends React.Component {
     }
 
     render() {
-        debugger
+        // debugger
         const postIndexList = this.props.posts.reverse().map( post => {
             return <PostIndexItemContainer key={post.id} 
                 post={post} 

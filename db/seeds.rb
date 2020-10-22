@@ -12,6 +12,7 @@ User.destroy_all
 Friendship.destroy_all
 Post.destroy_all
 Comment.destroy_all
+Like.destroy_all
 
 user1 = User.create!(
     email: 'demo_user@squat.com',
@@ -297,4 +298,28 @@ post11 = Post.create!(
 #     body: "Dang, what a view.",
 #     post_id: post11.id,
 #     comment_author_id: user5.id 
+# )
+
+like1 = Like.create!(
+    author_id: user1.id,
+    likeable_type: 'Post',
+    likeable_id: post1.id,
+)
+
+like2 = Like.create!(
+    author_id: user2.id,
+    likeable_type: 'Post',
+    likeable_id: post1.id,
+)
+
+like3 = Like.create!(
+    author_id: user3.id,
+    likeable_type: 'Post',
+    likeable_id: post1.id,
+)
+
+# like2 = Like.create!(
+#     author_id: user1.id,
+#     likeable_type: 'Comment',
+#     likeable_id: comment1.id,
 # )

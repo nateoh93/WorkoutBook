@@ -50,7 +50,7 @@ class CommentIndexItem extends React.Component {
     }
 
     displayLikes() {
-        debugger
+        // debugger
         let liked = false;
         this.props.likes.forEach(like => {
             if (like.author_id === this.props.currentUser.id) {
@@ -61,7 +61,7 @@ class CommentIndexItem extends React.Component {
 
 
         if (this.props.likes.length !== undefined) {
-            debugger
+            // debugger
             return <Like currentUser={this.props.currentUser}
                 liked={liked}
                 likes={this.props.likes}
@@ -79,9 +79,9 @@ class CommentIndexItem extends React.Component {
     }
 
     displayDropdownMenu() {
-        debugger
+        // debugger
         if (this.props.currentUser.id === this.props.comment.comment_author_id || this.props.currentUser.id === this.props.postProfile.id) {
-            debugger
+            // debugger
             if (this.props.currentUser.id === this.props.comment.comment_author_id) {
                 return (
                     <>

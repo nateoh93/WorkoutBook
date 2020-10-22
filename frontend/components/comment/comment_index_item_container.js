@@ -8,7 +8,7 @@ import { getLikes } from '../../reducers/selectors';
 
 
 const mSTP = (state, ownProps) => {
-    debugger
+    // debugger
 
     // let comments = [];
     // if (ownProps.post.commentIds) {
