@@ -6,10 +6,10 @@ class Api::PostsController < ApplicationController
 
         
         if params[:wallId] == 'all'
-            @posts = Post.all
+            @posts = Post.includes(:comments, :likes).all
         else
-            # @posts = @posts.where(profile_user_id: params[:wallId])
-            @posts = Post.all.where(profile_user_id: params[:wallId])
+            # @posts = Post.where(profile_user_id: params[:wallId])
+            @posts = Post.includes(:comments, :likes).all.where(profile_user_id: params[:wallId])
             # if @posts.length == 0
             #     return nil
             # end

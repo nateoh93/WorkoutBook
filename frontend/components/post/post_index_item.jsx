@@ -2,18 +2,18 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import CommentFormContainer from '../comment/comment_form_container'
 import CommentIndexContainer from '../comment/comment_index_container';
+import Like from '../likes/like'
 
 class PostIndexItem extends React.Component{
     constructor(props) {
         super(props);
-        this.state = {
-            isLiked: false,
-        }
 
         this.destroyPost = this.destroyPost.bind(this);
         this.displayDropdownMenu = this.displayDropdownMenu.bind(this);
         this.displayPostAuthor = this.displayPostAuthor.bind(this);
-        this.focusComment = this.focusComment.bind(this)
+        this.focusComment = this.focusComment.bind(this);
+        this.toggleLike = this.toggleLike.bind(this);
+        this.displayLikes = this.displayLikes.bind(this);
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -22,7 +22,50 @@ class PostIndexItem extends React.Component{
         // }
     }
 
+    toggleLike(e) {
+        e.preventDefault();
 
+        let newLike = {
+            likeable_type: "Post",
+            likeable_id: this.props.post.id
+        };
+        let toggle = false;
+        debugger
+        this.props.likes.forEach( like => {
+            if (like.author_id === this.props.currentUser.id) {
+                newLike = like;
+                toggle = true;
+            }
+        })
+        
+        if (toggle) {
+            this.props.deleteLike(newLike);
+        } else {
+            this.props.createLike(newLike);
+        }
+    }
+
+    displayLikes() {
+        debugger
+        let liked = false;
+        this.props.likes.forEach(like => {
+            if (like.author_id === this.props.currentUser.id) {
+                liked = true;
+            }
+        })
+
+
+
+        if (this.props.likes.length !== undefined ) {
+            debugger
+            return <Like currentUser={this.props.currentUser}
+                liked={liked}
+                likes={this.props.likes}
+            />
+        } else {
+            return null
+        }
+    }
 
     destroyPost(e) {
         e.preventDefault();
@@ -121,8 +164,11 @@ class PostIndexItem extends React.Component{
                 {/* <div className='wallpost-body'>{this.state.body}</div> */}
                 <img className='wallpost-photos' src={this.props.post.postPhoto} />
                 {/* <img className='wallpost-photos' src={this.state.postPhoto} /> */}
+                
+                {this.displayLikes()}
+
                 <div className='like-comment-container'>
-                    <div><i className="fas fa-thumbs-up likebtn"></i>Like</div>
+                    <div onClick={this.toggleLike}><i className="far fa-thumbs-up likebtn"></i>Like</div>
                     <div onClick={this.focusComment}><i className="far fa-comment-alt"></i>Comment</div>
                 </div>
 

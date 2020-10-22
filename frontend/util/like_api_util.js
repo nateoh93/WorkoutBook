@@ -7,6 +7,7 @@ export const createLike = like => {
 }
 
 export const deleteLike = like => {
+    debugger
     return $.ajax({
         url: `/api/likes/${like.id}`,
         method: `DELETE`,

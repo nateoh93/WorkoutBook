@@ -1,5 +1,6 @@
 import React from 'react';
 import PostIndexItem from './post_index_item'
+import PostIndexItemContainer from './post_index_item_container';
 
 class FeedPostIndex extends React.Component {
     constructor(props) {
@@ -64,13 +65,13 @@ class FeedPostIndex extends React.Component {
             const postIndexList = allPosts.reverse().map(post => {
             // const postIndexList = this.state.posts.reverse().map(post => {
                 // debugger
-                return <PostIndexItem key={post.id}
+                return <PostIndexItemContainer key={post.id}
                     post={post}
-                    deletePost={this.props.deletePost}
-                    currentUser={this.props.currentUser}
-                    postProfile={this.props.postProfile}
-                    otherForm={this.props.otherForm}
-                    users={this.props.users}
+                    // deletePost={this.props.deletePost}
+                    // currentUser={this.props.currentUser}
+                    // postProfile={this.props.postProfile}
+                    // otherForm={this.props.otherForm}
+                    // users={this.props.users}
                 />
             });
             // debugger

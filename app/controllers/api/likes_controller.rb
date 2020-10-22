@@ -2,6 +2,7 @@ class Api::LikesController < ApplicationController
     # before_action :require_logged_in
 
     def create
+        # debugger
         @like = Like.new(like_params)
         @like.author_id = current_user.id
 
@@ -13,6 +14,7 @@ class Api::LikesController < ApplicationController
     end
 
     def destroy
+        # debugger
         @like = Like.find_by(id: params[:id])
         if @like.destroy
             render json: {}

@@ -1,5 +1,6 @@
 import React from 'react';
 import PostIndexItem from './post_index_item'
+import PostIndexItemContainer from './post_index_item_container'
 
 class WallPostIndex extends React.Component {
     constructor(props) {
@@ -18,19 +19,16 @@ class WallPostIndex extends React.Component {
         }
     }
 
-    // displayPostsList() {
-    //     if ()
-    // }
-
     render() {
+        debugger
         const postIndexList = this.props.posts.reverse().map( post => {
-            return <PostIndexItem key={post.id} 
+            return <PostIndexItemContainer key={post.id} 
                 post={post} 
-                deletePost={this.props.deletePost}
-                currentUser={this.props.currentUser}
-                postProfile={this.props.postProfile}
-                otherForm={this.props.otherForm}
-                users={this.props.users}
+                // deletePost={this.props.deletePost}
+                // currentUser={this.props.currentUser}
+                // postProfile={this.props.postProfile}
+                // otherForm={this.props.otherForm}
+                // users={this.props.users}
                 />
         })
 

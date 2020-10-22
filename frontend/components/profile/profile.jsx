@@ -15,7 +15,7 @@ class Profile extends React.Component {
 
     componentDidMount() {
         // debugger
-        // this.props.fetchAllUsers()
+        this.props.fetchAllUsers()
         // this.props.fetchUser(this.props.user.id)
     }
 

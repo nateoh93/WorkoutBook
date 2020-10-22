@@ -38,11 +38,13 @@ const postsReducer = (state={}, action) => {
             nextState[action.comment.post_id].commentIds = newCommentIds;
             return nextState;
         case RECEIVE_LIKE:
+            debugger
             if (action.like.likeable_type === 'Post') {
                 nextState[action.like.likeable_id].likeIds.push(action.like.id)
             }
             return nextState;
         case REMOVE_LIKE:
+            debugger
             if (action.like.likeable_type === 'Post') {
                 let newLikeIds = nextState[action.like.likeable_id].likeIds.filter(id => id !== action.like.id);
                 nextState[action.like.likeable_id].likeIds = newLikeIds;
