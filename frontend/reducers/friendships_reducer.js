@@ -8,7 +8,11 @@ const friendshipReducer = (state = {}, action) => {
             return Object.assign(nextState, action.usersPayload.friendships)
         case RECEIVE_USER:
             nextState[action.user.user.id] = action.user.friends
-            return nextState
+            return nextState;
+        case ACCEPT_FRIENDSHIP:
+            nextState[action.friendship.friend.id] = action.friendship.friend
+            nextState[action.friendship.inverse_friend.id] = action.friendship.inverse_friend
+            return nextState;
         default:
             return state;
     }

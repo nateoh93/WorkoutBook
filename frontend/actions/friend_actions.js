@@ -4,24 +4,24 @@ export const RECEIVE_FRIEND_REQUEST = 'RECEIVE_FRIEND_REQUEST';
 export const ACCEPT_FRIENDSHIP = 'ACCEPT_FRIENDSHIP';
 export const REMOVE_FRIENDSHIP = 'REMOVE_FRIENDSHIP';
 
-const receiveFriendRequest = data => {
+const receiveFriendRequest = request => {
     return ({
         type: RECEIVE_FRIEND_REQUEST,
-        data
+        request
     })
 }
 
-const acceptFriendship = data => {
+const acceptFriendship = friendship => {
     return ({
         type: ACCEPT_FRIENDSHIP,
-        data
+        friendship
     })
 }
 
-const removeFriendship = data => {
+const removeFriendship = friendship => {
     return ({
         type: REMOVE_FRIENDSHIP,
-        data
+        friendship
     })
 }
 
