@@ -4,7 +4,8 @@ class Api::FriendRequestsController < ApplicationController
     def create
         # debugger
         @request = FriendRequest.new(request_params)
-        @request.requester_id = current_user.id
+        #uncomment below
+        # @request.requester_id = current_user.id
 
         if @request.save
             render :show

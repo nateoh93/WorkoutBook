@@ -111,29 +111,14 @@ friendship1 = Friendship.create!(
     friend_id: user2.id
 )
 
-friendship2 = Friendship.create!(
-    user_id: user1.id,
-    friend_id: user3.id
-)
-
-friendship3 = Friendship.create!(
-    user_id: user1.id,
-    friend_id: user4.id
-)
-
-friendship4 = Friendship.create!(
-    user_id: user1.id,
-    friend_id: user5.id
-)
-
-friendship5 = Friendship.create!(
-    user_id: user2.id,
-    friend_id: user5.id
-)
-
 friendship6 = Friendship.create!(
     user_id: user2.id,
     friend_id: user1.id
+)
+
+friendship2 = Friendship.create!(
+    user_id: user1.id,
+    friend_id: user3.id
 )
 
 friendship7 = Friendship.create!(
@@ -141,14 +126,28 @@ friendship7 = Friendship.create!(
     friend_id: user1.id
 )
 
+friendship3 = Friendship.create!(
+    user_id: user1.id,
+    friend_id: user4.id
+)
+
 friendship8 = Friendship.create!(
     user_id: user4.id,
     friend_id: user1.id
 )
 
+friendship4 = Friendship.create!(
+    user_id: user1.id,
+    friend_id: user5.id
+)
+
 friendship9 = Friendship.create!(
     user_id: user5.id,
     friend_id: user1.id
+)
+friendship5 = Friendship.create!(
+    user_id: user2.id,
+    friend_id: user5.id
 )
 
 friendship10 = Friendship.create!(
