@@ -310,3 +310,7 @@ textarea {
 .delete-friend-btn:hover .pending-friendship-btn:hover, .request-friendship-btn:hover {
     background: #f0f2f5;
 }
+
+.pending-friendship-btn:hover {
+    cursor: default;
+}
