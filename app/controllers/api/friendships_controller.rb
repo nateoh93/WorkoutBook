@@ -35,11 +35,12 @@ class Api::FriendshipsController < ApplicationController
     end
 
     def destroy
-            # debugger
+            debugger
 
         # @friend = Friendship.find_by(id: params[:id])
-        @friend = Friendship.find_by(user_id: current_user.id, friend_id: params[:id])
-        @inverse_friend = Friendship.find_by(user_id: params[:id], friend_id: current_user.id)
+        @friend = Friendship.find_by(id: params[:id])
+
+        @inverse_friend = Friendship.find_by(user_id: @friend.friend_id, friend_id: current_user.id)
 
         # @friend = Friendship.find_by(id: params[:id])
         # user2_id = @friend.friend_id

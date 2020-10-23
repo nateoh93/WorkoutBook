@@ -19,8 +19,13 @@ class FriendForm extends React.Component {
     
     handleRemove(e) {
         e.preventDefault();
-
-        this.props.deleteFriend({friend_id: this.props.postProfile.id})
+        let friendship;
+        this.props.currentUserFriends.forEach( friend => {
+            if (friend.friend_id === this.props.postProfile.id) {
+                friendship = friend;
+            }
+        })
+        this.props.deleteFriend(friendship)
     }
 
     displayFriendButton() {
