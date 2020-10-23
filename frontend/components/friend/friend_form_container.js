@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { createFriendRequest, deleteFriend } from '../../actions/friend_actions';
+import { fetchUser } from '../../actions/session_actions';
 import { getUserFriendships } from '../../reducers/selectors';
 import FriendForm from './friend_form';
 
@@ -17,7 +18,8 @@ const mSTP = (state, ownProps) => {
 const mDTP = dispatch => {
     return({
         deleteFriend: (friend) => dispatch(deleteFriend(friend)),
-        requestFriend: (friend) => dispatch(createFriendRequest(friend))
+        requestFriend: (friend) => dispatch(createFriendRequest(friend)),
+        fetchUser: (userId) => dispatch(fetchUser(userId))
     })
 };
 

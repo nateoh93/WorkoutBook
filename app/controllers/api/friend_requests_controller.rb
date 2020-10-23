@@ -2,7 +2,7 @@ class Api::FriendRequestsController < ApplicationController
     # before_action :require_logged_in
 
     def create
-        debugger
+        # debugger
         @request = FriendRequest.new(request_params)
         #uncomment below
         @request.requester_id = current_user.id

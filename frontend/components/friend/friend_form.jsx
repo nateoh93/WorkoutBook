@@ -14,7 +14,7 @@ class FriendForm extends React.Component {
     handleRequest(e) {
         e.preventDefault();
 
-        this.props.requestFriend({requestee_id: this.props.postProfile.id})
+        this.props.requestFriend({ requestee_id: this.props.postProfile.id }).then(this.props.fetchUser(this.props.postProfile.id))
     }
     
     handleRemove(e) {
@@ -25,7 +25,7 @@ class FriendForm extends React.Component {
                 friendship = friend;
             }
         })
-        this.props.deleteFriend(friendship)
+        this.props.deleteFriend(friendship).then(this.props.fetchUser(this.props.postProfile.id))
     }
 
     displayFriendButton() {

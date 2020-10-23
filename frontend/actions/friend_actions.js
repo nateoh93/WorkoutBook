@@ -65,5 +65,5 @@ export const deleteFriend = data => dispatch => {
     debugger
 
     return (FriendAPIUtil.deleteFriend(data))
-        .then( () => dispatch(removeFriendship(data)))
+        .then( (deletedFriendship) => dispatch(removeFriendship(deletedFriendship)))
 }

@@ -147,25 +147,25 @@ request2 = FriendRequest.create!(
     requestee_id: user1.id,
 )
 
-# friendship3 = Friendship.create!(
-#     user_id: user1.id,
-#     friend_id: user4.id
-# )
+friendship3 = Friendship.create!(
+    user_id: user1.id,
+    friend_id: user4.id
+)
 
-# friendship_inverse3 = Friendship.create!(
-#     user_id: user4.id,
-#     friend_id: user1.id
-# )
+friendship_inverse3 = Friendship.create!(
+    user_id: user4.id,
+    friend_id: user1.id
+)
 
-# friendship4 = Friendship.create!(
-#     user_id: user1.id,
-#     friend_id: user5.id
-# )
+friendship4 = Friendship.create!(
+    user_id: user1.id,
+    friend_id: user5.id
+)
 
-# friendship_inverse4 = Friendship.create!(
-#     user_id: user5.id,
-#     friend_id: user1.id
-# )
+friendship_inverse4 = Friendship.create!(
+    user_id: user5.id,
+    friend_id: user1.id
+)
 
 
 post1 = Post.create!(
@@ -174,8 +174,8 @@ post1 = Post.create!(
     post_author_id: user1.id
 )
 
-# postphoto2 = open('https://workoutbook-seeds.s3-us-west-1.amazonaws.com/yoga.jpg')
-# post1.post_photo.attach(io: postphoto2, filename: 'yoga.jpg')
+postphoto2 = open('https://workoutbook-seeds.s3-us-west-1.amazonaws.com/yoga.jpg')
+post1.post_photo.attach(io: postphoto2, filename: 'yoga.jpg')
 
 post2 = Post.create!(
     body: "I heard you also ran an ultramarathon last week. You should hydrate.",
@@ -183,8 +183,8 @@ post2 = Post.create!(
     post_author_id: user2.id
 )
 
-# postphoto1 = open('https://workoutbook-seeds.s3-us-west-1.amazonaws.com/water.jpg')
-# post2.post_photo.attach(io: postphoto1, filename: 'water.jpg')
+postphoto1 = open('https://workoutbook-seeds.s3-us-west-1.amazonaws.com/water.jpg')
+post2.post_photo.attach(io: postphoto1, filename: 'water.jpg')
 
 post3 = Post.create!(
     body: 'Ever thought about just eating burgers and sitting on a couch all day?',
@@ -222,8 +222,8 @@ post8 = Post.create!(
     post_author_id: user5.id
 )
 
-# postphoto3 = open('https://workoutbook-seeds.s3-us-west-1.amazonaws.com/morning_session.jpg')
-# post8.post_photo.attach(io: postphoto3, filename: 'morning_workout.jpg')
+postphoto3 = open('https://workoutbook-seeds.s3-us-west-1.amazonaws.com/morning_session.jpg')
+post8.post_photo.attach(io: postphoto3, filename: 'morning_workout.jpg')
 
 post9 = Post.create!(
     body: "Fall leaves and chill weather but still getting after it!",
@@ -231,8 +231,8 @@ post9 = Post.create!(
     post_author_id: user3.id
 )
 
-# postphoto4 = open('https://workoutbook-seeds.s3-us-west-1.amazonaws.com/fall_run.jpg')
-# post9.post_photo.attach(io: postphoto4, filename: 'fall_run.jpg')
+postphoto4 = open('https://workoutbook-seeds.s3-us-west-1.amazonaws.com/fall_run.jpg')
+post9.post_photo.attach(io: postphoto4, filename: 'fall_run.jpg')
 
 post10 = Post.create!(
     body: "Check out this view from my hike the other day!",
@@ -240,8 +240,8 @@ post10 = Post.create!(
     post_author_id: user5.id
 )
 
-# postphoto5 = open('https://workoutbook-seeds.s3-us-west-1.amazonaws.com/hike1.jpg')
-# post10.post_photo.attach(io: postphoto5, filename: 'hike1.jpg')
+postphoto5 = open('https://workoutbook-seeds.s3-us-west-1.amazonaws.com/hike1.jpg')
+post10.post_photo.attach(io: postphoto5, filename: 'hike1.jpg')
 
 post11 = Post.create!(
     body: "You showed me an awesome pic so I wanted to try to one up you. How cool is this?",
@@ -249,8 +249,8 @@ post11 = Post.create!(
     post_author_id: user4.id
 )
 
-# postphoto6 = open('https://workoutbook-seeds.s3-us-west-1.amazonaws.com/hike2.jpg')
-# post11.post_photo.attach(io: postphoto6, filename: 'hik2.jpg')
+postphoto6 = open('https://workoutbook-seeds.s3-us-west-1.amazonaws.com/hike2.jpg')
+post11.post_photo.attach(io: postphoto6, filename: 'hik2.jpg')
 
 comment1 = Comment.create!(
     body: 'Hey you deserve it. You have to enjoy life too!',

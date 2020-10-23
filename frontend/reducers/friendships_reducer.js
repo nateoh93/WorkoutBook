@@ -17,12 +17,14 @@ const friendshipReducer = (state = {}, action) => {
             // return nextState;
         case ACCEPT_FRIENDSHIP:
             debugger
-            nextState[Object.keys(action.friendship.friend)] = action.friendship.friend
-            nextState[Object.keys(action.friendship.inverse_friend)] = action.friendship.inverse_friend
+            nextState[Object.keys(action.friendship.friend)] = Object.values(action.friendship.friend)[0]
+            nextState[Object.keys(action.friendship.inverse_friend)] = Object.values(action.friendship.inverse_friend)[0]
             return nextState;
         case REMOVE_FRIENDSHIP:
             debugger
-            delete nextState[action.friendship.id];
+            delete nextState[Object.keys(action.friendship.friend)]
+            delete nextState[Object.keys(action.friendship.inverse_friend)]
+            // delete nextState[action.friendship.id];
             return nextState;
         default:
             return state;
