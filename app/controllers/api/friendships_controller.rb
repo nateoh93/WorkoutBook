@@ -14,7 +14,7 @@ class Api::FriendshipsController < ApplicationController
             render json: ["Already friends, can't add friend again."], status: 422
         end
         
-        # debugger
+        debugger
         @friend = Friendship.new(user_id: current_user.id, friend_id: params[:requester_id])
         @inverse_friend = Friendship.new(user_id: params[:requester_id], friend_id: current_user.id)
         

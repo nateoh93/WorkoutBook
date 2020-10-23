@@ -12,7 +12,7 @@ const mSTP = (state, ownProps) => {
     // debugger
 
     const postProfileId = ownProps.match.params.userId || state.session.id
-    debugger
+    // debugger
     return({
         user: state.entities.users[ownProps.match.params.userId],
         // friendships: friendships,

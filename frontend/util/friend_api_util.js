@@ -16,12 +16,12 @@ export const deleteFriend = friendship => {
     })
 }
 
-export const createFriendRequest = request => {
+export const createFriendRequest = friend_request => {
     debugger
     return $.ajax({
         url: `/api/friend_requests`,
         method: `POST`,
-        data: {request}
+        data: {friend_request}
     })
 }
 

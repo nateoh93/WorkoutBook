@@ -7,9 +7,9 @@ const friendRequestsReducer = (state={}, action) => {
 
     switch (action.type) {
         case RECEIVE_FRIEND_REQUEST:
-            // debugger
+            debugger
 
-            nextState[action.request.id] = action.request
+            nextState[Object.keys(action.request)] = action.request
             return nextState;
         case REMOVE_FRIEND_REQUEST:
             // debugger

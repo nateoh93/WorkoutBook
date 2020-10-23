@@ -7,7 +7,7 @@ import { getLikes } from '../../reducers/selectors';
 import { deletePost } from '../../actions/post_actions';
 
 const mSTP = (state, ownProps) => {
-    debugger
+    // debugger
     const postProfileId = ownProps.match.params.userId || state.session.id
     // debugger
     return ({

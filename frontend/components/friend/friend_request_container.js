@@ -4,7 +4,7 @@ import { receivedRequests, requestedFriends } from '../../reducers/selectors';
 import FriendRequest from './friend_request';
 
 const mSTP = (state, ownProps) => {
-    debugger
+    // debugger
 
     return ({
         currentUser: state.entities.users[state.session.id],
@@ -15,7 +15,7 @@ const mSTP = (state, ownProps) => {
 }
 
 const mDTP = (dispatch) => {
-    debugger
+    // debugger
 
     return ({
         createFriend: (friend) => dispatch(createFriend(friend)),
