@@ -7,18 +7,21 @@ class FriendRequest extends React.Component {
     }
 
     render() {
+        debugger
 
         const requestList = this.props.requestedUsers.map( user => {
             return <FriendRequestItem
                 key={user.id}
                 user={user}
-                deleteFriend={this.props.deleteFriend}
+                deleteFriendRequest={this.props.deleteFriendRequest}
                 createFriend={this.props.createFriend}
+                requestedFriends={this.props.requestedFriends}
             />
         })
+
         return (
             <ul className='request-index'>
-                {requestList}
+                {this.props.requestedUsers.length > 0 ? requestList : <li>You have no new friend requests</li>}
             </ul>
         );
     }

@@ -30,21 +30,6 @@ class FeedPostIndex extends React.Component {
         // }
     }
 
-    // allNewsFeedPosts() {
-    //     debugger
-    //     const allPosts = []
-        
-    //     this.props.newsFeedUsers.forEach (user => {
-    //         this.state.posts.forEach( post => {
-    //             if (post.post_author_id === user.id) {
-    //                 allPosts.push(post);
-    //             }
-    //         })
-    //     })
-
-    //     return allPosts;
-    // }
-
     render() {
         // debugger
         if (this.props.posts.length === 0) {
@@ -52,7 +37,8 @@ class FeedPostIndex extends React.Component {
         } else {
             let allPosts = [];
             // debugger
-            this.props.newsfeedUsers.forEach( user => {
+            this.props.userFriends.push(this.props.currentUser);
+            this.props.userFriends.forEach( user => {
                 // debugger
                 this.props.posts.forEach( post => {
                     // debugger

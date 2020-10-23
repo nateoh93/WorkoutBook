@@ -10,12 +10,9 @@ end
 
 json.friendships do
     @users.each do |user|
-       json.set! user.id do 
-            user.friends.each do |friend|
-                json.set! friend.id do
-                    json.extract! friend, :id, :fname, :lname
-                    json.profilePhoto url_for(friend.profile_photo) if friend.profile_photo.attached?
-                end
+        user.friendships.each do |friend|
+            json.set! friend.id do
+                json.extract! friend, :id, :user_id, :friend_id
             end
         end
     end
@@ -23,11 +20,9 @@ end
 
 json.friendRequests do
     @users.each do |user|
-        json.set! user.id do
-            user.received_requests.each do |request|
-                json.set! request.id do
-                    json.extract! request, :id, :requester_id, :requestee_id
-                end
+        user.received_requests.each do |request|
+            json.set! request.id do
+                json.extract! request, :id, :requester_id, :requestee_id
             end
         end
     end

@@ -4,11 +4,10 @@ json.user do
     json.profilePhoto url_for(@user.profile_photo) if @user.profile_photo.attached?
 end
 
-json.friends do
-    @user.friends.each do |friend|
+json.friendships do
+    @user.friendships.each do |friend|
         json.set! friend.id do
-            json.extract! friend, :id, :fname, :lname
-            json.profilePhoto url_for(friend.profile_photo) if friend.profile_photo.attached?
+            json.extract! friend, :id, :user_id, :friend_id
         end
     end
 end

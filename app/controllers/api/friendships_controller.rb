@@ -10,14 +10,16 @@ class Api::FriendshipsController < ApplicationController
     end
 
     def create
-        if Friendship.find_by(user_id: current_user.id, friend_id: params[:id])
+        if Friendship.find_by(user_id: current_user.id, friend_id: params[:requester_id])
             render json: ["Already friends, can't add friend again."], status: 422
         end
         
-        @friend = Friendship.new(user_id: current_user.id, friend_id: params[:id])
-        @inverse_friend = Friendship.new(user_id: params[:id], friend_id: current_user.id)
+        # debugger
+        @friend = Friendship.new(user_id: current_user.id, friend_id: params[:requester_id])
+        @inverse_friend = Friendship.new(user_id: params[:requester_id], friend_id: current_user.id)
         
-        @request = FriendRequest.find_by(requester_id: params[:id], requestee_id: current_user.id)
+        # @request = FriendRequest.find_by(requester_id: params[:requester_id], requestee_id: current_user.id)
+        @request = FriendRequest.find_by(id: params[:id])
 
         # @friend = Friendship.new(friend_params)
         # user2_id = @friend.friend_id
@@ -33,6 +35,8 @@ class Api::FriendshipsController < ApplicationController
     end
 
     def destroy
+            # debugger
+
         # @friend = Friendship.find_by(id: params[:id])
         @friend = Friendship.find_by(user_id: current_user.id, friend_id: params[:id])
         @inverse_friend = Friendship.find_by(user_id: params[:id], friend_id: current_user.id)

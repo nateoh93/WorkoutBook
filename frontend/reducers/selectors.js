@@ -1,3 +1,16 @@
+export const getUserFriends = ({entities}, id) => {
+    debugger
+    let userFriends = [];
+
+    Object.values(entities.friendships).forEach( user => {
+        if (user.user_id == id) {
+            userFriends.push(entities.users[user.friend_id]);
+        };
+    });
+
+    return userFriends
+}
+
 export const getLikes = (state, item ) => {
     let likes = [];
     const type = item.post_author_id ? 'Post' : 'Comment';
@@ -11,16 +24,40 @@ export const getLikes = (state, item ) => {
     return likes
 }
 
-export const receivedRequests = (state, id) => {
+export const receivedRequests = ({users, friendRequests}, id) => {
     debugger
     let requestedUsers = [];
-    if (Object.keys(state.entities.friendRequests).length === 0) {
-        return requestedUsers;
-    } else {
-        Object.values(state.entities.friendRequests[id]).forEach ( request => {
-            requestedUsers.push(state.entities.users[request.requester_id]);
-        });
+    // if (Object.keys(state.entities.friendRequests).length === 0 || state.entities.friendRequests === undefined) {
+    // if (friendRequests[id] === undefined || Object.keys(friendRequests).length === 0) {
+    //     return requestedUsers;
+    // } else {
+    //     Object.values(friendRequests[id]).forEach ( request => {
+    //         requestedUsers.push(users[request.requester_id]);
+    //     });
     
-        return requestedUsers
-    }
+    //     return requestedUsers
+    // }
+
+    Object.values(friendRequests).forEach( request => {
+        if (request.requestee_id === id) {
+            requestedUsers.push(users[request.requester_id]);
+        };
+    });
+
+    return requestedUsers;
+}
+
+
+export const requestedFriends = ({friendRequests}, id) => {
+    debugger
+
+    let requestedFriends = [];
+
+    Object.values(friendRequests).forEach(request => {
+        if (request.requestee_id === id) {
+            requestedFriends.push(request);
+        };
+    });
+
+    return requestedFriends
 }

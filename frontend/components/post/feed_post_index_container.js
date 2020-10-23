@@ -4,23 +4,24 @@ import { connect } from 'react-redux';
 // import { openModal, closeModal } from '../../actions/modal_actions'
 import { withRouter } from 'react-router-dom';
 import { deletePost, fetchPosts } from '../../actions/post_actions';
+import { getUserFriends } from '../../reducers/selectors';
 import FeedPostIndex from './feed_post_index'
 
 const mSTP = (state, ownProps) => {
-    // debugger
+    debugger
 
     const postProfileId = ownProps.match.params.userId || state.session.id
 
-    let newsfeedUsers = [];
-    if (state.entities.friendships[state.session.id] !== undefined) {
-        newsfeedUsers = Object.values(state.entities.friendships[state.session.id])
-        newsfeedUsers.push(state.entities.users[state.session.id])
-    } else {
-        newsfeedUsers.push(state.entities.users[state.session.id])
-    }
+    // let newsfeedUsers = [];
+    // if (state.entities.friendships[state.session.id] !== undefined) {
+    //     newsfeedUsers = Object.values(state.entities.friendships[state.session.id])
+    //     newsfeedUsers.push(state.entities.users[state.session.id])
+    // } else {
+    //     newsfeedUsers.push(state.entities.users[state.session.id])
+    // }
 
     return ({
-        newsfeedUsers: newsfeedUsers,
+        userFriends: getUserFriends(state, postProfileId),
         posts: Object.values(state.entities.posts),
         currentUser: state.entities.users[state.session.id],
         users: state.entities.users,

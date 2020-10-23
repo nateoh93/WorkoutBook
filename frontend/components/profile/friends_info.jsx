@@ -14,11 +14,12 @@ class FriendsInfo extends React.Component{
     }
 
     render() {
-        // debugger
+        debugger
         let displayFriends;
         if (Object.keys(this.props.friendships).length === 0) {
             displayFriends = null;
         } else { 
+            debugger
             displayFriends = this.props.friendships.map(friend => {
                 return (
                     <div className='friend-tile' key={friend.id}><Link to={`/users/${friend.id}`}>

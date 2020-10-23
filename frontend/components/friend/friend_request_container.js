@@ -1,20 +1,25 @@
 import {connect} from 'react-redux';
-import { createFriend, deleteFriend } from '../../actions/friend_actions';
-import { receivedRequests } from '../../reducers/selectors';
+import { createFriend, deleteFriend, deleteFriendRequest } from '../../actions/friend_actions';
+import { receivedRequests, requestedFriends } from '../../reducers/selectors';
 import FriendRequest from './friend_request';
 
 const mSTP = (state, ownProps) => {
+    debugger
+
     return ({
         currentUser: state.entities.users[state.session.id],
-        requestedUsers: receivedRequests(state, state.session.id),
-        users: state.entities.users
+        requestedUsers: receivedRequests(state.entities, state.session.id),
+        users: state.entities.users,
+        requestedFriends: requestedFriends(state.entities, state.session.id)
     })
 }
 
 const mDTP = (dispatch) => {
+    debugger
+
     return ({
         createFriend: (friend) => dispatch(createFriend(friend)),
-        deleteFriend: (friend) => dispatch(deleteFriend(friend))
+        deleteFriendRequest: (friend) => dispatch(deleteFriendRequest(friend))
     })
 };
 

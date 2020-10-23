@@ -82,7 +82,7 @@ class ProfileBio extends React.Component {
                 </div>
 
                 <FriendsInfo 
-                    friendships={this.props.friendships}
+                    friendships={this.props.userFriends}
                     users={this.props.users}/>
             </>
         );

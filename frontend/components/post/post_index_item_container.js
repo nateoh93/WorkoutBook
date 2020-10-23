@@ -4,9 +4,10 @@ import { withRouter } from 'react-router-dom';
 import PostIndexItem from './post_index_item';
 import { createLike, deleteLike } from '../../actions/like_actions';
 import { getLikes } from '../../reducers/selectors';
+import { deletePost } from '../../actions/post_actions';
 
 const mSTP = (state, ownProps) => {
-    // debugger
+    debugger
     const postProfileId = ownProps.match.params.userId || state.session.id
     // debugger
     return ({

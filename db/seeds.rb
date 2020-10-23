@@ -174,8 +174,8 @@ post1 = Post.create!(
     post_author_id: user1.id
 )
 
-postphoto2 = open('https://workoutbook-seeds.s3-us-west-1.amazonaws.com/yoga.jpg')
-post1.post_photo.attach(io: postphoto2, filename: 'yoga.jpg')
+# postphoto2 = open('https://workoutbook-seeds.s3-us-west-1.amazonaws.com/yoga.jpg')
+# post1.post_photo.attach(io: postphoto2, filename: 'yoga.jpg')
 
 post2 = Post.create!(
     body: "I heard you also ran an ultramarathon last week. You should hydrate.",
@@ -183,8 +183,8 @@ post2 = Post.create!(
     post_author_id: user2.id
 )
 
-postphoto1 = open('https://workoutbook-seeds.s3-us-west-1.amazonaws.com/water.jpg')
-post2.post_photo.attach(io: postphoto1, filename: 'water.jpg')
+# postphoto1 = open('https://workoutbook-seeds.s3-us-west-1.amazonaws.com/water.jpg')
+# post2.post_photo.attach(io: postphoto1, filename: 'water.jpg')
 
 post3 = Post.create!(
     body: 'Ever thought about just eating burgers and sitting on a couch all day?',
@@ -252,65 +252,65 @@ post11 = Post.create!(
 # postphoto6 = open('https://workoutbook-seeds.s3-us-west-1.amazonaws.com/hike2.jpg')
 # post11.post_photo.attach(io: postphoto6, filename: 'hik2.jpg')
 
-# comment1 = Comment.create!(
-#     body: 'Hey you deserve it. You have to enjoy life too!,
-#     post_id: post4.id,
-#     comment_author_id: user1.id
-# )
+comment1 = Comment.create!(
+    body: 'Hey you deserve it. You have to enjoy life too!',
+    post_id: post4.id,
+    comment_author_id: user1.id
+)
 
-# comment2 = Comment.create!(
-#     body: 'Alex is right. You know what they say...hydrate or die-drate.',
-#     post_id: post2.id,
-#     comment_author_id: user3.id 
-# )
+comment2 = Comment.create!(
+    body: 'Alex is right. You know what they say...hydrate or die-drate.',
+    post_id: post2.id,
+    comment_author_id: user3.id 
+)
 
-# comment3 = Comment.create!(
-#     body: "That's just nonsensical. You're crazy!",
-#     post_id: post1.id,
-#     comment_author_id: user2.id
-# )
+comment3 = Comment.create!(
+    body: "That's just nonsensical. You're crazy!",
+    post_id: post1.id,
+    comment_author_id: user2.id
+)
 
-# comment4 = Comment.create!(
-#     body: 'Rise and grind. Early bird gets the worm!',
-#     post_id: post8.id,
-#     comment_author_id: user4.id
-# )
+comment4 = Comment.create!(
+    body: 'Rise and grind. Early bird gets the worm!',
+    post_id: post8.id,
+    comment_author_id: user4.id
+)
 
-# comment5 = Comment.create!(
-#     body: "Don't be silly. Abs are made in the kitchen.",
-#     post_id: post3.id,
-#     comment_author_id: user5.id 
-# )
+comment5 = Comment.create!(
+    body: "Don't be silly. Abs are made in the kitchen.",
+    post_id: post3.id,
+    comment_author_id: user5.id 
+)
 
-# comment6 = Comment.create!(
-#     body: "Wow that's beautiful",
-#     post_id: post9.id,
-#     comment_author_id: user1.id 
-# )
+comment6 = Comment.create!(
+    body: "Wow that's beautiful",
+    post_id: post9.id,
+    comment_author_id: user1.id 
+)
 
-# comment7 = Comment.create!(
-#     body: "Haha no thanks. That's embarrassing.",
-#     post_id: post6.id,
-#     comment_author_id: user3.id
-# )
+comment7 = Comment.create!(
+    body: "Haha no thanks. That's embarrassing.",
+    post_id: post6.id,
+    comment_author_id: user3.id
+)
 
-# comment8 = Comment.create!(
-#     body: "Okay not bad! I'm going hiking soon. I'll take a pic too.",
-#     post_id: post10.id,
-#     comment_author_id: user4.id
-# )
+comment8 = Comment.create!(
+    body: "Okay not bad! I'm going hiking soon. I'll take a pic too.",
+    post_id: post10.id,
+    comment_author_id: user4.id
+)
 
-# comment9 = Comment.create!(
-#     body: "Good luck. Don't hurt yourself.",
-#     post_id: post5.id,
-#     comment_author_id: user2.id
-# )
+comment9 = Comment.create!(
+    body: "Good luck. Don't hurt yourself.",
+    post_id: post5.id,
+    comment_author_id: user2.id
+)
 
-# comment10 = Comment.create!(
-#     body: "Dang, what a view.",
-#     post_id: post11.id,
-#     comment_author_id: user5.id 
-# )
+comment10 = Comment.create!(
+    body: "Dang, what a view.",
+    post_id: post11.id,
+    comment_author_id: user5.id 
+)
 
 like1 = Like.create!(
     author_id: user1.id,
@@ -330,8 +330,8 @@ like3 = Like.create!(
     likeable_id: post1.id,
 )
 
-# like2 = Like.create!(
-#     author_id: user1.id,
-#     likeable_type: 'Comment',
-#     likeable_id: comment1.id,
-# )
+like2 = Like.create!(
+    author_id: user1.id,
+    likeable_type: 'Comment',
+    likeable_id: comment1.id,
+)

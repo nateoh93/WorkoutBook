@@ -1,6 +1,8 @@
 json.post do
     json.extract! @post, :id, :body, :profile_user_id, :post_author_id, :created_at
     json.postPhoto url_for(@post.post_photo) if @post.post_photo.attached?
+    json.commentIds @post.comment_ids
+    json.likeIds @post.like_ids
 end
 
 json.comments do
@@ -19,5 +21,11 @@ json.likes do
                 json.extract! like, :id, :author_id, :likeable_id, :likeable_type
             end
         end
-    end 
+    end
+
+    @post.likes.each do |like|
+        json.set! like.id do
+            json.extract! like, :id, :author_id, :likeable_id, :likeable_type
+        end
+    end
 end

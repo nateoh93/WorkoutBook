@@ -111,16 +111,11 @@ class PostIndexItem extends React.Component{
         
         let month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
         month = month[this.props.post.created_at.slice(5, 7) - 1];
-        // month = month[this.state.created_at.slice(5, 7) - 1];
         let year = this.props.post.created_at.slice(0, 4);
-        // let year = this.state.created_at.slice(0, 4);
         let day = this.props.post.created_at.slice(8, 10);
-        // let day = this.state.created_at.slice(8, 10);
 
         let hour = this.props.post.created_at.slice(11, 13)
-        // let hour = this.state.created_at.slice(11, 13)
         let min = this.props.post.created_at.slice(13, 16)
-        // let min = this.state.created_at.slice(13, 16)
         let time;
 
         if (hour < 1) {
@@ -132,7 +127,7 @@ class PostIndexItem extends React.Component{
         } else {
             time = `${hour}${min} AM`;
         }
-        // debugger
+        debugger
         const postAuthor = this.props.users[this.props.post.post_author_id]
         // const postAuthor = this.props.users[this.state.post_author_id]
         return (

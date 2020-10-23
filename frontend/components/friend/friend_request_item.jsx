@@ -9,14 +9,36 @@ class FriendRequestItem extends React.Component {
         this.handleDecline = this.handleDecline.bind(this)
     }
 
-    handleAccept() {
+    handleAccept(e) {
+        debugger
+
         e.preventDefault();
-        // this.props.createFriend();
+
+        let requestedFriendData;
+
+        this.props.requestedFriends.forEach(request => {
+            if (this.props.user.id === request.requester_id) {
+                requestedFriendData = request;
+            }
+        })
+
+        this.props.createFriend(requestedFriendData);
     }
     
-    handleDecline() {
+    handleDecline(e) {
+        debugger
+
         e.preventDefault();
-        // this.props.deleteFriend();
+
+        let requestedFriendData;
+
+        this.props.requestedFriends.forEach( request => {
+            if (this.props.user.id === request.requester_id) {
+                requestedFriendData = request;
+            }
+        })
+
+        this.props.deleteFriendRequest(requestedFriendData);
     }
 
     render() {

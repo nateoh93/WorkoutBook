@@ -32,6 +32,7 @@ class SessionForm extends React.Component {
 
     componentWillUnmount() {
         this.props.clearErrors();
+        this.props.fetchAllUsers();
         this.setState({
             email: '',
             password: '',

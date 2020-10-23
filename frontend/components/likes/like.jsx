@@ -26,7 +26,7 @@ class Like extends React.Component {
             } else if (amount === 1 && liked === false) {
                 text = <div className='like-amount'>1 other</div>;
             } else if (amount > 1 && liked === true) {
-                text = <div className='like-amount'>You and {this.props.likes.length} others</div>;
+                text = <div className='like-amount'>You and {this.props.likes.length-1} others</div>;
             } else if (amount > 1 && liked === false) {
                 text = <div className='like-amount'>{this.props.likes.length} others</div>
             }
