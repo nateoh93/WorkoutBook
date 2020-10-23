@@ -180,10 +180,10 @@ li:hover > .header-button {
 .friend-request-dropdown {
     display: none;
     position: absolute;
-    left: 52.5%;
+    left: 47.5%;
     top: 43px;
-    height: 50px;
-    width: 210px;
+    height: fit-content;
+    width: 300px;
     font-size: 14px;
     background: white;
     border-radius: 3px;
@@ -258,7 +258,7 @@ li:hover > .header-button {
     border-left: 15px solid transparent;
 }
 
-.friend-request-icon:focus + .friend-request-dropdown, 
+.friend-request-icon:focus + .friend-request-dropdown, .friend-request-dropdown:hover,
 .messenger-icon:focus + .messages-dropdown,
 .notifications-icon:focus + .notifications-dropdown,
 .logout-icon:focus + .logout-dropdown, .logout-dropdown:hover {
@@ -308,6 +308,73 @@ li:hover > .header-button {
     border-radius: 100%;
 }
 
-// .navbar-pic:hover {
-//     background: inherit
-// }
+.request-index {
+    margin-top: 3%;
+    display: flex;
+    flex-direction: column;
+}
+
+.request-index li {
+    display: flex;
+    font-size: 13px;
+    font-weight: normal;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #cecccc;
+    margin: 1% 0 1% 0;
+}
+
+.request-index li:first-child {
+    border-top: none;
+}
+
+.request-photo {
+    height: 35px;
+    width: 35px;
+    border-radius: 100%;
+}
+
+.request-photo + p {
+    padding-left: 10px;
+}
+
+.request-buttons div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    width: 65px;
+    height: 25px;
+    outline: none;
+    color: white;
+    border: 1px solid #cecccc;
+    background: #4267b2;
+}
+
+.request-buttons.cancel:hover, .request-buttons.answer:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.request-buttons.answer {
+    // background: #4267b2;
+    border: none;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+}
+
+.request-buttons.cancel {
+    color: inherit;
+    background: #f5f6f7;
+}
+
+.request-buttons {
+    display: flex;
+    width: 50%;
+    justify-content: space-evenly;
+}
+
+.request-container {
+    display: flex;
+    align-items: center;
+}

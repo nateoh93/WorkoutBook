@@ -42,8 +42,6 @@ class NavBar extends React.Component{
                         </div>
     
                         <div className='navbar-right'>
-                            
-                            <FriendRequestContainer />
 
                             <div className='nav-profile-photo'><Link to={`/users/${this.props.currentUser.id}`}><img className='navbar-pic' src={this.props.currentUser.profilePhoto} /></Link></div>
                             
@@ -57,7 +55,7 @@ class NavBar extends React.Component{
                                     <button className='friend-request-icon'></button>
                                     <div className={`friend-request-dropdown`}>
                                         <li className='friend-request'>Friend Requests</li>
-                                        <li>You don't have any friend requests</li>
+                                        <FriendRequestContainer />
                                     </div>
                                 </div>
 
