@@ -1,11 +1,13 @@
 .newsfeed-page {
     background: #f0f2f5;
+    min-height: 100vh
 }
 .newsfeed-container {
-    margin: 0 37% 0 18%;
+    margin: 0 30% 0 15%;
     display: flex;
     justify-content: space-between;
     padding-top: 1%;
+    min-height: 100vh
 }
 
 .newsfeed-left {
