@@ -30,7 +30,7 @@ class CommentIndex extends React.Component {
                 // users={this.props.users}
                 // postProfile={this.props.postProfile}
                 // fetchPost={this.props.fetchPost}
-                // post={this.props.post}
+                post={this.props.post}
             />
         })
 

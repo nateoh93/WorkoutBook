@@ -8,6 +8,7 @@
 }
 .image-preview {
     width: 30%;
+    position: relative
 }
 
 .post-form-container {
@@ -15,8 +16,8 @@
 }
 
 .close-x.cancel-photo {
-    top: -10px;
-    left: 120px;
+    top: -5%;
+    left: 23%;
     font-size: 19px;
     z-index: 2;
 }

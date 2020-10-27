@@ -80,7 +80,7 @@ class CommentIndexItem extends React.Component {
 
     displayDropdownMenu() {
         // debugger
-        if (this.props.currentUser.id === this.props.comment.comment_author_id || this.props.currentUser.id === this.props.postProfile.id) {
+        // if (this.props.currentUser.id === this.props.comment.comment_author_id || this.props.currentUser.id === this.props.postProfile.id) {
             // debugger
             if (this.props.currentUser.id === this.props.comment.comment_author_id) {
                 return (
@@ -92,7 +92,7 @@ class CommentIndexItem extends React.Component {
                         </ul>
                     </>
                 )
-            } else {
+            } else if (this.props.currentUser.id === this.props.post.post_author_id){
                 return (
                     <>
                         <button className='comment-menu-btn-icon'></button>
@@ -102,7 +102,7 @@ class CommentIndexItem extends React.Component {
                     </>
                 )
             }
-        }
+        // }
     }
 
     changeComment(e) {

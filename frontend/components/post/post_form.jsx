@@ -72,8 +72,8 @@ class PostForm extends React.Component {
     render() {
         const showPreview = (this.state.photoUrl) ?
             (<div className='image-preview-container'>
-                <span onClick={this.cancelPhoto} className="close-x cancel-photo">&times;</span>
                 <img className='image-preview' src={this.state.photoUrl} />
+                <span onClick={this.cancelPhoto} className="close-x cancel-photo">&times;</span>
             </div>) : null
 
         let postButton;

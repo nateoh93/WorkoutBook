@@ -32,8 +32,8 @@ class FriendsInfo extends React.Component{
 
         return (
             <div className='profile-friends-container'>
-                <div className='profile-friends-icon'></div>
                 <h3>Friends 
+                    <div className='profile-friends-icon'></div>
                     <p className='dot'>•</p>
                     <p className='friend-count'>{this.props.friendships.length}</p>
                 </h3>
