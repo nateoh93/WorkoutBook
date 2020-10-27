@@ -147,25 +147,25 @@ request2 = FriendRequest.create!(
     requestee_id: user1.id,
 )
 
-friendship3 = Friendship.create!(
-    user_id: user1.id,
-    friend_id: user4.id
-)
+# friendship3 = Friendship.create!(
+#     user_id: user1.id,
+#     friend_id: user4.id
+# )
 
-friendship_inverse3 = Friendship.create!(
-    user_id: user4.id,
-    friend_id: user1.id
-)
+# friendship_inverse3 = Friendship.create!(
+#     user_id: user4.id,
+#     friend_id: user1.id
+# )
 
-friendship4 = Friendship.create!(
-    user_id: user1.id,
-    friend_id: user5.id
-)
+# friendship4 = Friendship.create!(
+#     user_id: user1.id,
+#     friend_id: user5.id
+# )
 
-friendship_inverse4 = Friendship.create!(
-    user_id: user5.id,
-    friend_id: user1.id
-)
+# friendship_inverse4 = Friendship.create!(
+#     user_id: user5.id,
+#     friend_id: user1.id
+# )
 
 
 post1 = Post.create!(
