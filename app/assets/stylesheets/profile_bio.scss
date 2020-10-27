@@ -26,6 +26,7 @@
 
 .profile-bio-list li {
     padding-bottom: 8%;
+    position: relative
 }
 
 font {
@@ -78,8 +79,8 @@ font {
     width: 20px;
     height: 20px;
     position: absolute;
-    top: 68%;
-    left: 13px;
+    top: -15%;
+    left: -13%;
     // cursor: pointer;
 }
 
@@ -91,8 +92,8 @@ font {
     width: 20px;
     height: 20px;
     position: absolute;
-    top: 84%;
-    left: 13px;
+    top: -15%;
+    left: -13%;
     // cursor: pointer;
 }
 
@@ -104,8 +105,8 @@ font {
     width: 20px;
     height: 20px;
     position: absolute;
-    top: 53%;
-    left: 13px;
+    top: -15%;
+    left: -13%;
     // cursor: pointer;
 }
 .birth-icon {
@@ -116,8 +117,8 @@ font {
     width: 20px;
     height: 20px;
     position: absolute;
-    top: 38%;
-    left: 13px;
+    top: -15%;
+    left: -13%;
     // cursor: pointer;
 }
 

@@ -37,7 +37,7 @@ class NavBar extends React.Component{
                         <div className='navbar-left'>
                             <div className='nav-logo'><Link to='/feed'><img className='logo-img' src={window.logo} /></Link></div>
                             <form className='search-bar-form'>
-                                <input className='search-bar' type="text" placeholder='Search'/>
+                                <input className='search-bar' type="text" placeholder='Search coming soon...'/>
                             </form>
                         </div>
     

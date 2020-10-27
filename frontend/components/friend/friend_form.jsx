@@ -49,9 +49,9 @@ class FriendForm extends React.Component {
         if (this.props.postProfile.id === this.props.currentUser.id) {
             return null;
         } else if (alreadyFriends === true) {
-            return <button className='delete-friend-btn' onClick={this.handleRemove}>Remove Friend</button>
+            return <button className='delete-friend-btn' onClick={this.handleRemove}>Unfriend</button>
         } else if (pendingFriendship === true) {
-            return <button className='pending-friendship-btn'>Friendship Pending</button>
+            return <button className='pending-friendship-btn'>Pending</button>
         } else {
             return <button className='request-friendship-btn' onClick={this.handleRequest}>Add Friend</button>
         }

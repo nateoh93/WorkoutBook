@@ -62,17 +62,25 @@ class ProfileBio extends React.Component {
                     <h3>Intro</h3>
                     <p>{this.state.bio}</p>
                     <ul className='profile-bio-list'>
-                        <li>Born on <font>{month} {day}, {year}</font></li>
-                        <li>Lives in <font>{this.state.city}</font></li>
-                        <li>Studied at <font>{this.state.school}</font></li>
-                        <li>Works as a <font>{this.state.work}</font></li>
+                        <li>
+                            <div className='birth-icon'></div>
+                            Born on <font>{month} {day}, {year}</font></li>
+                        <li>
+                            <div className='house-icon'></div>
+                            Lives in <font>{this.state.city}</font></li>
+                        <li>
+                            <div className='school-icon'></div>
+                            Studied at <font>{this.state.school}</font></li>
+                        <li>
+                            <div className='work-icon'></div>
+                            Works as a <font>{this.state.work}</font></li>
                     </ul>
-                    <ul className='profile-bio-icons'>
+                    {/* <ul className='profile-bio-icons'>
                         <div className='birth-icon'></div>
                         <div className='school-icon'></div>
                         <div className='house-icon'></div>
                         <div className='work-icon'></div>
-                    </ul>
+                    </ul> */}
                 </div>
 
                 <div className='profile-photos-container'>
