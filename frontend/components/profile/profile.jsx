@@ -19,7 +19,6 @@ class Profile extends React.Component {
     }
 
     render() {
-        // const userData = this.props.fetchUser(this.props.match.params.userId)
         if (Object.values(this.props.users).length < 2) {
             return (<div></div>)
         } else {

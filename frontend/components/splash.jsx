@@ -32,10 +32,6 @@ const mapStateToProps = (state) => {
     };
 };
 
-// const mapDispatchToProps = dispatch => ({
-//     // return ({null})
-// });
-
 export default connect(
     mapStateToProps,
     null
