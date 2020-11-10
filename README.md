@@ -23,6 +23,7 @@ Users must login or signup in order to use Workoutbook's features.
 Users can share posts and photos on their wall and other users' walls. When sharing photos, users can see a preview of their photo prior to posting and cancel if desired. Users can only edit posts if they are the author. Users can delete posts if they are the author or if the posts are on their profile page. This allows more customization for what others can see when visiting their profile pages.
 ### Comments
 Users can comment on posts. Similarly to posts, users can only edit inline comments if they are the author. Users can delete comments if they are the author or if the comments are on their profile page.
+
 ![comment2](https://user-images.githubusercontent.com/60491357/98743837-8c73cb00-2365-11eb-9834-3c3ecb3dd3d1.gif)
 ### Likes
 Users can like and unlike posts and comments.
