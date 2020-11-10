@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
-// import { login, clearErrors } from '../../actions/session_actions';
 import { openModal, closeModal } from '../../actions/modal_actions';
 import EditProfileForm from './edit_profile_form';
 import {fetchUser, updateUserInfo} from '../../actions/session_actions'
@@ -8,7 +7,6 @@ import {fetchUser, updateUserInfo} from '../../actions/session_actions'
 const mapStateToProps = (state, ownProps) => {
     return ({
         user: state.entities.users[state.session.id],
-        // errors: state.errors.session,
         openModal: state.ui.modal,
     });
 };

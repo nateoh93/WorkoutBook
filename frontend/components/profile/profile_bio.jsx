@@ -1,5 +1,4 @@
 import React from 'react';
-// import FriendsInfoContainer from './friends_container'
 import FriendsInfo from './friends_info'
 
 class ProfileBio extends React.Component {
@@ -72,12 +71,6 @@ class ProfileBio extends React.Component {
                             <div className='work-icon'></div>
                             Works as a <font>{this.state.work}</font></li>
                     </ul>
-                    {/* <ul className='profile-bio-icons'>
-                        <div className='birth-icon'></div>
-                        <div className='school-icon'></div>
-                        <div className='house-icon'></div>
-                        <div className='work-icon'></div>
-                    </ul> */}
                 </div>
 
                 <div className='profile-photos-container'>

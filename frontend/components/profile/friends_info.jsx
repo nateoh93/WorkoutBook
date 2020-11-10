@@ -6,12 +6,6 @@ class FriendsInfo extends React.Component{
         super(props)
     }
 
-    componentDidUpdate(prevProps, prevState) {
-        // if (prevProps.postProfile !== this.props.postProfile) {
-        //     this.props.fetchPosts(this.props.postProfile.id)
-        // }
-    }
-
     render() {
         let displayFriends;
         if (Object.keys(this.props.friendships).length === 0) {

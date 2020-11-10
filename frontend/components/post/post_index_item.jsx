@@ -16,12 +16,6 @@ class PostIndexItem extends React.Component{
         this.displayLikes = this.displayLikes.bind(this);
     }
 
-    componentDidUpdate(prevProps, prevState) {
-        // if (prevProps.post.commentIds.length !== this.props.post.commentIds.length) {
-        //     this.props.fetchPost(this.props.post.profile_user_id)
-        // }
-    }
-
     toggleLike(e) {
         e.preventDefault();
 
@@ -68,7 +62,6 @@ class PostIndexItem extends React.Component{
     destroyPost(e) {
         e.preventDefault();
         this.props.deletePost(this.props.post.id)
-        // this.props.deletePost(this.state.id)
     }
     
     displayDropdownMenu() {
@@ -122,7 +115,6 @@ class PostIndexItem extends React.Component{
             time = `${hour}${min} AM`;
         }
         const postAuthor = this.props.users[this.props.post.post_author_id]
-        // const postAuthor = this.props.users[this.state.post_author_id]
         return (
             <div className='post-author-container'>
                 <Link to={`/users/${postAuthor.id}`}><img className='post-author-pic' src={postAuthor.profilePhoto} /></Link>
@@ -141,7 +133,6 @@ class PostIndexItem extends React.Component{
     focusComment(e) {
         e.preventDefault();
         document.getElementById(`comment-form-input-id-${this.props.post.id}`).focus();
-        // document.getElementById(`comment-form-input-id-${this.state.id}`).focus();
     }
 
     render() {
@@ -150,9 +141,7 @@ class PostIndexItem extends React.Component{
                 {this.displayPostAuthor()}
                 
                 <div className='wallpost-body'>{this.props.post.body}</div>
-                {/* <div className='wallpost-body'>{this.state.body}</div> */}
                 <img className='wallpost-photos' src={this.props.post.postPhoto} />
-                {/* <img className='wallpost-photos' src={this.state.postPhoto} /> */}
                 
                 {this.displayLikes()}
 
@@ -162,9 +151,7 @@ class PostIndexItem extends React.Component{
                 </div>
 
                 <CommentIndexContainer post={this.props.post}/>
-                {/* <CommentIndexContainer post={this.state}/> */}
                 <CommentFormContainer post={this.props.post}/>
-                {/* <CommentFormContainer post={this.state}/> */}
             </li>
         );
     }

@@ -19,14 +19,7 @@ class WallPostIndex extends React.Component {
 
     render() {
         const postIndexList = this.props.posts.reverse().map( post => {
-            return <PostIndexItemContainer key={post.id} 
-                post={post} 
-                // deletePost={this.props.deletePost}
-                // currentUser={this.props.currentUser}
-                // postProfile={this.props.postProfile}
-                // otherForm={this.props.otherForm}
-                // users={this.props.users}
-                />
+            return <PostIndexItemContainer key={post.id} post={post} />
         })
 
         return(

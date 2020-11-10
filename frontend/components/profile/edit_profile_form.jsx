@@ -22,8 +22,6 @@ class EditProfileForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        // const user = Object.assign({}, this.state)
-        // this.props.updateUserInfo(user).then(this.props.closeModal).then(this.props.history.push(`/users/${this.props.user.id}`))
         const formData = new FormData();
         formData.id = this.props.user.id;
         formData.append('user[bio]', this.state.bio);

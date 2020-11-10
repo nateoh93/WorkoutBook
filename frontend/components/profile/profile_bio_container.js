@@ -9,10 +9,8 @@ const mSTP = (state, ownProps) => {
     
     return({
         user: state.entities.users[ownProps.match.params.userId],
-        // friendships: friendships,
         userFriends: getUserFriends(state, postProfileId),
         users: state.entities.users,
-        // friendsIds: state.entities.users[ownProps.match.params.userId].friendIds
     })
 }
 
