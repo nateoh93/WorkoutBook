@@ -1,4 +1,3 @@
-// export const fetchPosts = () => {
 export const fetchPosts = (wallId) => {
     return $.ajax({
         url: `/api/posts`,
