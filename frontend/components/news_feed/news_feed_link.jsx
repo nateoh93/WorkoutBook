@@ -24,17 +24,17 @@ class NewsFeedLink extends React.Component {
 
                 <div className='newsfeed-outside-links'>
                     <h1>Shortcuts</h1>
-                    <a href="https://www.linkedin.com/in/nathan-oh-cpa-8062075a/"><div className='link-container'>
+                    <a target="_blank" href="https://www.linkedin.com/in/nathan-oh-cpa-8062075a/"><div className='link-container'>
                         <div className='link-name'>LinkedIn</div>
                         <i className="fab fa-linkedin link-icon"></i>
                     </div></a>
 
-                    <a href="https://github.com/nateoh93"><div className='link-container'>
+                    <a target="_blank" href="https://github.com/nateoh93"><div className='link-container'>
                         <div className='link-name'>GitHub</div>
                         <i className="fab fa-github link-icon"></i>
                     </div></a>
 
-                    <a href="https://github.com/nateoh93/WorkoutBook"><div className='link-container'>
+                    <a target="_blank" href="https://github.com/nateoh93/WorkoutBook"><div className='link-container'>
                         <div className='link-name'>Workoutbook Repo</div>
                         <i className="fas fa-code-branch link-icon"></i>
                     </div></a>

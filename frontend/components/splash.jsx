@@ -16,9 +16,9 @@ class Splash extends React.Component {
                 <footer>
                         <div className='copyright'>&copy; Nathan Oh 2020</div>
                         <div className='footer-links'>
-                            <a href="https://www.linkedin.com/in/nathan-oh-cpa-8062075a/">LinkedIn</a>
-                            <a href="https://github.com/nateoh93">GitHub</a>
-                            <a href="https://github.com/nateoh93/WorkoutBook">Workoutbook Repo</a>
+                            <a target="_blank" href="https://www.linkedin.com/in/nathan-oh-cpa-8062075a/">LinkedIn</a>
+                            <a target="_blank" href="https://github.com/nateoh93">GitHub</a>
+                            <a target="_blank" href="https://github.com/nateoh93/WorkoutBook">Workoutbook Repo</a>
                         </div>
                 </footer>
             </>
