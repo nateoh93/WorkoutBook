@@ -18,7 +18,6 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = (dispatch) => {
     return ({
-        // otherForm: () => dispatch(openModal('Create Post')),
         otherForm: (modal) => dispatch(openModal(modal)),
         createPost: (post) => dispatch(createPost(post)),
         closeModal: () => dispatch(closeModal()),

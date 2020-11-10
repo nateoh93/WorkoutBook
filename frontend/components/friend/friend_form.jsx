@@ -3,9 +3,7 @@ import React from 'react';
 class FriendForm extends React.Component {
     constructor(props) {
         super(props);
-        // this.state = {
-        //     status: 'unchanged'
-        // }
+        
         this.handleRequest = this.handleRequest.bind(this);
         this.handleRemove = this.handleRemove.bind(this);
         this.displayFriendButton = this.displayFriendButton.bind(this);

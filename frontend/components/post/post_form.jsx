@@ -15,10 +15,6 @@ class PostForm extends React.Component {
         this.clickFile = this.clickFile.bind(this);
     }
 
-    componentDidMount() {
-        // this.props.fetchUsers()
-    }
-
     handleFile(e) {
         const file = e.currentTarget.files[0];
         const fileReader = new FileReader();
@@ -86,7 +82,6 @@ class PostForm extends React.Component {
             <>
                 <h3>Create Post</h3>
                 <div className='post-form-container'>
-                    {/* <form className='create-post-form' onSubmit={this.handleSubmit}> */}
                     <form className='create-post-form'>
                         <div className='post-body-container'>
                             <img className='post-form-photo' src={this.props.currentUser.profilePhoto}/>
@@ -102,7 +97,6 @@ class PostForm extends React.Component {
                         <div className='create-post-btn-container'>
 
                         {postButton}
-                        {/* <button className='create-post-btn'>Post</button> */}
                         </div>
                     </form>
                 </div>

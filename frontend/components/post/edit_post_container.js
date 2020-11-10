@@ -7,7 +7,6 @@ import {openModal, closeModal} from '../../actions/modal_actions'
 const mSTP = (state, ownProps) => {
     return ({
         openModal: state.ui.modal,
-        // formType: 'Update Post',
         post: state.entities.posts[ownProps.id],
         currentUser: state.entities.users[state.session.id],
     })
@@ -15,7 +14,6 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = (dispatch) => {
     return ({
-        // otherForm: () => dispatch(openModal('Update Post')),
         otherForm: (modal) => dispatch(openModal(modal)),
         action: (post) => dispatch(updatePost(post)),
         closeModal: () => dispatch(closeModal()),

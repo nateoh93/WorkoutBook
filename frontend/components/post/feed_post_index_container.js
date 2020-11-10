@@ -1,7 +1,4 @@
 import { connect } from 'react-redux';
-// import { fetchPosts, deletePost } from '../../actions/post_actions';
-// import WallPostIndex from './wall_post_index';
-// import { openModal, closeModal } from '../../actions/modal_actions'
 import { withRouter } from 'react-router-dom';
 import { deletePost, fetchPosts } from '../../actions/post_actions';
 import { getUserFriends } from '../../reducers/selectors';

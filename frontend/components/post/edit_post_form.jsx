@@ -40,7 +40,6 @@ class EditPostForm extends React.Component {
         }
 
         return (
-            // <form className='update-post-form' onSubmit={this.handleSubmit}>
             <form className='update-post-form'>
                 <span onClick={this.props.closeModal} className="close-x post-form-modal">&times;</span>
                 <h3>Edit Post </h3>

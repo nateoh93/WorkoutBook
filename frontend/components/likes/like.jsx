@@ -12,9 +12,6 @@ class Like extends React.Component {
         const amount = this.props.likes.length;
         const liked = this.props.liked
 
-        // const display = { amount = this.props.likes.length, liked: this.props.liked}
-
-
         if (this.props.type === 'Post') {
             if (amount === 0) {
                 text = null;
@@ -34,12 +31,10 @@ class Like extends React.Component {
                 likeBtn = null;
             } else {
                 text = <div className='like-amount-comment'>{amount}</div>;
-                // text = <div className='like-amount'>{amount}</div>;
                 likeBtn = <div className='like-icon-blue-comment'></div>
             }
 
         }
-
 
         return(
             <>

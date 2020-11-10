@@ -12,7 +12,6 @@ const mSTP = (state, ownProps) => {
     return ({
         users: state.entities.users,
         currentUser: state.entities.users[state.session.id],
-        // postProfile: state.entities.users[ownProps.match.params.userId]
         postProfile: state.entities.users[postProfileId],
         post: ownProps.post,
         likes: getLikes(state, ownProps.post)
