@@ -19,12 +19,6 @@ class CommentIndexItem extends React.Component {
         this.displayLikes = this.displayLikes.bind(this);
     }
 
-    componentDidUpdate(prevProps, prevState) {
-        // if (prevProps.comment.body !== this.props.comment.body) {
-        //     this.props.fetchPost(this.props.post.id)
-        // }
-    }
-
     toggleLike(e) {
         e.preventDefault();
 

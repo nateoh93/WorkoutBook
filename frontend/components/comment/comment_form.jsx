@@ -12,10 +12,6 @@ class CommentForm extends React.Component {
         this.update = this.update.bind(this);
     }
 
-    componentDidMount() {
-        // this.props.fetchUsers()
-    }
-
     handleSubmit(e) {
         e.preventDefault();
 
@@ -43,7 +39,6 @@ class CommentForm extends React.Component {
                         value={this.state.body}
                         onChange={this.update('body')}
                         id={`comment-form-input-id-${this.props.post.id}`}
-                        // onKeyPress={this.handleSubmit}
                     />
                 </form>
             </div>
