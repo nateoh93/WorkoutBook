@@ -7,6 +7,11 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
 
+    <meta property='og:title' content='Workoutbook' />
+    <meta property='og:image' content='<%= image_url('workoutbook.png') %>' />
+    <meta property='og:description' content='A Facebook inspired social media network that connects users and allows them to share health and fitness content' />
+    <meta property='og:url' content='https://workoutbook-nate.herokuapp.com/#/' />
+
     <% if logged_in? %>
       <script type="text/javascript">
         window.currentUser = {
