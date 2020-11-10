@@ -5,14 +5,8 @@ import { getUserFriends } from '../../reducers/selectors';
 import ProfileBio from './profile_bio';
 
 const mSTP = (state, ownProps) => {
-    // let friendships = [];
-    // if (state.entities.friendships[ownProps.match.params.userId] !== undefined) {
-    //     friendships = Object.values(state.entities.friendships[ownProps.match.params.userId])
-    // }
-    // debugger
-
     const postProfileId = ownProps.match.params.userId || state.session.id
-    // debugger
+    
     return({
         user: state.entities.users[ownProps.match.params.userId],
         // friendships: friendships,
@@ -23,7 +17,6 @@ const mSTP = (state, ownProps) => {
 }
 
 const mDTP = dispatch => {
-    // debugger
     return({
         fetchUser: (userId) => dispatch(fetchUser(userId)),
     })

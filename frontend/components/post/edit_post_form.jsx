@@ -11,7 +11,6 @@ class EditPostForm extends React.Component {
     }
 
     handleSubmit(e) {
-        // debugger
         e.preventDefault();
         const formData = new FormData();
         formData.id = this.props.post.id;

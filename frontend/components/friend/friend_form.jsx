@@ -45,7 +45,7 @@ class FriendForm extends React.Component {
                     pendingFriendship = true;
             }
         })
-        debugger
+        
         if (this.props.postProfile.id === this.props.currentUser.id) {
             return null;
         } else if (alreadyFriends === true) {

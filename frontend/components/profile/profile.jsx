@@ -14,14 +14,12 @@ class Profile extends React.Component {
     }
 
     componentDidMount() {
-        // debugger
         this.props.fetchAllUsers()
         // this.props.fetchUser(this.props.user.id)
     }
 
     render() {
         // const userData = this.props.fetchUser(this.props.match.params.userId)
-        // debugger
         if (Object.values(this.props.users).length < 2) {
             return (<div></div>)
         } else {

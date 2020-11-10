@@ -8,19 +8,16 @@ class CommentIndex extends React.Component {
     }
 
     componentDidMount() {
-        // debugger
         // this.props.fetchPosts(this.props.postProfile.id)
     }
 
     componentDidUpdate(prevProps, prevState) {
-        // debugger
         // if (prevProps.postProfile.id !== this.props.postProfile.id) {
         //     this.props.fetchPosts(this.props.postProfile.id)
         // }
     }
 
     render() {
-        // debugger
         const CommentIndexList = this.props.comments.map(comment => {
             return <CommentIndexItemContainer key={comment.id}
                 comment={comment}

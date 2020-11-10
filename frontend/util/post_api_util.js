@@ -1,6 +1,5 @@
 // export const fetchPosts = () => {
 export const fetchPosts = (wallId) => {
-    // debugger
     return $.ajax({
         url: `/api/posts`,
         method: `GET`,
@@ -26,7 +25,6 @@ export const createPost = (post) => {
 }
 
 export const updatePost = (post) => {
-    // debugger
     return $.ajax({
         url: `/api/posts/${post.id}`,
         method: `PATCH`,

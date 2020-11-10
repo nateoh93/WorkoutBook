@@ -1,5 +1,4 @@
 export const getUserFriends = ({entities}, id) => {
-    // debugger
     let userFriends = [];
 
     Object.values(entities.friendships).forEach( user => {
@@ -12,7 +11,6 @@ export const getUserFriends = ({entities}, id) => {
 }
 
 export const getUserFriendships = ({entities}, id) => {
-    // debugger
     let userFriendships = [];
 
     Object.values(entities.friendships).forEach( user => {
@@ -38,7 +36,6 @@ export const getLikes = (state, item ) => {
 }
 
 export const receivedRequests = ({users, friendRequests}, id) => {
-    // debugger
     let requestedUsers = [];
     // if (Object.keys(state.entities.friendRequests).length === 0 || state.entities.friendRequests === undefined) {
     // if (friendRequests[id] === undefined || Object.keys(friendRequests).length === 0) {
@@ -62,7 +59,6 @@ export const receivedRequests = ({users, friendRequests}, id) => {
 
 
 export const requestedFriends = ({friendRequests}, id) => {
-    // debugger
 
     let requestedFriends = [];
 

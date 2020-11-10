@@ -6,22 +6,18 @@ const friendshipReducer = (state = {}, action) => {
     let nextState = Object.assign({}, state);
     switch (action.type) {
         case RECEIVE_ALL_USERS:
-            debugger
 
             return Object.assign(nextState, action.usersPayload.friendships)
         case RECEIVE_USER:
-            debugger
             return Object.assign(nextState, action.user.friendships)
 
             // nextState[action.user.user.id] = action.user.friends
             // return nextState;
         case ACCEPT_FRIENDSHIP:
-            debugger
             nextState[Object.keys(action.friendship.friend)] = Object.values(action.friendship.friend)[0]
             nextState[Object.keys(action.friendship.inverse_friend)] = Object.values(action.friendship.inverse_friend)[0]
             return nextState;
         case REMOVE_FRIENDSHIP:
-            debugger
             delete nextState[Object.keys(action.friendship.friend)]
             delete nextState[Object.keys(action.friendship.inverse_friend)]
             // delete nextState[action.friendship.id];

@@ -7,9 +7,8 @@ import { getLikes } from '../../reducers/selectors';
 import { deletePost } from '../../actions/post_actions';
 
 const mSTP = (state, ownProps) => {
-    // debugger
     const postProfileId = ownProps.match.params.userId || state.session.id
-    // debugger
+    
     return ({
         users: state.entities.users,
         currentUser: state.entities.users[state.session.id],
@@ -21,7 +20,6 @@ const mSTP = (state, ownProps) => {
 }
 
 const mDTP = (dispatch) => {
-    // debugger
     return ({
         createLike: (like) => dispatch(createLike(like)),
         deleteLike: (like) => dispatch(deleteLike(like)),

@@ -2,7 +2,6 @@ class Api::PostsController < ApplicationController
     # before_action :require_logged_in
 
     def index
-        # debugger
 
         
         if params[:wallId] == 'all'
@@ -10,9 +9,6 @@ class Api::PostsController < ApplicationController
         else
             # @posts = Post.where(profile_user_id: params[:wallId])
             @posts = Post.includes(:comments, :likes).all.where(profile_user_id: params[:wallId])
-            # if @posts.length == 0
-            #     return nil
-            # end
         end
         render :index
     end
@@ -23,7 +19,6 @@ class Api::PostsController < ApplicationController
     end
 
     def create
-        # debugger
         @post = Post.new(post_params)
         if @post.save
             render :show
@@ -33,7 +28,6 @@ class Api::PostsController < ApplicationController
     end
 
     def update
-        # debugger
         @post = Post.find_by(id: params[:id])
         if @post.update(post_params)
             render :show
@@ -43,7 +37,6 @@ class Api::PostsController < ApplicationController
     end
 
     def destroy
-        # debugger
         @post = Post.find_by(id: params[:id])
         if @post.destroy
             render :show

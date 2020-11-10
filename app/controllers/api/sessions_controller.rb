@@ -2,7 +2,6 @@ class Api::SessionsController < ApplicationController
     before_action :require_logged_in, except: [:create]
 
     def create
-        # debugger
         @user = User.find_by_credentials(
             params[:user][:email],
             params[:user][:password]

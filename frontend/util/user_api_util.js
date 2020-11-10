@@ -23,7 +23,6 @@ export const updateUser = (user) => {
 }
 
 export const updateUserInfo = (user) => {
-    // debugger
     return $.ajax({
         method: 'PATCH',
         url: `/api/users/${user.id}`,
@@ -32,11 +31,3 @@ export const updateUserInfo = (user) => {
         processData: false
     })
 }
-
-// export const fetchFriends = () => {
-//     debugger
-//     return $.ajax({
-//         method: 'GET',
-//         url: '/api/users',
-//     })
-// }

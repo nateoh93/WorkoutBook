@@ -30,7 +30,6 @@ class PostIndexItem extends React.Component{
             likeable_id: this.props.post.id
         };
         let toggle = false;
-        // debugger
         this.props.likes.forEach( like => {
             if (like.author_id === this.props.currentUser.id) {
                 newLike = like;
@@ -46,7 +45,6 @@ class PostIndexItem extends React.Component{
     }
 
     displayLikes() {
-        // debugger
         let liked = false;
         this.props.likes.forEach(like => {
             if (like.author_id === this.props.currentUser.id) {
@@ -57,7 +55,6 @@ class PostIndexItem extends React.Component{
 
 
         if (this.props.likes.length !== undefined ) {
-            // debugger
             return <Like currentUser={this.props.currentUser}
                 liked={liked}
                 likes={this.props.likes}
@@ -70,13 +67,11 @@ class PostIndexItem extends React.Component{
 
     destroyPost(e) {
         e.preventDefault();
-        // debugger
         this.props.deletePost(this.props.post.id)
         // this.props.deletePost(this.state.id)
     }
     
     displayDropdownMenu() {
-        // debugger
         //consider whether to allow the profileUser to also delete / edit posts that are on his profile
         if (this.props.currentUser.id === this.props.post.post_author_id || this.props.currentUser.id === this.props.post.profile_user_id) {
         // if (this.props.currentUser.id === this.state.post_author_id || this.props.currentUser.id === this.props.post.profile_user_id) {
@@ -107,7 +102,6 @@ class PostIndexItem extends React.Component{
 
 
     displayPostAuthor() {
-        // debugger
         
         let month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
         month = month[this.props.post.created_at.slice(5, 7) - 1];
@@ -127,7 +121,6 @@ class PostIndexItem extends React.Component{
         } else {
             time = `${hour}${min} AM`;
         }
-        // debugger
         const postAuthor = this.props.users[this.props.post.post_author_id]
         // const postAuthor = this.props.users[this.state.post_author_id]
         return (

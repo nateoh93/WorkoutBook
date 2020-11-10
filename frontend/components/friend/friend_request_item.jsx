@@ -10,8 +10,6 @@ class FriendRequestItem extends React.Component {
     }
 
     handleAccept(e) {
-        debugger
-
         e.preventDefault();
 
         let requestedFriendData;
@@ -26,8 +24,6 @@ class FriendRequestItem extends React.Component {
     }
     
     handleDecline(e) {
-        debugger
-
         e.preventDefault();
 
         let requestedFriendData;

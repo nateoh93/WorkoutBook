@@ -7,8 +7,6 @@ class FriendRequest extends React.Component {
     }
 
     render() {
-        debugger
-
         const requestList = this.props.requestedUsers.map( user => {
             return <FriendRequestItem
                 key={user.id}

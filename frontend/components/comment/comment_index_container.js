@@ -8,8 +8,6 @@ import { getLikes } from '../../reducers/selectors';
 
 
 const mSTP = (state, ownProps) => {
-    // debugger
-
     let comments = [];
     if (ownProps.post.commentIds) {
         ownProps.post.commentIds.forEach( commentId => {
@@ -32,7 +30,6 @@ const mSTP = (state, ownProps) => {
 }
 
 const mDTP = (dispatch) => {
-    // debugger
     return ({
         updateComment: (comment) => dispatch(updateComment(comment)),
         deleteComment: (comment) => dispatch(deleteComment(comment)),

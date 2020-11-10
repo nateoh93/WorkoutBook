@@ -6,7 +6,6 @@ class Like extends React.Component {
     }
 
     render() {
-        // debugger
         let text;
         let likeBtn = <div className='like-icon-blue'></div>
 
@@ -15,7 +14,6 @@ class Like extends React.Component {
 
         // const display = { amount = this.props.likes.length, liked: this.props.liked}
 
-        // debugger
 
         if (this.props.type === 'Post') {
             if (amount === 0) {
@@ -43,7 +41,6 @@ class Like extends React.Component {
         }
 
 
-        // debugger
         return(
             <>
                 {this.props.type === 'Post' ? <div className='display-like-count'>

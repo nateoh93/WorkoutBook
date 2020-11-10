@@ -37,7 +37,6 @@ class User < ApplicationRecord
         foreign_key: :user_id,
         class_name: :Friendship,
         dependent: :destroy
-        # inverse_of: :user
     
     has_many :friends,
         through: :friendships,

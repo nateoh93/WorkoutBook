@@ -10,14 +10,12 @@ const postsReducer = (state={}, action) => {
     // // } else {
     // }
 
-    // debugger
     Object.freeze(state);
     let nextState = Object.assign({}, state);
 
     switch (action.type) {
         case RECEIVE_ALL_POSTS:
             // nextState = action.posts.posts
-            // debugger
             // return Object.assign(nextState, action.posts.posts);
             return Object.assign({}, action.posts.posts);
         case RECEIVE_POST:
@@ -27,25 +25,21 @@ const postsReducer = (state={}, action) => {
             delete nextState[action.postId]
             return nextState;
         case RECEIVE_COMMENT:
-            // debugger
             let post = nextState[action.comment.post_id];
             if (!post.commentIds.includes(action.comment.id)) {
                 post.commentIds.push(action.comment.id)
             }
             return nextState;
         case REMOVE_COMMENT:
-            // debugger
             let newCommentIds = nextState[action.comment.post_id].commentIds.filter(id => id !== action.comment.id)
             nextState[action.comment.post_id].commentIds = newCommentIds;
             return nextState;
         case RECEIVE_LIKE:
-            // debugger
             if (action.like.likeable_type === 'Post') {
                 nextState[action.like.likeable_id].likeIds.push(action.like.id)
             }
             return nextState;
         case REMOVE_LIKE:
-            // debugger
             if (action.like.likeable_type === 'Post') {
                 let newLikeIds = nextState[action.like.likeable_id].likeIds.filter(id => id !== action.like.id);
                 nextState[action.like.likeable_id].likeIds = newLikeIds;

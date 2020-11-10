@@ -5,7 +5,6 @@ import { openModal, closeModal } from '../../actions/modal_actions'
 import { withRouter } from 'react-router-dom';
 
 const mSTP = (state, ownProps) => {
-    // debugger
     const postProfileId = ownProps.match.params.userId || state.session.id
 
     return ({
@@ -18,7 +17,6 @@ const mSTP = (state, ownProps) => {
 }
 
 const mDTP = (dispatch) => {
-    // debugger
     return ({
         otherForm: (modal, id) => dispatch(openModal(modal, id)),
         // createPost: (post) => dispatch(createPost(post)),

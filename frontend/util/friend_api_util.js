@@ -1,5 +1,4 @@
 export const createFriend = friendship => {
-    debugger
     return $.ajax({
         url: `/api/friendships`,
         method: `POST`,
@@ -8,7 +7,6 @@ export const createFriend = friendship => {
 }
 
 export const deleteFriend = friendship => {
-    debugger
     return $.ajax({
         url: `/api/friendships/${friendship.id}`,
         method: `DELETE`,
@@ -17,7 +15,6 @@ export const deleteFriend = friendship => {
 }
 
 export const createFriendRequest = friend_request => {
-    debugger
     return $.ajax({
         url: `/api/friend_requests`,
         method: `POST`,
@@ -26,7 +23,6 @@ export const createFriendRequest = friend_request => {
 }
 
 export const deleteFriendRequest = request => {
-    debugger
     return $.ajax({
         url: `/api/friend_requests/${request.id}`,
         method: `DELETE`,

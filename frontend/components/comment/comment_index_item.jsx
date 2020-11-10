@@ -20,7 +20,6 @@ class CommentIndexItem extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState) {
-        // debugger
         // if (prevProps.comment.body !== this.props.comment.body) {
         //     this.props.fetchPost(this.props.post.id)
         // }
@@ -34,7 +33,6 @@ class CommentIndexItem extends React.Component {
             likeable_id: this.props.comment.id
         };
         let toggle = false;
-        // debugger
         this.props.likes.forEach(like => {
             if (like.author_id === this.props.currentUser.id) {
                 newLike = like;
@@ -50,7 +48,6 @@ class CommentIndexItem extends React.Component {
     }
 
     displayLikes() {
-        // debugger
         let liked = false;
         this.props.likes.forEach(like => {
             if (like.author_id === this.props.currentUser.id) {
@@ -61,7 +58,6 @@ class CommentIndexItem extends React.Component {
 
 
         if (this.props.likes.length !== undefined) {
-            // debugger
             return <Like currentUser={this.props.currentUser}
                 liked={liked}
                 likes={this.props.likes}
@@ -74,14 +70,11 @@ class CommentIndexItem extends React.Component {
 
     destroyComment(e) {
         e.preventDefault();
-        // debugger
         this.props.deleteComment(this.props.comment)
     }
 
     displayDropdownMenu() {
-        // debugger
         // if (this.props.currentUser.id === this.props.comment.comment_author_id || this.props.currentUser.id === this.props.postProfile.id) {
-            // debugger
             if (this.props.currentUser.id === this.props.comment.comment_author_id) {
                 return (
                     <>
@@ -106,7 +99,6 @@ class CommentIndexItem extends React.Component {
     }
 
     changeComment(e) {
-        // debugger
         // e.preventDefault();
         this.setState({edit: true})
 
@@ -120,7 +112,6 @@ class CommentIndexItem extends React.Component {
     }
 
     handleSubmit(e) {
-        // debugger
         const formData = new FormData();
         formData.id = this.props.comment.id;
         formData.append('comment[body]', this.state.body);
@@ -139,7 +130,6 @@ class CommentIndexItem extends React.Component {
 
 
     render() {
-        // debugger
         let commentDisplay;
         this.state.edit === true ? commentDisplay = 
             <>

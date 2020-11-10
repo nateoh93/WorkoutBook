@@ -7,22 +7,15 @@ const friendRequestsReducer = (state={}, action) => {
 
     switch (action.type) {
         case RECEIVE_FRIEND_REQUEST:
-            debugger
-
             nextState[Object.keys(action.request)] = action.request
             return nextState;
         case REMOVE_FRIEND_REQUEST:
-            // debugger
-
             delete nextState[action.request.id]
             return nextState;
         case ACCEPT_FRIENDSHIP:
-            debugger
             delete nextState[Object.keys(action.friendship.request)]
             return nextState;
         case RECEIVE_ALL_USERS:
-            debugger
-
             return Object.assign(nextState, action.usersPayload.friendRequests);
         default:
             return state;

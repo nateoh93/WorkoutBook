@@ -31,7 +31,6 @@ class PostForm extends React.Component {
     }
 
     handleSubmit(e) {
-        // debugger
         e.preventDefault();
         const formData = new FormData();
         formData.append('post[body]', this.state.body)
@@ -39,7 +38,6 @@ class PostForm extends React.Component {
         formData.append('post[post_author_id]', this.props.currentUser.id)
 
         if (this.state.photoFile) {
-            // debugger
             formData.append('post[post_photo]', this.state.photoFile)
         }
         

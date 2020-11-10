@@ -8,17 +8,7 @@ import { getUserFriends } from '../../reducers/selectors';
 import FeedPostIndex from './feed_post_index'
 
 const mSTP = (state, ownProps) => {
-    // debugger
-
     const postProfileId = ownProps.match.params.userId || state.session.id
-
-    // let newsfeedUsers = [];
-    // if (state.entities.friendships[state.session.id] !== undefined) {
-    //     newsfeedUsers = Object.values(state.entities.friendships[state.session.id])
-    //     newsfeedUsers.push(state.entities.users[state.session.id])
-    // } else {
-    //     newsfeedUsers.push(state.entities.users[state.session.id])
-    // }
 
     return ({
         userFriends: getUserFriends(state, postProfileId),
@@ -30,11 +20,7 @@ const mSTP = (state, ownProps) => {
 }
 
 const mDTP = (dispatch) => {
-    // debugger
     return ({
-        // otherForm: (modal, id) => dispatch(openModal(modal, id)),
-        // createPost: (post) => dispatch(createPost(post)),
-        // closeModal: () => dispatch(closeModal()),
         fetchPosts: (wallId) => dispatch(fetchPosts(wallId)),
         deletePost: (postId) => dispatch(deletePost(postId))
     })

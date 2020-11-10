@@ -11,7 +11,6 @@ class Api::CommentsController < ApplicationController
     end
 
     def create
-        # debugger
         @comment = Comment.new(comment_params)
         if @comment.save
             render :show
@@ -30,7 +29,6 @@ class Api::CommentsController < ApplicationController
     end
 
     def destroy
-        # debugger
         @comment = Comment.find_by(id: params[:id])
         if @comment.destroy
             render json: :show
