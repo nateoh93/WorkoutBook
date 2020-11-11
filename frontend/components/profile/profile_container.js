@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Profile from './profile';
-import {fetchAllUsers, fetchFriends, fetchUser} from '../../actions/session_actions'
+import {fetchAllUsers, fetchUser} from '../../actions/session_actions'
 import {withRouter} from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {

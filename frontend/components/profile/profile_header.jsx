@@ -1,7 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
 import FriendFormContainer from '../friend/friend_form_container';
-import EditProfileContainer from './edit_profile_container';
 
 class ProfileHeader extends React.Component {
     constructor(props) {

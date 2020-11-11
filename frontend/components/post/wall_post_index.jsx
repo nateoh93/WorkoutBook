@@ -1,5 +1,4 @@
 import React from 'react';
-import PostIndexItem from './post_index_item'
 import PostIndexItemContainer from './post_index_item_container'
 
 class WallPostIndex extends React.Component {

@@ -37,16 +37,6 @@ export const getLikes = (state, item ) => {
 
 export const receivedRequests = ({users, friendRequests}, id) => {
     let requestedUsers = [];
-    // if (Object.keys(state.entities.friendRequests).length === 0 || state.entities.friendRequests === undefined) {
-    // if (friendRequests[id] === undefined || Object.keys(friendRequests).length === 0) {
-    //     return requestedUsers;
-    // } else {
-    //     Object.values(friendRequests[id]).forEach ( request => {
-    //         requestedUsers.push(users[request.requester_id]);
-    //     });
-    
-    //     return requestedUsers
-    // }
 
     Object.values(friendRequests).forEach( request => {
         if (request.requestee_id === id) {

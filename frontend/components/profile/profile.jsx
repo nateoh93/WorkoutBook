@@ -6,16 +6,12 @@ import WallPostIndexContainer from '../post/wall_post_index_container'
 import CreatePostContainer from '../post/create_post_container';
 
 class Profile extends React.Component {
-    //consider fetching all user info here. then passing it down to each container as its own props.
-    // that way you don't have to keep calling componentdidmount() and fetch user. looks like there are multiple
-    //queries to fetch data.
     constructor(props) {
         super(props);
     }
 
     componentDidMount() {
         this.props.fetchAllUsers()
-        // this.props.fetchUser(this.props.user.id)
     }
 
     render() {

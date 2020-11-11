@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { openModal, closeModal } from '../../actions/modal_actions';
 import EditProfileForm from './edit_profile_form';
 import {fetchUser, updateUserInfo} from '../../actions/session_actions'
@@ -17,7 +17,6 @@ const mapDispatchToProps = (dispatch) => {
         updateUserInfo: (user) => {
             return dispatch(updateUserInfo(user))
         },
-        // otherForm: () => dispatch(openModal('Update Info')),
         otherForm: (modal) => dispatch(openModal(modal)),
         closeModal: () => dispatch(closeModal()),
     });

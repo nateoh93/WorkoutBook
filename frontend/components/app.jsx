@@ -21,13 +21,9 @@ const App = () => {
             
             <Switch>
                 <ProtectedRoute path='/users/:userId' component={ProfileContainer} />
-                {/* <ProtectedRoute path='/users/:userId' component={Profile} /> */}
                 <ProtectedRoute path='/feed' component={NewsFeedContainer} />
                 <AuthRoute exact path='/' component={SplashContainer} />
                 <Redirect to='/feed' />
-                
-                {/* <AuthRoute path='/login' component={LoginFormContainer} />
-                <AuthRoute path='/signup' component={SignupFormContainer} /> */}
             </Switch>
         </div>
     )
