@@ -1,5 +1,5 @@
 class Api::FriendRequestsController < ApplicationController
-    # before_action :require_logged_in
+    before_action :require_logged_in
 
     def create
         @request = FriendRequest.new(request_params)

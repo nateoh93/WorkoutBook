@@ -1,13 +1,10 @@
 class Api::PostsController < ApplicationController
-    # before_action :require_logged_in
+    before_action :require_logged_in
 
-    def index
-
-        
+    def index      
         if params[:wallId] == 'all'
             @posts = Post.includes(:comments, :likes).all
         else
-            # @posts = Post.where(profile_user_id: params[:wallId])
             @posts = Post.includes(:comments, :likes).all.where(profile_user_id: params[:wallId])
         end
         render :index
