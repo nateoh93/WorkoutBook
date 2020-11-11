@@ -1,6 +1,6 @@
 json.friend do 
     json.set! @friend.id do
-        json.extract! @friend, :id, :user_id, :friend_id
+        json.partial! 'friendship', friend: @friend
     end
 end
 
@@ -13,7 +13,7 @@ end
 if @request
     json.request do
         json.set! @request.id do
-            json.extract! @request, :id, :requester_id, :requestee_id
+            json.partial! 'api/friend_requests/friend_request', request: @request
         end
     end
 end

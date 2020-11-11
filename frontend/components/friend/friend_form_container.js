@@ -19,7 +19,8 @@ const mDTP = dispatch => {
     return({
         deleteFriend: (friend) => dispatch(deleteFriend(friend)),
         requestFriend: (friend) => dispatch(createFriendRequest(friend)),
-        fetchAllUsers: () => dispatch(fetchAllUsers())
+        fetchAllUsers: () => dispatch(fetchAllUsers()),
+        fetchUser: (userId) => dispatch(fetchUser(userId)),
     })
 };
 
