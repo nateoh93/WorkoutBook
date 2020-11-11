@@ -34,7 +34,53 @@ Users can accept / decline friend requests and request / unfriend other users.
 
 ![friend](https://user-images.githubusercontent.com/60491357/98750786-aae0c300-2373-11eb-8a82-c660a24b32ee.gif)
 ## Code Snippets
+### Friend Request
+This snippet handles the main functionality of requesting a new friendship, unfriending current friends, and displaying a pending friendship status if a friend request already exists. `handleRequest` and `handleRemove` invokes methods, which are promises, `this.props.requestFriends` and `this.props.deleteFriend`, respectively. Thereafter, methods were chained onto the promises to trigger an update to the Redux state.
+```js
+    handleRequest(e) {
+        e.preventDefault();
+        this.props.requestFriend({ requestee_id: this.props.postProfile.id }).then(this.props.fetchAllUsers());
+    };
+    
+    handleRemove(e) {
+        e.preventDefault();
+        let friendship;
+        this.props.currentUserFriends.forEach( friend => {
+            if (friend.friend_id === this.props.postProfile.id) {
+                friendship = friend;
+            };
+        });
+        this.props.deleteFriend(friendship).then(this.props.fetchUser(this.props.postProfile.id));
+    }
 
+    displayFriendButton() {
+        let alreadyFriends = false;
+        let pendingFriendship = false;
+
+        this.props.currentUserFriends.forEach( friend => {
+            if (friend.friend_id === this.props.postProfile.id) {
+                alreadyFriends = true;
+            };
+        });
+
+        this.props.friendRequests.forEach( request => {
+            if ((request.requester_id === this.props.postProfile.id && request.requestee_id === this.props.currentUser.id) ||
+                (request.requestee_id === this.props.postProfile.id && request.requester_id === this.props.currentUser.id)) {
+                    pendingFriendship = true;
+            };
+        });
+        
+        if (this.props.postProfile.id === this.props.currentUser.id) {
+            return null;
+        } else if (alreadyFriends === true) {
+            return <button className='delete-friend-btn' onClick={this.handleRemove}><i class="fas fa-user-minus"></i>Unfriend</button>
+        } else if (pendingFriendship === true) {
+            return <button className='pending-friendship-btn'><i class="fas fa-user-edit"></i>Pending</button>
+        } else {
+            return <button className='request-friendship-btn' onClick={this.handleRequest}><i class="fas fa-user-plus"></i>Add Friend</button>
+        };
+    };
+```
 ## Future Direction
 + Search functionality
 + Nested comments
