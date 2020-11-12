@@ -10,7 +10,6 @@ class ProfileNav extends React.Component {
         return(
             <div>
                 <ul className='profile-nav'>
-                    <li>Navbar coming soon...</li>
                     {/* <li>Timeline</li>
                     <li>About</li>
                     <li>Friends</li>
