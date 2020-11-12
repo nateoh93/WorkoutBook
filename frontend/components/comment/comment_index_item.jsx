@@ -16,7 +16,6 @@ class CommentIndexItem extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleCancel = this.handleCancel.bind(this);
         this.toggleLike = this.toggleLike.bind(this);
-        this.displayLikes = this.displayLikes.bind(this);
     }
 
     toggleLike(e) {
@@ -38,27 +37,6 @@ class CommentIndexItem extends React.Component {
             this.props.deleteLike(newLike);
         } else {
             this.props.createLike(newLike);
-        }
-    }
-
-    displayLikes() {
-        let liked = false;
-        this.props.likes.forEach(like => {
-            if (like.author_id === this.props.currentUser.id) {
-                liked = true;
-            }
-        })
-
-
-
-        if (this.props.likes.length !== undefined) {
-            return <Like currentUser={this.props.currentUser}
-                liked={liked}
-                likes={this.props.likes}
-                type='Comment'
-            />
-        } else {
-            return null
         }
     }
 
@@ -93,10 +71,7 @@ class CommentIndexItem extends React.Component {
     }
 
     changeComment(e) {
-        // e.preventDefault();
         this.setState({edit: true})
-
-        // document.getElementById(`comment-edit-input-id-${this.props.comment.id}`).focus();
     }
 
     update(field) {
@@ -136,7 +111,6 @@ class CommentIndexItem extends React.Component {
                         this.handleSubmit();}
                     }}
                 />
-                {/* <button onClick={this.setState({edit: false})}>Cancel</button> */}
             </> : commentDisplay = <div className='comment-body'>{this.state.body}</div>
     
         let liked = false;
@@ -171,14 +145,9 @@ class CommentIndexItem extends React.Component {
 
                     {commentDisplay}
 
-                    {this.state.edit === true ? 
-                        <div className='cancel-edit-comment'
-                            // id={`comment-edit-input-id-${this.props.comment.id}`}
-                            onClick={this.handleCancel}>Cancel</div> : null}
-
+                    {this.state.edit === true ? <div className='cancel-edit-comment' onClick={this.handleCancel}>Cancel</div> : null}
                 </div>
 
-                {/* {this.displayLikes()} */}
                 {displayLikes}
                 
                 <div className='like-comment-btn' onClick={this.toggleLike} id={underlineLike}>Like</div>
