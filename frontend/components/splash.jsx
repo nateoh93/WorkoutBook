@@ -8,7 +8,7 @@ class Splash extends React.Component {
             <>
                 <header>
                     <div className="splash-header">
-                        <h1 className='splash-logo'>workoutbook</h1>
+                        <h1 className='splash-logo'>Workoutbook</h1>
                         <h2 className='splash-title'>Connect with friends and the world around you on Workoutbook.</h2>
                     </div>
                     <LoginFormContainer />

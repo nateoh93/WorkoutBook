@@ -13,7 +13,6 @@ class PostIndexItem extends React.Component{
         this.displayPostAuthor = this.displayPostAuthor.bind(this);
         this.focusComment = this.focusComment.bind(this);
         this.toggleLike = this.toggleLike.bind(this);
-        this.displayLikes = this.displayLikes.bind(this);
     }
 
     toggleLike(e) {
@@ -35,27 +34,6 @@ class PostIndexItem extends React.Component{
             this.props.deleteLike(newLike);
         } else {
             this.props.createLike(newLike);
-        }
-    }
-
-    displayLikes() {
-        let liked = false;
-        this.props.likes.forEach(like => {
-            if (like.author_id === this.props.currentUser.id) {
-                liked = true;
-            }
-        })
-
-
-
-        if (this.props.likes.length !== undefined ) {
-            return <Like currentUser={this.props.currentUser}
-                liked={liked}
-                likes={this.props.likes}
-                type='Post'
-            />
-        } else {
-            return null
         }
     }
 
@@ -132,6 +110,24 @@ class PostIndexItem extends React.Component{
     }
 
     render() {
+        let liked = false;
+        this.props.likes.forEach(like => {
+            if (like.author_id === this.props.currentUser.id) {
+                liked = true;
+            }
+        })
+
+        let boldLikes = liked ? 'bold-like' : '';
+        let displayLikes;
+
+        if (this.props.likes.length !== undefined ) {
+            displayLikes = <Like currentUser={this.props.currentUser}
+                liked={liked}
+                likes={this.props.likes}
+                type='Post'
+            />
+        }
+
         return (
             <li>
                 {this.displayPostAuthor()}
@@ -139,10 +135,10 @@ class PostIndexItem extends React.Component{
                 <div className='wallpost-body'>{this.props.post.body}</div>
                 <img className='wallpost-photos' src={this.props.post.postPhoto} />
                 
-                {this.displayLikes()}
+                {displayLikes}
 
                 <div className='like-comment-container'>
-                    <div onClick={this.toggleLike}><i className="far fa-thumbs-up likebtn"></i>Like</div>
+                    <div onClick={this.toggleLike} className={boldLikes}><i className="far fa-thumbs-up likebtn"></i>Like</div>
                     <div onClick={this.focusComment}><i className="far fa-comment-alt"></i>Comment</div>
                 </div>
 
