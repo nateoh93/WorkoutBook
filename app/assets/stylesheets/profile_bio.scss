@@ -81,7 +81,6 @@ font {
     position: absolute;
     top: -15%;
     left: -13%;
-    // cursor: pointer;
 }
 
 .work-icon {
@@ -94,7 +93,6 @@ font {
     position: absolute;
     top: -15%;
     left: -13%;
-    // cursor: pointer;
 }
 
 .house-icon {
@@ -107,8 +105,8 @@ font {
     position: absolute;
     top: -15%;
     left: -13%;
-    // cursor: pointer;
 }
+
 .birth-icon {
     background: image-url('icons-5.png');
     background-size: auto;
@@ -119,7 +117,6 @@ font {
     position: absolute;
     top: -15%;
     left: -13%;
-    // cursor: pointer;
 }
 
 .profile-friends-container {
@@ -128,7 +125,6 @@ font {
     margin: 4% 4% 0 0;
     background: white;
     border-radius: 3px;
-    // height: 100px;
     font-size: 13px;
 }
 
@@ -146,7 +142,6 @@ font {
 .friends-display {
     display: flex;
     flex-wrap: wrap;
-    // justify-content: space-between;
     margin: 0 5% 5% 5%;
 }
 
