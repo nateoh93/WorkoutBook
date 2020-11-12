@@ -139,6 +139,23 @@ class CommentIndexItem extends React.Component {
                 {/* <button onClick={this.setState({edit: false})}>Cancel</button> */}
             </> : commentDisplay = <div className='comment-body'>{this.state.body}</div>
     
+        let liked = false;
+        this.props.likes.forEach(like => {
+            if (like.author_id === this.props.currentUser.id) {
+                liked = true;
+            }
+        })
+
+        let underlineLike = liked ? 'underline-like' : '';
+        let displayLikes;
+
+        if (this.props.likes.length !== undefined) {
+            displayLikes = <Like currentUser={this.props.currentUser}
+                liked={liked}
+                likes={this.props.likes}
+                type='Comment'
+            />
+        }
 
         return (
             <li>
@@ -161,9 +178,10 @@ class CommentIndexItem extends React.Component {
 
                 </div>
 
-                {this.displayLikes()}
+                {/* {this.displayLikes()} */}
+                {displayLikes}
                 
-                <div className='like-comment-btn' onClick={this.toggleLike}>Like</div>
+                <div className='like-comment-btn' onClick={this.toggleLike} id={underlineLike}>Like</div>
                 {this.displayDropdownMenu()}
             </li>
         );
