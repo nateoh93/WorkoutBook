@@ -105,8 +105,6 @@ user5.cover_photo.attach(io: coverphoto5, filename: 'user5_cover_photo.jpg')
 profphoto5 = open('https://workoutbook-seeds.s3-us-west-1.amazonaws.com/user5_prof_pic.jpg')
 user5.profile_photo.attach(io: profphoto5, filename: 'user5_prof_photo.jpg')
 
-# user1.friend_ids = [user2.id, user3.id, user4.id, user5.id]
-
 friendship1 = Friendship.create!(
     user_id: user1.id,
     friend_id: user2.id
