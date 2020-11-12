@@ -105,6 +105,39 @@ user5.cover_photo.attach(io: coverphoto5, filename: 'user5_cover_photo.jpg')
 profphoto5 = open('https://workoutbook-seeds.s3-us-west-1.amazonaws.com/user5_prof_pic.jpg')
 user5.profile_photo.attach(io: profphoto5, filename: 'user5_prof_photo.jpg')
 
+user6 = User.create!(
+    email: 'lisa@squat.com',
+    password: 'password',
+    fname: 'Lisa',
+    lname: 'Lam',
+    birthday: '06/01/2000',
+    city: "San Francisco",
+    school: "Nap University",
+    work: 'Professional Sleeper'
+)
+
+user7 = User.create!(
+    email: 'ryan@squat.com',
+    password: 'password',
+    fname: 'Ryan',
+    lname: 'Mapa',
+    birthday: '07/01/2000',
+    city: "San Francisco",
+    school: "App University",
+    work: 'Professional App Developer'
+)
+
+user8 = User.create!(
+    email: 'erik@squat.com',
+    password: 'password',
+    fname: 'Erik',
+    lname: 'Elliot',
+    birthday: '08/01/2000',
+    city: "San Francisco",
+    school: "App University",
+    work: 'Professional App Developer Helper'
+)
+
 friendship1 = Friendship.create!(
     user_id: user1.id,
     friend_id: user2.id
@@ -135,13 +168,33 @@ friendship_inverse3 = Friendship.create!(
     friend_id: user2.id
 )
 
+friendship4 = Friendship.create!(
+    user_id: user1.id,
+    friend_id: user4.id
+)
+
+friendship_inverse4 = Friendship.create!(
+    user_id: user4.id,
+    friend_id: user1.id
+)
+
+friendship5 = Friendship.create!(
+    user_id: user1.id,
+    friend_id: user5.id
+)
+
+friendship_inverse5 = Friendship.create!(
+    user_id: user5.id,
+    friend_id: user1.id
+)
+
 request1 = FriendRequest.create!(
-    requester_id: user1.id,
-    requestee_id: user4.id,
+    requester_id: user7.id,
+    requestee_id: user1.id,
 )
 
 request2 = FriendRequest.create!(
-    requester_id: user5.id,
+    requester_id: user8.id,
     requestee_id: user1.id,
 )
 
@@ -212,7 +265,7 @@ postphoto4 = open('https://workoutbook-seeds.s3-us-west-1.amazonaws.com/fall_run
 post9.post_photo.attach(io: postphoto4, filename: 'fall_run.jpg')
 
 post10 = Post.create!(
-    body: "Check out this view from my hike the other day!",
+    body: "I just went on a hike the other day too!",
     profile_user_id: user4.id,
     post_author_id: user5.id
 )
@@ -227,7 +280,67 @@ post11 = Post.create!(
 )
 
 postphoto6 = open('https://workoutbook-seeds.s3-us-west-1.amazonaws.com/hike2.jpg')
-post11.post_photo.attach(io: postphoto6, filename: 'hik2.jpg')
+post11.post_photo.attach(io: postphoto6, filename: 'hike2.jpg')
+
+post12 = Post.create!(
+    body: "How are your weight loss goals going?",
+    profile_user_id: user1.id,
+    post_author_id: user4.id
+)
+
+post13 = Post.create!(
+    body: "Yummmmm....and healthy",
+    profile_user_id: user1.id,
+    post_author_id: user1.id
+)
+
+postphoto7 = open('https://workoutbook-seeds.s3-us-west-1.amazonaws.com/meal1.jpg')
+post13.post_photo.attach(io: postphoto7, filename: 'meal1.jpg')
+
+post14 = Post.create!(
+    body: "Saw your delicious meal so wanted to share mine",
+    profile_user_id: user1.id,
+    post_author_id: user4.id
+)
+
+postphoto7 = open('https://workoutbook-seeds.s3-us-west-1.amazonaws.com/meal2.jpg')
+post14.post_photo.attach(io: postphoto7, filename: 'meal2.jpg')
+
+post15 = Post.create!(
+    body: "Lunch!",
+    profile_user_id: user3.id,
+    post_author_id: user3.id
+)
+
+postphoto8 = open('https://workoutbook-seeds.s3-us-west-1.amazonaws.com/meal3.jpg')
+post15.post_photo.attach(io: postphoto8, filename: 'meal3.jpg')
+
+post16 = Post.create!(
+    body: "My morning view...",
+    profile_user_id: user2.id,
+    post_author_id: user2.id
+)
+
+postpohoto9 = open('https://workoutbook-seeds.s3-us-west-1.amazonaws.com/camp1.jpg')
+post16.post_photo.attach(io: postpohoto9, filename: 'camp1.jpg')
+
+post17 = Post.create!(
+    body: "I think I like camping...",
+    profile_user_id: user5.id,
+    post_author_id: user5.id
+)
+
+postpohoto10 = open('https://workoutbook-seeds.s3-us-west-1.amazonaws.com/camp2.jpg')
+post17.post_photo.attach(io: postpohoto10, filename: 'camp2.jpg')
+
+post18 = Post.create!(
+    body: "No words needed",
+    profile_user_id: user4.id,
+    post_author_id: user1.id
+)
+
+postpohoto11 = open('https://workoutbook-seeds.s3-us-west-1.amazonaws.com/sun1.jpg')
+post18.post_photo.attach(io: postpohoto11, filename: 'sun1.jpg')
 
 comment1 = Comment.create!(
     body: 'Hey you deserve it. You have to enjoy life too!',
@@ -289,6 +402,36 @@ comment10 = Comment.create!(
     comment_author_id: user5.id 
 )
 
+comment11 = Comment.create!(
+    body: "It's going well! I lost 15lbs. Worried about upcoming holiday season though...",
+    post_id: post12.id,
+    comment_author_id: user1.id 
+)
+
+comment12 = Comment.create!(
+    body: "Hey you have to enjoy yourself too. It'll be fine.",
+    post_id: post12.id,
+    comment_author_id: user4.id 
+)
+
+comment13 = Comment.create!(
+    body: "You're absolutely right. I deserve this.",
+    post_id: post12.id,
+    comment_author_id: user1.id 
+)
+
+comment14 = Comment.create!(
+    body: "Wow...you're right",
+    post_id: post18.id,
+    comment_author_id: user4.id 
+)
+
+comment15 = Comment.create!(
+    body: "You have to send me this recipe",
+    post_id: post14.id,
+    comment_author_id: user1.id 
+)
+
 like1 = Like.create!(
     author_id: user1.id,
     likeable_type: 'Post',
@@ -307,8 +450,62 @@ like3 = Like.create!(
     likeable_id: post1.id,
 )
 
-like2 = Like.create!(
+like4 = Like.create!(
     author_id: user1.id,
     likeable_type: 'Comment',
     likeable_id: comment1.id,
+)
+
+like5 = Like.create!(
+    author_id: user4.id,
+    likeable_type: 'Comment',
+    likeable_id: comment13.id,
+)
+
+like6 = Like.create!(
+    author_id: user1.id,
+    likeable_type: 'Comment',
+    likeable_id: comment12.id,
+)
+
+like7 = Like.create!(
+    author_id: user4.id,
+    likeable_type: 'Post',
+    likeable_id: post18.id,
+)
+
+like8 = Like.create!(
+    author_id: user2.id,
+    likeable_type: 'Post',
+    likeable_id: post18.id,
+)
+
+like9 = Like.create!(
+    author_id: user3.id,
+    likeable_type: 'Post',
+    likeable_id: post18.id,
+)
+
+like10 = Like.create!(
+    author_id: user3.id,
+    likeable_type: 'Post',
+    likeable_id: post13.id,
+)
+
+like11 = Like.create!(
+    author_id: user4.id,
+    likeable_type: 'Post',
+    likeable_id: post13.id,
+)
+
+like12 = Like.create!(
+    author_id: user1.id,
+    likeable_type: 'Post',
+    likeable_id: post17.id,
+)
+
+like13 = Like.create!(
+    author_id: user1.id,
+    likeable_type: 'Post',
+    likeable_id: post14.id,
 )
