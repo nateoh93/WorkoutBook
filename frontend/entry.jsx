@@ -5,7 +5,7 @@ import Root from './components/root'
 import ReactGA from 'react-ga';
 
 document.addEventListener('DOMContentLoaded', () => {
-    function initializeReactGA() {
+    initializeReactGA = () => {
         ReactGA.initialize('G-YKVSFEZXN7');
         ReactGA.pageview('/feed');
     }
