@@ -2,9 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root'
-
+import ReactGA from 'react-ga';
 
 document.addEventListener('DOMContentLoaded', () => {
+    function initializeReactGA() {
+        ReactGA.initialize('G-YKVSFEZXN7');
+        ReactGA.pageview('/homepage');
+    }
+
+    initializeReactGA();
+
     let store;
 
     if (window.currentUser) {
