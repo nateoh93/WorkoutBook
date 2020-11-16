@@ -7,7 +7,7 @@ import ReactGA from 'react-ga';
 document.addEventListener('DOMContentLoaded', () => {
     function initializeReactGA() {
         ReactGA.initialize('G-YKVSFEZXN7');
-        ReactGA.pageview('/homepage');
+        ReactGA.pageview('/feed');
     }
 
     initializeReactGA();
