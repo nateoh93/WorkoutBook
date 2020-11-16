@@ -2,15 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root'
-import ReactGA from 'react-ga';
+// import ReactGA from 'react-ga';
 
 document.addEventListener('DOMContentLoaded', () => {
-    function initializeReactGA() {
-        ReactGA.initialize('G-YKVSFEZXN7');
-        ReactGA.pageview('/feed');
-    }
+    // function initializeReactGA() {
+    //     ReactGA.initialize('G-YKVSFEZXN7');
+    //     ReactGA.pageview('/feed');
+    // }
 
-    initializeReactGA();
+    // initializeReactGA();
 
     let store;
 
