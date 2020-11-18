@@ -140,6 +140,14 @@ li:hover > .header-button {
     outline: none;
 }
 
+.search-bar:focus {
+    outline: 1px solid black;
+}
+
+.search-bar:focus + .fa-search {
+    color: black;
+}
+
 .logo-img {
     height: 30px;
 }
