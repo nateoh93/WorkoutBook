@@ -11,10 +11,14 @@ class NavBar extends React.Component{
             notifsDropdown: false,
             messagesDropdown: false,
             friendsDropdown: false,
+            search: "",
+            searchResults: [],
         }
 
         this.handleDropdown = this.handleDropdown.bind(this);
         this.handleLogOut = this.handleLogOut.bind(this);
+        this.handleSearch = this.handleSearch.bind(this);
+        this.displaySearchResults = this.displaySearchResults.bind(this);
     }
 
     handleDropdown(field) {
@@ -29,6 +33,35 @@ class NavBar extends React.Component{
         this.handleDropdown();
     }
 
+    handleSearch(e) {
+        this.setState({search: e.currentTarget.value})
+
+        let searchResults = [];
+        this.props.users.forEach (user => {
+            let name = user.fname + user.lname;
+            if (name.toLowerCase().includes(e.currentTarget.value.toLowerCase())) {
+                searchResults.push(user);
+                console.log(name)
+            };
+        });
+
+        this.setState({searchResults: searchResults});
+    }
+
+    displaySearchResults() {
+        if (this.state.searchResults.length === 0) {
+            return null;
+        } else {
+            this.state.searchResults.map (user => {
+                return (
+                    <Link to={`/users/${user.id}`}>
+
+                    </Link>
+                )
+            })
+        }
+    }
+
     render() {
         if (this.props.currentUser) {            
             return (
@@ -37,7 +70,10 @@ class NavBar extends React.Component{
                         <div className='navbar-left'>
                             <div className='nav-logo'><Link to='/feed'><img className='logo-img' src={window.logo} /></Link></div>
                             <form className='search-bar-form'>
-                                <input className='search-bar' type="text" placeholder='Search...' />
+                                <input className='search-bar' type="text"
+                                    onChange={this.handleSearch}
+                                    value={this.state.search}
+                                    placeholder='Search...' />
                                 <i className="fas fa-search"></i>
                             </form>
                         </div>
