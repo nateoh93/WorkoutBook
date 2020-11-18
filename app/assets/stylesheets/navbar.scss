@@ -137,8 +137,10 @@ li:hover > .header-button {
     border: none;
     box-shadow: none;
     height: 23px;
-    width: 350px;
+    width: 342px;
     outline: none;
+    font-size: 13px;
+    padding-left: 10px;
 }
 
 .search-bar:focus {
@@ -166,7 +168,7 @@ li:hover > .header-button {
 .fa-search {
     position: absolute;
     top: 3px;
-    left: 315px;
+    left: 340px;
     color: gray;
 }
 
