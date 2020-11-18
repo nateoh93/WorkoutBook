@@ -37,20 +37,21 @@ class NavBar extends React.Component{
         this.setState({search: e.currentTarget.value})
 
         let searchResults = [];
-        this.props.users.forEach (user => {
-            let name = user.fname + user.lname;
-            if (name.toLowerCase().includes(e.currentTarget.value.toLowerCase())) {
-                searchResults.push(user);
-                console.log(name)
-            };
-        });
-        console.log(this.state.searchResults)
+        if (e.currentTarget.value) {
+            this.props.users.forEach (user => {
+                let name = user.fname + user.lname;
+                if (name.toLowerCase().includes(e.currentTarget.value.toLowerCase())) {
+                    searchResults.push(user);
+                };
+            });
+        }
         this.setState({searchResults: searchResults});
         this.displaySearchResults();
     }
 
     displaySearchResults() {
         console.log(this.state.searchResults)
+        console.log(this.state.search)
         if (this.state.searchResults.length === 0) {
             return null;
         } else {
