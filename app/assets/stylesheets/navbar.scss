@@ -392,8 +392,15 @@ li:hover > .header-button {
     left: 44px;
     border: 1px solid #cecccc;
     background: white;
-    width: 332px;
+    width: 352px;
     border-radius: 2px;
-    padding: 10px;
     font-size: 13px;
+}
+
+.search-results-container li {
+    padding: 10px 0 10px 10px;
+}
+
+.search-results-container li:hover {
+    background: lightgray;
 }
