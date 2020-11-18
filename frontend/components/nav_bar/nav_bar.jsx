@@ -64,6 +64,19 @@ class NavBar extends React.Component{
         }
     }
 
+    componentDidUpdate(prevProps) {
+        if (prevProps.location.pathname !== this.props.location.pathname) {
+            this.setState({
+                logoutDropdown: false,
+                notifsDropdown: false,
+                messagesDropdown: false,
+                friendsDropdown: false,
+                search: "",
+                searchResults: [],
+            })
+        }
+    }
+
     render() {
         if (this.props.currentUser) {            
             return (
