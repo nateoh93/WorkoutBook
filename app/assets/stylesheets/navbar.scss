@@ -151,6 +151,14 @@ li:hover > .header-button {
 .search-bar-form {
     padding-left: 10px;
     width: 100%;
+    position: relative;
+}
+
+.fa-search {
+    position: absolute;
+    top: 3px;
+    left: 315px;
+    color: gray;
 }
 
 .nav-home-button {
