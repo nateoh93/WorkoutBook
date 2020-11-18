@@ -44,18 +44,20 @@ class NavBar extends React.Component{
                 console.log(name)
             };
         });
-
+        console.log(this.state.searchResults)
         this.setState({searchResults: searchResults});
+        this.displaySearchResults();
     }
 
     displaySearchResults() {
+        console.log(this.state.searchResults)
         if (this.state.searchResults.length === 0) {
             return null;
         } else {
-            this.state.searchResults.map (user => {
+            return this.state.searchResults.map (user => {
                 return (
-                    <Link to={`/users/${user.id}`}>
-
+                    <Link to={`/users/${user.id}`} key={user.id}>
+                        <li>{user.fname} {user.lname}</li>
                     </Link>
                 )
             })
@@ -76,6 +78,7 @@ class NavBar extends React.Component{
                                     placeholder='Search...' />
                                 <i className="fas fa-search"></i>
                             </form>
+                            <ul className='search-results-container'>{this.displaySearchResults()}</ul>
                         </div>
     
                         <div className='navbar-right'>

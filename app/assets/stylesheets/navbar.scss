@@ -24,6 +24,7 @@ nav {
     display: flex;
     align-items: center;
     width: 30%;
+    position: relative;
 }
 
 .nav-logo > a {
@@ -136,7 +137,7 @@ li:hover > .header-button {
     border: none;
     box-shadow: none;
     height: 23px;
-    width: 100%;
+    width: 350px;
     outline: none;
 }
 
@@ -381,4 +382,16 @@ li:hover > .header-button {
 .request-container {
     display: flex;
     align-items: center;
+}
+
+.search-results-container {
+    position: absolute;
+    top: 30px;
+    left: 44px;
+    border: 1px solid #cecccc;
+    background: white;
+    width: 332px;
+    border-radius: 2px;
+    padding: 10px;
+    font-size: 13px;
 }
