@@ -59,8 +59,7 @@ class NavBar extends React.Component{
                         <li>{user.fname} {user.lname}</li>
                     </Link>
                 )
-            })}
-            </ul>
+            })}</ul>
         }
     }
 
@@ -90,8 +89,9 @@ class NavBar extends React.Component{
                                     value={this.state.search}
                                     placeholder='Search...' />
                                 <i className="fas fa-search"></i>
+
+                                {this.displaySearchResults()}
                             </form>
-                            {this.displaySearchResults()}
                         </div>
     
                         <div className='navbar-right'>

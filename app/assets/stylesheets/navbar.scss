@@ -388,13 +388,14 @@ li:hover > .header-button {
 
 .search-results-container {
     position: absolute;
-    top: 30px;
-    left: 44px;
+    top: 26px;
+    left: 10px;
     border: 1px solid #cecccc;
     background: white;
     width: 352px;
     border-radius: 2px;
     font-size: 13px;
+    display: none;
 }
 
 .search-results-container li {
@@ -403,4 +404,8 @@ li:hover > .header-button {
 
 .search-results-container li:hover {
     background: lightgray;
+}
+
+.search-bar:focus ~ .search-results-container, .search-results-container:hover {
+    display: block;
 }
