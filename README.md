@@ -29,6 +29,10 @@ Users can comment on posts. Similarly to posts, users can only edit inline comme
 Users can like and unlike posts and comments.
 
 ![likes](https://user-images.githubusercontent.com/60491357/98742851-fb502480-2363-11eb-8753-59969f1936a8.gif)
+### Search
+Users can search other users to add as friends.
+
+![search1](https://user-images.githubusercontent.com/60491357/99607425-a4c89300-29c0-11eb-8fbb-dc48ea2676c7.gif)
 ### Friending
 Users can accept / decline friend requests and request / unfriend other users.
 
@@ -82,6 +86,5 @@ This snippet handles the main functionality of requesting a new friendship, unfr
     };
 ```
 ## Future Direction
-+ Search functionality
 + Nested comments
 + Photo carousel
