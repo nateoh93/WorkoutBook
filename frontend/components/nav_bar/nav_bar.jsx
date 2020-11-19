@@ -1,6 +1,5 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-
 import FriendRequestContainer from '../friend/friend_request_container';
 
 class NavBar extends React.Component{
@@ -35,8 +34,8 @@ class NavBar extends React.Component{
 
     handleSearch(e) {
         this.setState({search: e.currentTarget.value})
-
         let searchResults = [];
+
         if (e.currentTarget.value) {
             this.props.users.forEach (user => {
                 let name = user.fname + user.lname;
@@ -44,24 +43,24 @@ class NavBar extends React.Component{
                     searchResults.push(user);
                 };
             });
-        }
+        };
+
         this.setState({searchResults: searchResults});
-        this.displaySearchResults();
     }
 
     displaySearchResults() {
-        console.log(this.state.searchResults)
-        console.log(this.state.search)
         if (this.state.searchResults.length === 0) {
             return null;
         } else {
-            return this.state.searchResults.map (user => {
+            return <ul className='search-results-container'>
+                {this.state.searchResults.map (user => {
                 return (
                     <Link to={`/users/${user.id}`} key={user.id}>
                         <li>{user.fname} {user.lname}</li>
                     </Link>
                 )
-            })
+            })}
+            </ul>
         }
     }
 
@@ -92,7 +91,7 @@ class NavBar extends React.Component{
                                     placeholder='Search...' />
                                 <i className="fas fa-search"></i>
                             </form>
-                            <ul className='search-results-container'>{this.displaySearchResults()}</ul>
+                            {this.displaySearchResults()}
                         </div>
     
                         <div className='navbar-right'>
