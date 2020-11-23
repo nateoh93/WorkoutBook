@@ -112,7 +112,7 @@ class NavBar extends React.Component{
                                     </div>
                                 </div>
 
-                                {/* <div className='navbar-messages-container'>
+                                <div className='navbar-messages-container'>
                                     <button className='messenger-icon'></button>
                                     <div className={`messages-dropdown`}>
                                         <li className='messages'>Messages</li>
@@ -126,7 +126,7 @@ class NavBar extends React.Component{
                                         <li className='notifs'>Notifications</li>
                                         <li>You are caught up on notifications</li>
                                     </div>
-                                </div> */}
+                                </div>
 
                                 <div className='navbar-logout-container'>
                                     <button className='logout-icon'></button>
